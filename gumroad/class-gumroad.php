@@ -163,7 +163,7 @@ class Gumroad {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Gumroad Overlay', $this->plugin_slug ),
+			__( 'Gumroad Overlay Settings', $this->plugin_slug ),
 			__( 'Gumroad', $this->plugin_slug ),
 			'manage_options',
 			$this->plugin_slug,
