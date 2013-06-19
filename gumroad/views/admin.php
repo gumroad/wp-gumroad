@@ -26,7 +26,7 @@
 	</p>
 
 	<p>
-		Add Gumroad links as you normally would and the overlay should appear. Example: <code>http://gum.co/demo</code>.
+		Add Gumroad links as you normally would to your content (i.e. <code>http://gum.co/demo</code>) and the overlay should appear.
 	</p>
 
 </div>
