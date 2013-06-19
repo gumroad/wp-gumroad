@@ -17,6 +17,16 @@
 	<?php screen_icon( 'edit' ); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
-	<!-- TODO: Provide markup for your options page here. -->
+	<p>
+		Currently you can enable the Gumroad overlay JavaScript on an individual post or page basis.
+	</p>
+
+	<p>
+		When you edit a post or page, you'll see an option to enable Gumroad along the right sidebar options.
+	</p>
+
+	<p>
+		Add Gumroad links as you normally would and the overlay should appear. Example: <code>http://gum.co/demo</code>.
+	</p>
 
 </div>
