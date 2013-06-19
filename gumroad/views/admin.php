@@ -5,11 +5,11 @@
  * This includes the header, options, and other information that should provide
  * The User Interface to the end user.
  *
- * @package   PluginName
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2013 Your Name or Company Name
+ * @package		GUM
+ * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @license		GPL-2.0+
+ * @link		http://philderksen.com
+ * @copyright	2013 Phil Derksen
  */
 ?>
 <div class="wrap">

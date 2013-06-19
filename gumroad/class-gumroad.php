@@ -63,8 +63,9 @@ class Gumroad {
 	 */
 	private function __construct() {
 
-		// Load plugin text domain
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		// TODO Load plugin text domain -- Translation not implemented for initial release.
+		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		// TODO Add file /lang/gumroad.pot, uncomment load_plugin_textdomain below.
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -76,6 +77,10 @@ class Gumroad {
 		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
 		add_action( 'save_post', array($this, 'save_meta_data') );
 
+
+		// Define custom functionality. See http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
+		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
+		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 	}
 
 	/**
@@ -119,9 +124,11 @@ class Gumroad {
 
 	/**
 	 * Load the plugin text domain for translation.
+	 * // TODO Translation not implemented for initial release
 	 *
 	 * @since    1.0.0
 	 */
+	/*
 	public function load_plugin_textdomain() {
 
 		$domain = $this->plugin_slug;
@@ -130,6 +137,7 @@ class Gumroad {
 		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
 	}
+	*/
 
 	/**
 	 * Register and enqueues public-facing JavaScript files.
