@@ -2,7 +2,7 @@
 /**
  * Gumroad Overlay
  *
- * Display your Gumroad purchase pages in a pretty lightbox.
+ * Display your Gumroad purchase pages in a pretty lightbox overlay.
  *
  * @package		GUM
  * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
@@ -11,9 +11,9 @@
  * @copyright	2013 Phil Derksen
  *
  * @wordpress-plugin
- * Plugin Name: Gumroad
+ * Plugin Name: Gumroad Overlay
  * Plugin URI: http://wordpress.org/plugins/gumroad/
- * Description: Display your Gumroad purchase pages in a pretty lightbox.
+ * Description: Display your Gumroad purchase pages in a pretty lightbox overlay.
  * Version: 1.0.0
  * Author: Phil Derksen
  * Author URI: http://philderksen.com
