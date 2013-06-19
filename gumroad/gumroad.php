@@ -11,10 +11,10 @@
  * @copyright	2013 Phil Derksen
  *
  * @wordpress-plugin
- * Plugin Name: Pinterest "Pin It" Button
+ * Plugin Name: Gumroad
  * Plugin URI: http://pinterestplugin.com
- * Description: Add a Pinterest "Pin It" Button to your posts and pages allowing your readers easily pin your images. Includes shortcode and widget.
- * Version: 2.0.0
+ * Description: Add new description here
+ * Version: 1.0.0
  * Author: Phil Derksen, Nick Young
  * Author URI: http://philderksen.com
  * License: GPL-2.0+
@@ -27,12 +27,12 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // TODO: replace `class-plugin-name.php` with the name of the actual plugin's class file
-require_once( plugin_dir_path( __FILE__ ) . 'class-plugin-name.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'class-gumroad.php' );
 
 // Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
 // TODO: replace PluginName with the name of the plugin defined in `class-plugin-name.php`
-register_activation_hook( __FILE__, array( 'PluginName', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'PluginName', 'deactivate' ) );
+register_activation_hook( __FILE__, array( 'Gumroad', 'activate' ) );
+register_deactivation_hook( __FILE__, array( 'Gumroad', 'deactivate' ) );
 
 // TODO: replace PluginName with the name of the plugin defined in `class-plugin-name.php`
-PluginName::get_instance();
+Gumroad::get_instance();

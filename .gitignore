@@ -43,3 +43,6 @@ Thumbs.db
 
 # MS Sync Toy dat file *
 SyncToy*.dat
+
+# Netbeans Project Folder
+/gumroad/nbproject/*
