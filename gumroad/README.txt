@@ -1,6 +1,6 @@
 === Gumroad Overlay ===
 Contributors: pderksen, nickyoung87
-Tags: gumroad, ecommerce, e-commerce, pdf, javascript, embed
+Tags: gumroad, gumroad overlay, ecommerce, e-commerce, pdf, javascript, embed
 Requires at least: 3.4.2
 Tested up to: 3.6
 Stable tag: 1.0.0
@@ -37,7 +37,8 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 == Screenshots ==
 
-[TODO]
+1. Enabling Gumroad overlay JavaScript in the post sidebar.
+2. Screenshot of Gumroad overlay on top of a WordPress page.
 
 == Changelog ==
 
