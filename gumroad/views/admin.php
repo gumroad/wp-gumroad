@@ -13,17 +13,7 @@
  */
 ?>
 <div class="wrap">
-	<?php 
-		global $gum_settings;
-		
-		$gum_option = get_option( 'gum_settings_general' );
-		
-		foreach( $gum_option as $g => $v ) {
-			foreach( $v as $k ) {
-				echo $k . "<br />";
-			}
-		}
-	?>
+	<?php global $gum_settings; ?>
 	
 	<?php screen_icon( 'edit' ); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>

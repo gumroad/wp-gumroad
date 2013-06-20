@@ -149,15 +149,27 @@ class Gumroad {
 	 */
 	public function enqueue_scripts() {
 		
-		global $post;
+		global $post, $gum_settings;
 		
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
 		
+		$gum_option = get_option( 'gum_settings_general' );
+		$gum_option = $gum_option['show_on'];
 		
+		if( $gum_option['blog_home_page'] && is_home() ) 
+			$load_script = 1;
 		
-		if( $gum_meta ) {
+		if( $gum_option['front_page'] && is_front_page() )
+			$load_script = 1;
+		
+		if( $gum_option['archives'] && is_archive() )
+			$load_script = 1;
+		
+		if( $gum_meta )
+			$load_script = 1;
+		
+		if( $load_script )
 			wp_enqueue_script( $this->plugin_slug . 'gumroad-script', 'https://gumroad.com/js/gumroad.js', '', $this->version, true );
-		}
 	}
 
 	/**
