@@ -66,9 +66,12 @@ class Gumroad {
 		// TODO Load plugin text domain -- Translation not implemented for initial release.
 		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		// TODO Add file /lang/gumroad.pot, uncomment load_plugin_textdomain below.
-
+		
+		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
+		add_action( 'admin_init', array( $this, 'initialize_settings' ), 1 );
+		
 		// Add the options page and menu item.
-		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
+		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -150,6 +153,8 @@ class Gumroad {
 		
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
 		
+		
+		
 		if( $gum_meta ) {
 			wp_enqueue_script( $this->plugin_slug . 'gumroad-script', 'https://gumroad.com/js/gumroad.js', '', $this->version, true );
 		}
@@ -178,6 +183,22 @@ class Gumroad {
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
+	}
+	
+	/**
+	 * Initialize settings.
+	 *
+	 * @since    1.0.0
+	 */
+	public function initialize_settings() {
+		// Load global PIB options
+		global $gum_options;
+		
+		// Include the file to register all of the plugin settings
+		include_once('views/register-settings.php');
+		
+		// Load global options settings
+		$gum_options = gum_get_settings();
 	}
 	
 	/* 

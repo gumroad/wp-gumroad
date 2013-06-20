@@ -13,7 +13,18 @@
  */
 ?>
 <div class="wrap">
-
+	<?php 
+		global $gum_settings;
+		
+		$gum_option = get_option( 'gum_settings_general' );
+		
+		foreach( $gum_option as $g => $v ) {
+			foreach( $v as $k ) {
+				echo $k . "<br />";
+			}
+		}
+	?>
+	
 	<?php screen_icon( 'edit' ); ?>
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
@@ -28,5 +39,19 @@
 	<p>
 		Add Gumroad links as you normally would to your content (i.e. <code>http://gum.co/demo</code>) and the overlay should appear.
 	</p>
+	
+	<div id="container">
+		<?php // TODO settings_errors(); ? ?>
 
+		<form method="post" action="options.php">
+			<?php
+			
+				settings_fields( 'gum_settings_general' );
+				do_settings_sections( 'gum_settings_general' );
+
+				submit_button();
+			?>
+		</form>
+	</div>
+	
 </div>
