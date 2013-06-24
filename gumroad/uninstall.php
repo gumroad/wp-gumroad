@@ -9,21 +9,17 @@
  * @copyright 2013 Your Name or Company Name
  */
 
-	// If uninstall, not called from WordPress, then exit
-	if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-		exit;
-	}
+// If uninstall, not called from WordPress, then exit
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit;
+}
 
-	// Deletes all post meta data when uninstalled
-	$posts = get_posts( 'numberposts=-1&post_type=post&post_status=any' );
+// Remove option records from options table
+delete_option( 'gum_settings_general' );
 
-	foreach( $posts as $p ) {
-		delete_post_meta( $p->ID, '_gum_enabled' );
-	}
+// Remove custom post meta fields
+$posts = get_posts( array( 'numberposts' => -1 ) );
 
-	// Deletes all page meta data when uninstalled
-	$pages = get_posts( 'numberposts=-1&post_type=page&post_status=any' );
-
-	foreach( $pages as $p ) {
-		delete_post_meta( $p->ID, '_gum_enabled' );
-	}
+foreach( $posts as $post ) {
+	delete_post_meta( $post->ID, '_gum_enabled' );
+}

@@ -9,8 +9,10 @@
 	* @since       1.0
     */
 
-    // Exit if accessed directly
-    if ( !defined( 'WPINC' ) ) exit;
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 function gum_register_settings() {
 	$gum_settings = array(
@@ -18,20 +20,16 @@ function gum_register_settings() {
 	    'general' => array(
 		   'activate_on' => array(
 			  'id' => 'show_on',
-			  'name' => __('Activate Gumroad on', 'pib'),
+			  'name' => __( 'Enable Gumroad on', 'gum' ),
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'blog_home_page' => array(
-					'label' => __('Blog Home Page (or Latest Posts Page)', 'pib'),
-					'value' => 1
-				),
-				 'front_page' => array(
-					'label' => __('Front Page (different from Home Page only if set in Settings > Reading)', 'pib'),
+					'label' => __( 'Blog Home Page (or Latest Posts Page)', 'gum' ),
 					'value' => 1
 				),
 				 'archives' => array(
-					'label' => __('Archives (includes Category, Tag, Author, and date-based pages', 'pib'),
+					'label' => __( 'Archives (includes Category, Tag, Author, and date-based pages', 'gum' ),
 					'value' => 1
 				)
 			  )
@@ -75,7 +73,7 @@ function gum_register_settings() {
 	register_setting( 'gum_settings_general',		'gum_settings_general',			'gum_settings_sanitize' );
 	
 }
-add_action('admin_init', 'gum_register_settings');
+add_action( 'admin_init', 'gum_register_settings' );
 
 
 /*
@@ -98,7 +96,7 @@ function gum_multicheck_callback( $args ) {
  */
 
 function gum_settings_sanitize( $input ) {
-	add_settings_error( 'gum-notices', '', __('Settings Updated', 'gum'), 'updated' );
+	add_settings_error( 'gum-notices', '', __( 'Settings Updated', 'gum' ), 'updated' );
 	return $input;
 }
 /*
@@ -113,8 +111,7 @@ function gum_missing_callback() {
  * Function used to return an array of all of the plugin settings
  */
 function gum_get_settings() {
-	$general_settings =			is_array( get_option( 'gum_settings_general' ) ) ? get_option( 'gum_settings_general' )  : array();
+	$general_settings =	is_array( get_option( 'gum_settings_general' ) ) ? get_option( 'gum_settings_general' )  : array();
 	
 	return array_merge( $general_settings );
 }
-

@@ -78,12 +78,8 @@ class Gumroad {
 
 		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
-		add_action( 'save_post', array($this, 'save_meta_data') );
-
-
-		// Define custom functionality. See http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
-		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
+		add_action( 'save_post', array( $this, 'save_meta_data') );
+		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
 	}
 
 	/**
@@ -148,8 +144,7 @@ class Gumroad {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		
-		global $post, $gum_settings;
+		global $post;
 		
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
 		
@@ -158,10 +153,7 @@ class Gumroad {
 		
 		if( $gum_option['blog_home_page'] && is_home() ) 
 			$load_script = 1;
-		
-		if( $gum_option['front_page'] && is_front_page() )
-			$load_script = 1;
-		
+
 		if( $gum_option['archives'] && is_archive() )
 			$load_script = 1;
 		
@@ -203,11 +195,11 @@ class Gumroad {
 	 * @since    1.0.0
 	 */
 	public function initialize_settings() {
-		// Load global PIB options
+		// Load global options
 		global $gum_options;
 		
 		// Include the file to register all of the plugin settings
-		include_once('views/register-settings.php');
+		include_once( 'views/register-settings.php' );
 		
 		// Load global options settings
 		$gum_options = gum_get_settings();
@@ -232,7 +224,7 @@ class Gumroad {
 		?>
 			<p>
 				<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> /> 
-				<label for="gum_enabled"><?php echo __('Enable Gumroad overlay on this page', 'gum' ); ?></label>
+				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
 			</p>
 		<?php
 		}
@@ -244,7 +236,7 @@ class Gumroad {
 	 * @since    1.0.0
 	 */
 	public function save_meta_data( $post_id ) {
-		
+
 		if( !isset( $_POST['gum_enabled_nonce'] ) || !wp_verify_nonce ( $_POST['gum_enabled_nonce'], basename( __FILE__ ) ) )
 			return $post_id;
 		
@@ -257,4 +249,20 @@ class Gumroad {
 			delete_post_meta( $post_id, '_gum_enabled' );
 		}
 	}
+
+	/**
+	 * Add a link to the settings page to the plugins list
+	 *
+	 * @since    1.0.0
+	 */
+	function add_action_link( $links, $file ) {
+		static $this_plugin;
+		if ( empty( $this_plugin ) ) $this_plugin = $this->plugin_slug . '/' . $this->plugin_slug . '.php';
+		if ( $file == $this_plugin ) {
+			$settings_link = '<a href="' . admin_url( 'options-general.php?page='  . $this->plugin_slug ) . '">' . __( 'Settings', 'gum' ) . '</a>';
+			array_unshift( $links, $settings_link );
+		}
+		return $links;
+	}
+
 }
