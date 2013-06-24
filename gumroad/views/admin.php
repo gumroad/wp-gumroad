@@ -19,17 +19,17 @@
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<p>
-		Currently you can enable the Gumroad overlay JavaScript on an individual post or page basis.
+		For enabling the Gumroad overlay JavaScript on individual posts or pages, when you edit a post or page you'll see the option to enable among the right sidebar options.
 	</p>
 
 	<p>
-		When you edit a post or page, you'll see an option to enable Gumroad along the right sidebar options.
+		For enabling the Gumroad overlay JavaScript for pages with multiple posts, use the options below.
 	</p>
 
 	<p>
-		Add Gumroad links as you normally would to your content (i.e. <code>http://gum.co/demo</code>) and the overlay should appear.
+		In all cases add Gumroad links as you normally would to your content (i.e. <code>http://gum.co/demo</code>) and the overlay should appear where enabled.
 	</p>
-	
+
 	<div id="container">
 		<?php // TODO settings_errors(); ? ?>
 
