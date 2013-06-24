@@ -78,12 +78,10 @@ class Gumroad {
 
 		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
-		add_action( 'save_post', array($this, 'save_meta_data') );
+		add_action( 'save_post', array( $this, 'save_meta_data') );
 
-
-		// Define custom functionality. See http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
-		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
+		// TODO Settings link on plugins page not working yet
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'add_plugin_settings_link' ) );
 	}
 
 	/**
@@ -148,8 +146,7 @@ class Gumroad {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		
-		global $post, $gum_settings;
+		global $post;
 		
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
 		
@@ -200,11 +197,11 @@ class Gumroad {
 	 * @since    1.0.0
 	 */
 	public function initialize_settings() {
-		// Load global PIB options
+		// Load global options
 		global $gum_options;
 		
 		// Include the file to register all of the plugin settings
-		include_once('views/register-settings.php');
+		include_once( 'views/register-settings.php' );
 		
 		// Load global options settings
 		$gum_options = gum_get_settings();
@@ -241,7 +238,7 @@ class Gumroad {
 	 * @since    1.0.0
 	 */
 	public function save_meta_data( $post_id ) {
-		
+
 		if( !isset( $_POST['gum_enabled_nonce'] ) || !wp_verify_nonce ( $_POST['gum_enabled_nonce'], basename( __FILE__ ) ) )
 			return $post_id;
 		
@@ -253,5 +250,17 @@ class Gumroad {
 		} else {
 			delete_post_meta( $post_id, '_gum_enabled' );
 		}
+	}
+
+	// TODO Settings link on plugins page not working yet
+	/*
+	 * Add Settings link to the left of Deactivate on plugins list page
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_plugin_settings_link( $links ) {
+		$settings_link = '<a href="' . admin_url( 'admin.php?page=' . $this->plugin_slug ) . '">Settings</a>';
+		array_unshift( $links, $settings_link );
+		return $links;
 	}
 }
