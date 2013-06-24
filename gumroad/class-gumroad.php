@@ -158,10 +158,7 @@ class Gumroad {
 		
 		if( $gum_option['blog_home_page'] && is_home() ) 
 			$load_script = 1;
-		
-		if( $gum_option['front_page'] && is_front_page() )
-			$load_script = 1;
-		
+
 		if( $gum_option['archives'] && is_archive() )
 			$load_script = 1;
 		
