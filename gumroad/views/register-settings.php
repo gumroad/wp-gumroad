@@ -77,7 +77,7 @@ function gum_register_settings() {
 	register_setting( 'gum_settings_general',		'gum_settings_general',			'gum_settings_sanitize' );
 	
 }
-add_action('admin_init', 'gum_register_settings');
+add_action( 'admin_init', 'gum_register_settings' );
 
 
 /*
@@ -100,7 +100,7 @@ function gum_multicheck_callback( $args ) {
  */
 
 function gum_settings_sanitize( $input ) {
-	add_settings_error( 'gum-notices', '', __( 'Settings Updated', 'gum'), 'updated' );
+	add_settings_error( 'gum-notices', '', __( 'Settings Updated', 'gum' ), 'updated' );
 	return $input;
 }
 /*
