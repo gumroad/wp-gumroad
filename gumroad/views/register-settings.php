@@ -9,8 +9,10 @@
 	* @since       1.0
     */
 
-    // Exit if accessed directly
-    if ( !defined( 'WPINC' ) ) exit;
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 function gum_register_settings() {
 	$gum_settings = array(
