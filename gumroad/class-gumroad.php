@@ -79,9 +79,7 @@ class Gumroad {
 		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
-
-		// TODO Settings link on plugins page not working yet
-		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'add_plugin_settings_link' ) );
+		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
 	}
 
 	/**
@@ -252,15 +250,19 @@ class Gumroad {
 		}
 	}
 
-	// TODO Settings link on plugins page not working yet
-	/*
-	 * Add Settings link to the left of Deactivate on plugins list page
+	/**
+	 * Add a link to the settings page to the plugins list
 	 *
 	 * @since    1.0.0
 	 */
-	public function add_plugin_settings_link( $links ) {
-		$settings_link = '<a href="' . admin_url( 'admin.php?page=' . $this->plugin_slug ) . '">Settings</a>';
-		array_unshift( $links, $settings_link );
+	function add_action_link( $links, $file ) {
+		static $this_plugin;
+		if ( empty( $this_plugin ) ) $this_plugin = $this->plugin_slug . '/' . $this->plugin_slug . '.php';
+		if ( $file == $this_plugin ) {
+			$settings_link = '<a href="' . admin_url( 'options-general.php?page='  . $this->plugin_slug ) . '">' . __( 'Settings', 'gum' ) . '</a>';
+			array_unshift( $links, $settings_link );
+		}
 		return $links;
 	}
+
 }
