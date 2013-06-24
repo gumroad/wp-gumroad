@@ -11,15 +11,13 @@ Display your Gumroad purchase pages in a pretty lightbox overlay.
 
 == Description ==
 
-From the official [Gumroad overlay documentation](https://gumroad.com/overlay):
-
-The Gumroad overlay lets you bring in the Gumroad purchase pages right onto your site, so that transactions can happen inline — in a pretty Gumroad lightbox — without ruining the browsing experience for your customers.
+The Gumroad overlay lets you bring in the Gumroad purchase pages right onto your site, so that transactions can happen inline — in a pretty Gumroad lightbox — without ruining the browsing experience for your customers (taken from the official [Gumroad overlay documentation](https://gumroad.com/overlay)).
 
 This plugin simply embeds the Gumroad JavaScript snippet on the posts or pages you specify. Just check the box in the sidebar when editing a post or page.
 
 You can also enable Gumroad on pages with multiple posts such as home or archive pages.
 
-Then just add the links to your Gumroad products on your posts and pages (i.e. `http://gum.com/demo`).
+Then just add the links to your Gumroad products on your posts and pages (i.e. `http://gum.co/demo`).
 
 == Installation ==
 
