@@ -232,7 +232,7 @@ class Gumroad {
 		?>
 			<p>
 				<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> /> 
-				<label for="gum_enabled"><?php echo __('Enable Gumroad overlay on this page', 'gum' ); ?></label>
+				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
 			</p>
 		<?php
 		}

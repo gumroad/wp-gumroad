@@ -20,20 +20,20 @@ function gum_register_settings() {
 	    'general' => array(
 		   'activate_on' => array(
 			  'id' => 'show_on',
-			  'name' => __('Activate Gumroad on', 'pib'),
+			  'name' => __( 'Activate Gumroad on', 'gum' ),
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'blog_home_page' => array(
-					'label' => __('Blog Home Page (or Latest Posts Page)', 'pib'),
+					'label' => __( 'Blog Home Page (or Latest Posts Page)', 'gum' ),
 					'value' => 1
 				),
 				 'front_page' => array(
-					'label' => __('Front Page (different from Home Page only if set in Settings > Reading)', 'pib'),
+					'label' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'gum' ),
 					'value' => 1
 				),
 				 'archives' => array(
-					'label' => __('Archives (includes Category, Tag, Author, and date-based pages', 'pib'),
+					'label' => __( 'Archives (includes Category, Tag, Author, and date-based pages', 'gum' ),
 					'value' => 1
 				)
 			  )
@@ -100,7 +100,7 @@ function gum_multicheck_callback( $args ) {
  */
 
 function gum_settings_sanitize( $input ) {
-	add_settings_error( 'gum-notices', '', __('Settings Updated', 'gum'), 'updated' );
+	add_settings_error( 'gum-notices', '', __( 'Settings Updated', 'gum'), 'updated' );
 	return $input;
 }
 /*
@@ -115,8 +115,7 @@ function gum_missing_callback() {
  * Function used to return an array of all of the plugin settings
  */
 function gum_get_settings() {
-	$general_settings =			is_array( get_option( 'gum_settings_general' ) ) ? get_option( 'gum_settings_general' )  : array();
+	$general_settings =	is_array( get_option( 'gum_settings_general' ) ) ? get_option( 'gum_settings_general' )  : array();
 	
 	return array_merge( $general_settings );
 }
-
