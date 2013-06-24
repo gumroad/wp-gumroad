@@ -17,7 +17,9 @@ The Gumroad overlay lets you bring in the Gumroad purchase pages right onto your
 
 This plugin simply embeds the Gumroad JavaScript snippet on the posts or pages you specify. Just check the box in the sidebar when editing a post or page.
 
-Then just add the link to your Gumroad product on your posts and pages (i.e. `http://gum.com/demo`).
+You can also enable Gumroad on pages with multiple posts such as home or archive pages.
+
+Then just add the links to your Gumroad products on your posts and pages (i.e. `http://gum.com/demo`).
 
 == Installation ==
 
