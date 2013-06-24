@@ -20,16 +20,12 @@ function gum_register_settings() {
 	    'general' => array(
 		   'activate_on' => array(
 			  'id' => 'show_on',
-			  'name' => __( 'Activate Gumroad on', 'gum' ),
+			  'name' => __( 'Enable Gumroad on', 'gum' ),
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
 				 'blog_home_page' => array(
 					'label' => __( 'Blog Home Page (or Latest Posts Page)', 'gum' ),
-					'value' => 1
-				),
-				 'front_page' => array(
-					'label' => __( 'Front Page (different from Home Page only if set in Settings > Reading)', 'gum' ),
 					'value' => 1
 				),
 				 'archives' => array(
