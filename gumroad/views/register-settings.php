@@ -3,6 +3,7 @@
  * Register Settings
  *
  * @package		GUM
+ * @subpackage	Views
  * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
 */
 
