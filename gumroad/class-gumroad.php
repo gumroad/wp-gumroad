@@ -76,10 +76,16 @@ class Gumroad {
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
+		// Add Post Meta stuff
+		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
+
+		// Add plugin listing "Settings" and other action links
 		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
+
+		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
+		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
+		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 	}
 
 	/**
@@ -147,9 +153,9 @@ class Gumroad {
 		global $post;
 		
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-		
 		$gum_option = get_option( 'gum_settings_general' );
 		$gum_option = $gum_option['show_on'];
+		$load_script = 0;
 		
 		if( $gum_option['blog_home_page'] && is_home() ) 
 			$load_script = 1;
@@ -210,7 +216,7 @@ class Gumroad {
 	 * 
 	 * @since    1.0.0
 	 */
-	public function post_meta() {
+	public function display_post_meta() {
 		
 		// Add the meta boxes for both posts and pages
 		add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'post', 'side', 'core');
@@ -251,7 +257,7 @@ class Gumroad {
 	}
 
 	/**
-	 * Add a link to the settings page to the plugins list
+	 * Add plugin listing "Settings" and other action links
 	 *
 	 * @since    1.0.0
 	 */
@@ -264,5 +270,4 @@ class Gumroad {
 		}
 		return $links;
 	}
-
 }
