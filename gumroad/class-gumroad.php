@@ -1,15 +1,5 @@
 <?php
 /**
- * Gumroad Overlay
- *
- * @package		GUM
- * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
- * @license		GPL-2.0+
- * @link		http://philderksen.com
- * @copyright	2013 Phil Derksen
- */
-
-/**
  * Main Gumroad class
  *
  * @package		GUM
