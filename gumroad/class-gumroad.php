@@ -67,7 +67,7 @@ class Gumroad {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		// Add Post Meta stuff
-		add_action( 'add_meta_boxes', array( $this, 'display_post_meta') );
+		add_action( 'add_meta_boxes', array( $this, 'call_meta_boxes') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
 
 		// Add plugin listing "Settings" and other action links
@@ -200,32 +200,39 @@ class Gumroad {
 		// Load global options settings
 		$gum_options = gum_get_settings();
 	}
+
+	// TODO Nick please fix. I F'ed this up.
 	
 	/* 
 	 * Add the post meta boxes and callback function to print the HTML
+	 * Reference: http://www.wproots.com/complex-meta-boxes-in-wordpress/
 	 * 
 	 * @since    1.0.0
 	 */
-	public function display_post_meta() {
-		
-		// Add the meta boxes for both posts and pages
-		add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'post', 'side', 'core');
-		add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'page', 'side', 'core');
-	
-		// function to output the HTML for meta box
-		function add_meta_form( $post ) {
-			$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-			
-			wp_nonce_field( basename( __FILE__ ), 'gum_enabled_nonce' );
-		?>
-			<p>
-				<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> /> 
-				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
-			</p>
-		<?php
-		}
+	public function call_meta_boxes( $post_type ) {
+		// TODO Loop through to make sure custom post types are enabled
+		add_meta_box('gum-meta', 'Gumroad', 'display_meta_box', $post_type, 'side', 'core');
+
+		// TODO: Old/remove: Add the meta boxes for both posts and pages
+		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'post', 'side', 'core');
+		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'page', 'side', 'core');
+		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'movies', 'side', 'core');
 	}
-	
+
+	// TODO Output the HTML for single meta box
+	function display_meta_box( $post ) {
+		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
+
+		wp_nonce_field( basename( __FILE__ ), 'gum_enabled_nonce' );
+		?>
+		<p>
+			<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> />
+			<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
+		</p>
+		<?php
+	}
+
+
 	/*
 	 * Save the post meta
 	 * 
