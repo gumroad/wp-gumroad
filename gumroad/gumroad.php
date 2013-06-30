@@ -1,6 +1,6 @@
 <?php
 /**
- * Gumroad Purchase Pages
+ * Gumroad Purchase Pages Overlay
  *
  * Display your Gumroad purchase pages in a pretty lightbox overlay.
  *
@@ -11,7 +11,7 @@
  * @copyright	2013 Phil Derksen
  *
  * @wordpress-plugin
- * Plugin Name: Gumroad Purchase Pages
+ * Plugin Name: Gumroad Purchase Pages Overlay
  * Plugin URI: http://wordpress.org/plugins/gumroad/
  * Description: Display your Gumroad purchase pages in a pretty lightbox overlay.
  * Version: 1.0.0

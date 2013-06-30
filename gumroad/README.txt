@@ -1,4 +1,4 @@
-=== Gumroad Purchase Pages ===
+=== Gumroad Purchase Page Overlay ===
 Contributors: pderksen, nickyoung87
 Tags: gumroad, gumroad purchase pages, gumroad overlay, ecommerce, e-commerce, pdf, javascript, embed
 Requires at least: 3.4.2
