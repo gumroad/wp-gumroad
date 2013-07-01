@@ -2,11 +2,8 @@
 /**
  * Fired when the plugin is uninstalled.
  *
- * @package   GUM
- * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2013 Your Name or Company Name
+ * @package		GUM
+ * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
 // If uninstall, not called from WordPress, then exit

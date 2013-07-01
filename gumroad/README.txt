@@ -1,6 +1,6 @@
-=== Gumroad Overlay ===
+=== Gumroad Purchase Page Overlay ===
 Contributors: pderksen, nickyoung87
-Tags: gumroad, gumroad overlay, ecommerce, e-commerce, pdf, javascript, embed
+Tags: gumroad, gumroad purchase pages, gumroad overlay, ecommerce, e-commerce, pdf, javascript, embed
 Requires at least: 3.4.2
 Tested up to: 3.6
 Stable tag: 1.0.0
@@ -21,7 +21,17 @@ Then just add the links to your Gumroad products on your posts and pages (i.e. `
 
 == Installation ==
 
-[TODO]
+**Finding and installing through the WordPress admin:**
+
+1. If searching for this plugin in your WordPress admin, search for "gumroad".
+1. Find the plugin that's labeled **Gumroad Purchase Pages**.
+1. Also look for our author names (**Phil Derksen** and **Nick Young**).
+1. Click "Install Now", then Activate, then head to Settings > Gumroad.
+
+**Alternative installation methods:**
+
+* Download this plugin, then upload through the WordPress admin (Plugins > Add New > Upload)
+* Download this plugin, unzip the contents, then FTP upload to the `/wp-content/plugins/` directory
 
 == Frequently Asked Questions ==
 
@@ -38,7 +48,8 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 == Screenshots ==
 
 1. Enabling Gumroad overlay JavaScript in the post sidebar.
-2. Screenshot of Gumroad overlay on top of a WordPress page.
+2. Gumroad purchase page overlay on top of a WordPress page.
+3. Gumroad overlay settings page (home/archive page options).
 
 == Changelog ==
 

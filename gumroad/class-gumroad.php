@@ -1,15 +1,5 @@
 <?php
 /**
- * Gumroad Overlay
- *
- * @package		GUM
- * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
- * @license		GPL-2.0+
- * @link		http://philderksen.com
- * @copyright	2013 Phil Derksen
- */
-
-/**
  * Main Gumroad class
  *
  * @package		GUM
@@ -76,10 +66,16 @@ class Gumroad {
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		add_action( 'add_meta_boxes', array( $this, 'post_meta') );
+		// Add Post Meta stuff
+		add_action( 'add_meta_boxes', array( $this, 'call_meta_boxes') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
+
+		// Add plugin listing "Settings" and other action links
 		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
+
+		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
+		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
+		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 	}
 
 	/**
@@ -147,9 +143,9 @@ class Gumroad {
 		global $post;
 		
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-		
 		$gum_option = get_option( 'gum_settings_general' );
 		$gum_option = $gum_option['show_on'];
+		$load_script = 0;
 		
 		if( $gum_option['blog_home_page'] && is_home() ) 
 			$load_script = 1;
@@ -204,32 +200,39 @@ class Gumroad {
 		// Load global options settings
 		$gum_options = gum_get_settings();
 	}
+
+	// TODO Nick please fix. I F'ed this up.
 	
 	/* 
 	 * Add the post meta boxes and callback function to print the HTML
+	 * Reference: http://www.wproots.com/complex-meta-boxes-in-wordpress/
 	 * 
 	 * @since    1.0.0
 	 */
-	public function post_meta() {
-		
-		// Add the meta boxes for both posts and pages
-		add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'post', 'side', 'core');
-		add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'page', 'side', 'core');
-	
-		// function to output the HTML for meta box
-		function add_meta_form( $post ) {
-			$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-			
-			wp_nonce_field( basename( __FILE__ ), 'gum_enabled_nonce' );
-		?>
-			<p>
-				<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> /> 
-				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
-			</p>
-		<?php
-		}
+	public function call_meta_boxes( $post_type ) {
+		// TODO Loop through to make sure custom post types are enabled
+		add_meta_box('gum-meta', 'Gumroad', 'display_meta_box', $post_type, 'side', 'core');
+
+		// TODO: Old/remove: Add the meta boxes for both posts and pages
+		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'post', 'side', 'core');
+		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'page', 'side', 'core');
+		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'movies', 'side', 'core');
 	}
-	
+
+	// TODO Output the HTML for single meta box
+	function display_meta_box( $post ) {
+		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
+
+		wp_nonce_field( basename( __FILE__ ), 'gum_enabled_nonce' );
+		?>
+		<p>
+			<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> />
+			<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
+		</p>
+		<?php
+	}
+
+
 	/*
 	 * Save the post meta
 	 * 
@@ -251,7 +254,7 @@ class Gumroad {
 	}
 
 	/**
-	 * Add a link to the settings page to the plugins list
+	 * Add plugin listing "Settings" and other action links
 	 *
 	 * @since    1.0.0
 	 */
@@ -264,5 +267,4 @@ class Gumroad {
 		}
 		return $links;
 	}
-
 }
