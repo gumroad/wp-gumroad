@@ -209,27 +209,32 @@ class Gumroad {
 	 * 
 	 * @since    1.0.0
 	 */
-	public function call_meta_boxes( $post_type ) {
+	public function call_meta_boxes() {
 		// TODO Loop through to make sure custom post types are enabled
+		global $post;
+		
+		$post_type = $post->post_type;
+		
+		
 		add_meta_box('gum-meta', 'Gumroad', 'display_meta_box', $post_type, 'side', 'core');
 
 		// TODO: Old/remove: Add the meta boxes for both posts and pages
-		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'post', 'side', 'core');
+		//add_meta_box('gum-meta', 'Gumroad', 'display_meta_box', 'post', 'side', 'core');
 		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'page', 'side', 'core');
 		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'movies', 'side', 'core');
-	}
+		
+		
+		function display_meta_box( $post ) {
+			$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
 
-	// TODO Output the HTML for single meta box
-	function display_meta_box( $post ) {
-		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-
-		wp_nonce_field( basename( __FILE__ ), 'gum_enabled_nonce' );
-		?>
-		<p>
-			<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> />
-			<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
-		</p>
-		<?php
+			wp_nonce_field( basename( __FILE__ ), 'gum_enabled_nonce' );
+			?>
+			<p>
+				<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> />
+				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
+			</p>
+			<?php
+		}
 	}
 
 
