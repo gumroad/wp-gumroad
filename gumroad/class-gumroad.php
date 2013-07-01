@@ -147,10 +147,14 @@ class Gumroad {
 		$gum_option = $gum_option['show_on'];
 		$load_script = 0;
 		
-		if( $gum_option['blog_home_page'] && is_home() ) 
+		if( !( $gum_option['blog_home_page'] ) && is_home() ) 
+			return;
+		else if( $gum_option['blog_home_page'] && is_home() )
 			$load_script = 1;
 
-		if( $gum_option['archives'] && is_archive() )
+		if( !( $gum_option['archives'] ) && is_archive() )
+			return;
+		else if( $gum_option['archives'] && is_archive() )
 			$load_script = 1;
 		
 		if( $gum_meta )
