@@ -72,10 +72,6 @@ class Gumroad {
 
 		// Add plugin listing "Settings" and other action links
 		add_filter( 'plugin_action_links', array( $this, 'add_action_link' ), 10, 2 );
-
-		// Define custom functionality. Read more about actions and filters: http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		// TODO add_action( 'TODO', array( $this, 'action_method_name' ) );
-		// TODO add_filter( 'TODO', array( $this, 'filter_method_name' ) );
 	}
 
 	/**
@@ -205,29 +201,20 @@ class Gumroad {
 		$gum_options = gum_get_settings();
 	}
 
-	// TODO Nick please fix. I F'ed this up.
-	
-	/* 
+	/*
 	 * Add the post meta boxes and callback function to print the HTML
 	 * Reference: http://www.wproots.com/complex-meta-boxes-in-wordpress/
 	 * 
 	 * @since    1.0.0
 	 */
 	public function call_meta_boxes() {
-		// TODO Loop through to make sure custom post types are enabled
 		global $post;
-		
+
+		//Loop through to make sure custom post types are enabled
 		$post_type = $post->post_type;
-		
 		
 		add_meta_box('gum-meta', 'Gumroad', 'display_meta_box', $post_type, 'side', 'core');
 
-		// TODO: Old/remove: Add the meta boxes for both posts and pages
-		//add_meta_box('gum-meta', 'Gumroad', 'display_meta_box', 'post', 'side', 'core');
-		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'page', 'side', 'core');
-		//add_meta_box('gum-meta', 'Gumroad', 'add_meta_form', 'movies', 'side', 'core');
-		
-		
 		function display_meta_box( $post ) {
 			$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
 
@@ -240,7 +227,6 @@ class Gumroad {
 			<?php
 		}
 	}
-
 
 	/*
 	 * Save the post meta
