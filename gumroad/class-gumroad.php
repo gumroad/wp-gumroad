@@ -168,7 +168,7 @@ class Gumroad {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Gumroad Overlay Settings', $this->plugin_slug ),
+			__( 'Gumroad Purchase Page Overlay Settings', $this->plugin_slug ),
 			__( 'Gumroad', $this->plugin_slug ),
 			'manage_options',
 			$this->plugin_slug,
@@ -222,7 +222,7 @@ class Gumroad {
 			?>
 			<p>
 				<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> />
-				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this page', 'gum' ); ?></label>
+				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this individual post/page URL.', 'gum' ); ?></label>
 			</p>
 			<?php
 		}
