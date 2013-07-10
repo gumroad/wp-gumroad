@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Main Gumroad class
  *
- * @package		GUM
- * @author		Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @package GUM
+ * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
+
 class Gumroad {
 
 	/**
