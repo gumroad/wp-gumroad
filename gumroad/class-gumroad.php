@@ -159,8 +159,8 @@ class Gumroad {
 			$load_script = 1;
 		
 		if( $load_script )
-			// Enqueue Gumroad JS plugin boilerplate style.
-			wp_enqueue_script( $this->plugin_slug . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), $this->version, true );
+			// Enqueue Gumroad JS plugin boilerplate style. Don't set a version.
+			wp_enqueue_script( $this->plugin_slug . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, true );
 	}
 
 	/**
