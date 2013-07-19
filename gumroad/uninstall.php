@@ -18,6 +18,6 @@ delete_option( 'gum_settings_general' );
 // Remove custom post meta fields
 $posts = get_posts( array( 'numberposts' => -1 ) );
 
-foreach( $posts as $post ) {
+foreach ( $posts as $post ) {
 	delete_post_meta( $post->ID, '_gum_enabled' );
 }

@@ -149,20 +149,20 @@ class Gumroad {
 		$gum_option = $gum_option['show_on'];
 		$load_script = 0;
 		
-		if( !( $gum_option['blog_home_page'] ) && is_home() ) 
+		if ( ! ( $gum_option['blog_home_page'] ) && is_home() )
 			return;
-		else if( $gum_option['blog_home_page'] && is_home() )
+		else if ( $gum_option['blog_home_page'] && is_home() )
 			$load_script = 1;
 
-		if( !( $gum_option['archives'] ) && is_archive() )
+		if ( ! ( $gum_option['archives'] ) && is_archive() )
 			return;
-		else if( $gum_option['archives'] && is_archive() )
+		else if ( $gum_option['archives'] && is_archive() )
 			$load_script = 1;
 		
-		if( $gum_meta )
+		if ( $gum_meta )
 			$load_script = 1;
 		
-		if( $load_script )
+		if ( $load_script )
 			// Enqueue Gumroad JS plugin boilerplate style. Don't set a version.
 			wp_enqueue_script( $this->plugin_slug . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, true );
 	}
@@ -242,13 +242,13 @@ class Gumroad {
 	 */
 	public function save_meta_data( $post_id ) {
 
-		if( !isset( $_POST['gum_enabled_nonce'] ) || !wp_verify_nonce ( $_POST['gum_enabled_nonce'], basename( __FILE__ ) ) )
+		if ( ! isset( $_POST['gum_enabled_nonce'] ) || ! wp_verify_nonce ( $_POST['gum_enabled_nonce'], basename( __FILE__ ) ) )
 			return $post_id;
 		
-		if( !current_user_can( 'edit_post', $post_id ) ) 
+		if ( ! current_user_can( 'edit_post', $post_id ) )
 			return $post_id;
 		
-		if( isset( $_POST['gum_enabled'] ) ) {
+		if ( isset( $_POST['gum_enabled'] ) ) {
 			update_post_meta( $post_id, '_gum_enabled', $_POST['gum_enabled'] );
 		} else {
 			delete_post_meta( $post_id, '_gum_enabled' );

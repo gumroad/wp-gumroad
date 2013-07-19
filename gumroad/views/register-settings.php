@@ -73,7 +73,6 @@ function gum_register_settings() {
 }
 add_action( 'admin_init', 'gum_register_settings' );
 
-
 /*
  * Multiple checkboxes callback function
  */
@@ -81,11 +80,12 @@ add_action( 'admin_init', 'gum_register_settings' );
 function gum_multicheck_callback( $args ) {
 	global $gum_options;
 
-	foreach( $args['options'] as $key => $option ):
-		if( isset( $gum_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
+	foreach ( $args['options'] as $key => $option ) {
+		if ( isset( $gum_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
 		echo '<input name="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
 		echo '<label for="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option['label'] . '</label><br/>';
-	endforeach;
+	}
+
 	echo '<p class="description">' . $args['desc'] . '</p>';
 }
 
