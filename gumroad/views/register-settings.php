@@ -8,10 +8,9 @@
  * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
 */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) )
+	exit;
 
 function gum_register_settings() {
 	$gum_settings = array(
