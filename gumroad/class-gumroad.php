@@ -58,9 +58,9 @@ class Gumroad {
 	 * @since     1.0.0
 	 */
 	private function __construct() {
-		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
-		add_action( 'admin_init', array( $this, 'initialize_settings' ), 1 );
-		
+		// Include required files.
+		$this->includes();
+
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 
@@ -149,18 +149,18 @@ class Gumroad {
 	}
 	
 	/**
-	 * Initialize settings.
+	 * Include required files (admin and frontend).
 	 *
-	 * @since    1.0.0
+	 * @since     1.0.1
 	 */
-	public function initialize_settings() {
-		// Load global options
+	private function includes() {
+		// Load global options.
 		global $gum_options;
-		
-		// Include the file to register all of the plugin settings
+
+		// Include the file to register all of the plugin settings.
 		include_once( 'views/register-settings.php' );
-		
-		// Load global options settings
+
+		// Load global options settings.
 		$gum_options = gum_get_settings();
 	}
 
