@@ -53,5 +53,9 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 == Changelog ==
 
+= 1.0.1 =
+* General bug fixes.
+* Fixed PHP debug warnings.
+
 = 1.0.0 =
 * Initial release
