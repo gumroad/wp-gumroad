@@ -158,7 +158,7 @@ class Gumroad {
 		global $gum_options;
 
 		// Include the file to register all of the plugin settings.
-		include_once( 'views/register-settings.php' );
+		include_once( 'includes/register-settings.php' );
 
 		// Load global options settings.
 		$gum_options = gum_get_settings();
