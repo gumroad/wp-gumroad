@@ -58,11 +58,6 @@ class Gumroad {
 	 * @since     1.0.0
 	 */
 	private function __construct() {
-
-		// TODO Load plugin text domain -- Translation not implemented for initial release.
-		// TODO add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-		// TODO Add file /lang/gumroad.pot, uncomment load_plugin_textdomain below.
-		
 		// Initialize the settings. This needs to have priority over adding the admin page or the admin page will come up blank.
 		add_action( 'admin_init', array( $this, 'initialize_settings' ), 1 );
 		
@@ -72,7 +67,7 @@ class Gumroad {
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Add Post Meta stuff
+		// Add Post Meta stuff.
 		add_action( 'add_meta_boxes', array( $this, 'call_meta_boxes') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
 
@@ -96,23 +91,6 @@ class Gumroad {
 
 		return self::$instance;
 	}
-
-	/**
-	 * Load the plugin text domain for translation.
-	 * // TODO Translation not implemented for initial release
-	 *
-	 * @since    1.0.0
-	 */
-	/*
-	public function load_plugin_textdomain() {
-
-		$domain = $this->plugin_slug;
-		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-
-		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
-		load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
-	}
-	*/
 
 	/**
 	 * Register and enqueues public-facing JavaScript files.
