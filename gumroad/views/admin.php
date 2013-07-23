@@ -24,13 +24,13 @@ if ( ! defined( 'ABSPATH' ) )
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<p>
-		For enabling the Gumroad overlay on individual posts or pages, when you edit a post or page you'll see the option among the right sidebar options.
+		<?php _e( 'For enabling the Gumroad overlay on individual posts or pages, when you edit a post or page you\'ll see the option among the right sidebar options.', 'gum' ); ?>
 	</p>
 	<p>
-		For enabling the Gumroad overlay for list pages with multiple posts, use the general settings below.
+		<?php _e( 'For enabling the Gumroad overlay on list pages with multiple posts, use the general settings below.', 'gum' ); ?>
 	</p>
 	<p>
-		In all cases add Gumroad links as you normally would to your content (i.e. <code>http://gum.co/demo</code>) and the overlay should appear where enabled.
+		<?php _e( 'In all cases add Gumroad links as you normally would to your content (i.e. <code>http://gum.co/demo</code>) and the overlay should appear where enabled.', 'gum' ); ?>
 	</p>
 
 	<div id="container">
@@ -49,8 +49,9 @@ if ( ! defined( 'ABSPATH' ) )
 
 	<div class="updated">
 		<p>
-			Find this plugin useful? Can you do us a huge favor and
-			<strong><a href="http://wordpress.org/support/view/plugin-reviews/gumroad" target="_blank">Rate it on WordPress.org</a></strong>. Thanks!
+			<?php _e( 'Find this plugin useful? Can you do us a huge favor and', 'gum' ); ?>
+			<strong><a href="http://wordpress.org/support/view/plugin-reviews/gumroad" target="_blank"><?php _e( 'Rate it on WordPress.org', 'gum' ); ?></a></strong>.
+			<?php _e( 'Thanks!', 'gum' ); ?>
 		</p>
 	</div>
 	
