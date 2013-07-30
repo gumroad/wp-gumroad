@@ -99,20 +99,19 @@ class Gumroad {
 	 */
 	public function enqueue_scripts() {
 		global $post;
+		global $gum_options;
 		
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-		$gum_option = get_option( 'gum_settings_general' );
-		$gum_option = $gum_option['show_on'];
 		$load_script = 0;
 		
-		if ( ! ( $gum_option['blog_home_page'] ) && is_home() )
+		if ( empty( $gum_options['blog_home_page'] ) && is_home() )
 			return;
-		else if ( $gum_option['blog_home_page'] && is_home() )
+		else if ( ! empty( $gum_options['blog_home_page'] ) && is_home() )
 			$load_script = 1;
 
-		if ( ! ( $gum_option['archives'] ) && is_archive() )
+		if ( empty( $gum_options['archives'] ) && is_archive() )
 			return;
-		else if ( $gum_option['archives'] && is_archive() )
+		else if ( ! empty( $gum_options['archives'] ) && is_archive() )
 			$load_script = 1;
 		
 		if ( $gum_meta )
