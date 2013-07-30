@@ -16,8 +16,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 delete_option( 'gum_settings_general' );
 
 // Remove custom post meta fields
-$posts = get_posts( array( 'numberposts' => -1 ) );
-
-foreach ( $posts as $post ) {
-	delete_post_meta( $post->ID, '_gum_enabled' );
-}
+delete_post_meta_by_key( '_gum_enabled' );
