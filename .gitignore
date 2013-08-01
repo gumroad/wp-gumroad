@@ -42,7 +42,9 @@ Thumbs.db
 .idea
 
 # MS Sync Toy dat file *
+########################
 SyncToy*.dat
 
-# Netbeans Project Folder
+# Netbeans IDE *
+################
 /gumroad/nbproject/*
