@@ -104,14 +104,17 @@ class Gumroad {
 		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
 		$load_script = 0;
 		
-		if ( empty( $gum_options['blog_home_page'] ) && is_home() )
+		if( isset( $gum_options['show_on'] ) ) 
+			$show_on = $gum_options['show_on'];
+		
+		if ( empty( $show_on['blog_home_page'] ) && is_home() )
 			return;
-		else if ( ! empty( $gum_options['blog_home_page'] ) && is_home() )
+		else if ( ! empty( $show_on['blog_home_page'] ) && is_home() )
 			$load_script = 1;
 
-		if ( empty( $gum_options['archives'] ) && is_archive() )
+		if ( empty( $show_on['archives'] ) && is_archive() )
 			return;
-		else if ( ! empty( $gum_options['archives'] ) && is_archive() )
+		else if ( ! empty( $show_on['archives'] ) && is_archive() )
 			$load_script = 1;
 		
 		if ( $gum_meta )
@@ -161,6 +164,7 @@ class Gumroad {
 
 		// Load global options settings.
 		$gum_options = gum_get_settings();
+		
 	}
 
 	/*

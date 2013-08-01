@@ -76,7 +76,7 @@ function gum_multicheck_callback( $args ) {
 
 	foreach ( $args['options'] as $key => $option ) {
 		if ( isset( $gum_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		echo '<input name="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
+		echo '<input name="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" id="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
 		echo '<label for="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 	}
 
