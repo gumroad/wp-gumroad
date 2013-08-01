@@ -22,19 +22,13 @@ function gum_register_settings() {
 			  'desc' => '',
 			  'type' => 'multicheck',
 			  'options' => array(
-				 'blog_home_page' => array(
-					'label' => __( 'Blog Home Page (or Latest Posts Page)', 'gum' ),
-					'value' => 1
-				),
-				 'archives' => array(
-					'label' => __( 'Archives (includes Category, Tag, Author, and date-based pages', 'gum' ),
-					'value' => 1
-				)
+				  'blog_home_page' => __( 'Blog Home Page (or Latest Posts Page)', 'gum' ),
+				  'archives' => __( 'Archives (includes Category, Tag, Author, and date-based pages', 'gum' )
 			  )
 		   )
 	    )
 	);
-	
+
 	/* If the options do not exist then create them for each section */
 	if ( false == get_option( 'gum_settings_general' ) ) {
 		add_option( 'gum_settings_general' );
@@ -82,8 +76,8 @@ function gum_multicheck_callback( $args ) {
 
 	foreach ( $args['options'] as $key => $option ) {
 		if ( isset( $gum_options[$args['id']][$key] ) ) { $enabled = $option; } else { $enabled = NULL; }
-		echo '<input name="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option['value'] . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
-		echo '<label for="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option['label'] . '</label><br/>';
+		echo '<input name="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']"" id="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
+		echo '<label for="gum_settings_' . $args['section'] . '[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 	}
 
 	echo '<p class="description">' . $args['desc'] . '</p>';
