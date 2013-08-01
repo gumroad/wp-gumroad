@@ -101,7 +101,7 @@ function gum_settings_sanitize( $input ) {
  *  Default callback function if correct one does not exist
  */
 
-function gum_missing_callback() {
+function gum_missing_callback( $args ) {
 	printf( __( 'The callback function used for the <strong>%s</strong> setting is missing.', 'gum' ), $args['id'] );
 }
 
