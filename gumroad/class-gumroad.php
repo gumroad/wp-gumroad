@@ -148,7 +148,7 @@ class Gumroad {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Gumroad Purchase Page Overlay Settings', $this->plugin_slug ),
+			$this->get_plugin_title() . __( ' Settings', 'gum' ),
 			__( 'Gumroad', $this->plugin_slug ),
 			'manage_options',
 			$this->plugin_slug,
@@ -180,6 +180,17 @@ class Gumroad {
 		// Load global options settings.
 		$gum_options = gum_get_settings();
 		
+	}
+
+	/**
+	 * Return localized base plugin title.
+	 *
+	 * @since     1.0.1
+	 *
+	 * @return    string
+	 */
+	public static function get_plugin_title() {
+		return __( 'Gumroad Purchase Page Overlay', 'gum' );
 	}
 
 	/*
