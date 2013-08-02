@@ -67,6 +67,9 @@ class Gumroad {
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Add admin notice after plugin activation. Also check if should be hidden.
+		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
+
 		// Add Post Meta stuff.
 		add_action( 'add_meta_boxes', array( $this, 'call_meta_boxes') );
 		add_action( 'save_post', array( $this, 'save_meta_data') );
@@ -90,6 +93,18 @@ class Gumroad {
 		}
 
 		return self::$instance;
+	}
+
+	/**
+	 * Fired when the plugin is activated.
+	 *
+	 * @since    1.0.1
+	 *
+	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
+	 */
+	public static function activate( $network_wide ) {
+		// Add value to indicate that we should show admin install notice.
+		update_option( 'gum_show_admin_install_notice', 1 );
 	}
 
 	/**
@@ -212,6 +227,8 @@ class Gumroad {
 		} else {
 			delete_post_meta( $post_id, '_gum_enabled' );
 		}
+
+		return $post_id;
 	}
 
 	/**
@@ -228,5 +245,24 @@ class Gumroad {
 		array_unshift( $links, $setting_link );
 
 		return $links;
+	}
+
+	/**
+	 * Show notice after plugin install/activate in admin dashboard.
+	 * Hide after first viewing.
+	 *
+	 * @since   1.0.1
+	 */
+	public function admin_install_notice() {
+		// Exit all of this is stored value is false/0 or not set.
+		if ( false == get_option( 'gum_show_admin_install_notice' ) )
+			return;
+
+		// At this point show install notice.
+		include_once( 'views/admin-install-notice.php' );
+
+		// Delete stored value to hide since we only want them to view it once.
+		delete_option( 'gum_show_admin_install_notice' );
+		return;
 	}
 }
