@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) )
 					'type' => 'author',
 					's' => 'pderksen'
 				), admin_url( 'plugin-install.php' ) ); ?>" class="btn btn-small btn-block btn-danger">
-				<?php _e( 'Download the "Pin It" Button plugin', 'gum' ); ?></a><br/>
+				<?php _e( 'Get the Free "Pin It" Button plugin', 'gum' ); ?></a><br/>
 			<a href="http://wordpress.org/plugins/pinterest-pin-it-button/" target="_blank"><?php _e( 'Visit the "Pin It" Button plugin page', 'gum' ); ?></a>
 		</p>
 	</div>
