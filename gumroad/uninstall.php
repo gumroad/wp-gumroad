@@ -7,14 +7,14 @@
  * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
  */
 
-// If uninstall, not called from WordPress, then exit
+// If uninstall, not called from WordPress, then exit.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-// Remove option records from options table
+// Remove option records from options table.
 delete_option( 'gum_settings_general' );
 delete_option( 'gum_show_admin_install_notice' );
 
-// Remove custom post meta fields
+// Remove custom post meta fields.
 delete_post_meta_by_key( '_gum_enabled' );
