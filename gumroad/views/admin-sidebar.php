@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) )
 		</p>
 
 		<a href="http://wordpress.org/support/view/plugin-reviews/gumroad" class="btn btn-small btn-block btn-inverse" target="_blank">
-			<?php _e( 'Rate this plugin on WordPress.org', 'pib' ); ?></a>
+			<?php _e( 'Rate this plugin on WordPress.org', 'gum' ); ?></a>
 	</div>
 </div>
 
