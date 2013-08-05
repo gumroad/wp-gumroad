@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 <style>
 	#gum-install-notice .button-primary,
-	#pib-install-notice .button-secondary {
+	#gum-install-notice .button-secondary {
 		margin-left: 15px;
 	}
 </style>
