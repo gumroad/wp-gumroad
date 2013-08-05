@@ -37,7 +37,11 @@ function gum_register_settings() {
 	/* Add the General Settings section */
 	add_settings_section(
 		'gum_settings_general',
-		__( 'General Settings', 'gum' ),
+
+		// Don't need a section header yet.
+		// __( 'General Settings', 'gum' ),
+		'',
+
 		'__return_false',
 		'gum_settings_general'
 	);
