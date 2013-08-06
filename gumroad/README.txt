@@ -24,7 +24,7 @@ Now just add links to your Gumroad products on your posts and pages (i.e. `http:
 **Finding and installing through the WordPress admin:**
 
 1. If searching for this plugin in your WordPress admin, search for "gumroad".
-1. Find the plugin that's labeled **Gumroad Purchase Pages**.
+1. Find the plugin that's labeled **Gumroad Purchase Page Overlay**.
 1. Also look for our author names (**Phil Derksen** and **Nick Young**).
 1. Click "Install Now", then Activate, then head to Settings > Gumroad.
 
