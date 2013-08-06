@@ -1,4 +1,4 @@
-Gumroad Overlay WordPress Plugin
-================================
+Gumroad WordPress Plugin
+========================
 
 Easily add Gumroad purchase page overlays to your WordPress site.
