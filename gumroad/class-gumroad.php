@@ -173,7 +173,7 @@ class Gumroad {
 	 *
 	 * @since     1.0.1
 	 */
-	private function includes() {
+	public function includes() {
 		// Load global options.
 		global $gum_options;
 
