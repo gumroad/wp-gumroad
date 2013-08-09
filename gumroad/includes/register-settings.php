@@ -53,15 +53,7 @@ function gum_register_settings() {
 			function_exists( 'gum_' . $option['type'] . '_callback' ) ? 'gum_' . $option['type'] . '_callback' : 'gum_missing_callback',
 			'gum_settings_general',
 			'gum_settings_general',
-			array(
-				'id' => $option['id'],
-				'desc' => $option['desc'],
-				'name' => $option['name'],
-				'section' => 'general',
-				'size' => isset( $option['size'] ) ? $option['size'] : null,
-				'options' => isset( $option['options'] ) ? $option['options'] : '',
-				'std' => isset( $option['std'] ) ? $option['std'] : ''
-			)
+			gum_get_settings_field_args( $option, 'general' )
 		);
 	}
 	
@@ -70,6 +62,35 @@ function gum_register_settings() {
 	
 }
 add_action( 'admin_init', 'gum_register_settings' );
+
+/*
+ * Return generic add_settings_field $args parameter array.
+ *
+ * @since     1.0.0
+ *
+ * @param   string  $option   Single settings option key.
+ * @param   string  $section  Section of settings apge.
+ * @return  array             $args parameter to use with add_settings_field call.
+ */
+function gum_get_settings_field_args( $option, $section ) {
+	$settings_args = array(
+		'id' => $option['id'],
+		'desc' => $option['desc'],
+		'name' => $option['name'],
+		'section' => $section,
+		'size' => isset( $option['size'] ) ? $option['size'] : null,
+		'options' => isset( $option['options'] ) ? $option['options'] : '',
+		'std' => isset( $option['std'] ) ? $option['std'] : ''
+	);
+
+	// Link label to input using 'label_for' argument if text, textarea, password, select, or variations of.
+	// Just add to existing settings args array if needed.
+	if ( in_array( $option['type'], array( 'text', 'select', 'textarea', 'password' ) ) ) {
+		$settings_args = array_merge( $settings_args, array( 'label_for' => 'gum_settings_' . $section . '[' . $option['id'] . ']' ) );
+	}
+
+	return $settings_args;
+}
 
 /*
  * Multiple checkboxes callback function
