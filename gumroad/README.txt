@@ -1,8 +1,8 @@
 === Gumroad Purchase Page Overlay ===
 Contributors: pderksen, nickyoung87
 Tags: gumroad, gumroad purchase pages, gumroad overlay, ecommerce, e-commerce, pdf, javascript, embed
-Requires at least: 3.4.2
-Tested up to: 3.6.1
+Requires at least: 3.5.2
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -55,7 +55,12 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Tested up to WordPress 3.8.
+
 = 1.0.1 =
+
 * Bug fixes.
 * Added settings link to plugin listing entry.
 * Added plugin activation notice.
