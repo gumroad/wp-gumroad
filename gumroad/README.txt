@@ -19,6 +19,8 @@ You can also enable Gumroad on the home page or archive pages where multiple pos
 
 Now just add links to your Gumroad products on your posts and pages (i.e. `http://gum.co/demo`).
 
+[Follow this project on Github](https://github.com/pderksen/WP-Gumroad).
+
 == Installation ==
 
 **Finding and installing through the WordPress admin:**
