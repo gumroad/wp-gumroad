@@ -58,6 +58,10 @@ class Gumroad {
 	 * @since     1.0.0
 	 */
 	private function __construct() {
+		
+		// Load plugin text domain
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		
 		// Include required files.
 		add_action( 'init', array( $this, 'includes' ), 1 );
 
@@ -80,7 +84,22 @@ class Gumroad {
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
 	}
+	
+	
+	/**
+	 * Load the plugin text domain for translation.
+	 *
+	 * @since    1.0.2
+	 */
+	public function load_plugin_textdomain() {
 
+		$domain = $this->plugin_slug;
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'gum' );
+
+		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
+
+	}
+	
 	/**
 	 * Return an instance of this class.
 	 *
