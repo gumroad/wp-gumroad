@@ -180,7 +180,7 @@ class Gumroad {
 	 * @return    string
 	 */
 	public static function get_plugin_title() {
-		return __( 'Gumroad Purchase Page Overlay', 'gum' );
+		return __( 'Gumroad Overlay & Embed Shortcodes', 'gum' );
 	}
 
 	/**

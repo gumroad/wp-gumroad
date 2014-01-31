@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) )
 			
 			<!-- Gumroad Shortcode Help -->
 
-			<h3 class="title"><?php _e( 'Gumroad Shortcode', 'gum' ); ?></h3>
+			<h3 class="title"><?php _e( 'Getting Started', 'gum' ); ?></h3>
 
 			<p>
 				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="demo"]</code> <?php _e( 'to add a product link that will popup in an overlay.', 'gum' ); ?>
