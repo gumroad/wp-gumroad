@@ -21,28 +21,9 @@ if ( ! defined( 'ABSPATH' ) )
 	<div id="gum-settings">
 		<div id="gum-settings-content">
 
-			<?php screen_icon( 'edit' ); ?>
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-
-			<p>
-				<?php _e( 'For enabling the Gumroad overlay on individual posts or pages, when you edit a post or page you\'ll see the option among the right sidebar options.', 'gum' ); ?>
-			</p>
-			<p>
-				<?php _e( 'For enabling the Gumroad overlay on list pages with multiple posts, use the general settings below.', 'gum' ); ?>
-			</p>
-			<p>
-				<?php _e( 'In all cases add Gumroad links as you normally would to your content (i.e. <code>http://gum.co/demo</code>) and the overlay should appear where enabled.', 'gum' ); ?>
-			</p>
-
-			<form method="post" action="options.php">
-				<?php
-
-					settings_fields( 'gum_settings_general' );
-					do_settings_sections( 'gum_settings_general' );
-
-				submit_button();
-				?>
-			</form>
+			
+			Add help for shortcodes here
 
 		</div><!-- #gum-settings-content -->
 

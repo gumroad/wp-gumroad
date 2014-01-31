@@ -148,7 +148,7 @@ class Gumroad {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			$this->get_plugin_title() . __( ' Settings', 'gum' ),
+			$this->get_plugin_title() . __( ' Help', 'gum' ),
 			__( 'Gumroad', 'gum' ),
 			'manage_options',
 			$this->plugin_slug,
@@ -171,21 +171,12 @@ class Gumroad {
 	 * @since     1.0.1
 	 */
 	public function includes() {
-		// Load global options.
-		//global $gum_options;
-
-		// Include the file to register all of the plugin settings.
-		//include_once( 'includes/register-settings.php' );
-
-		// Load global options settings.
-		//$gum_options = gum_get_settings();
 		
 		// Include any necessary functions
 		include_once( 'includes/misc-functions.php' );
 		
 		// Include shortcode functions
 		include_once( 'includes/shortcodes.php' );
-		
 	}
 
 	/**
