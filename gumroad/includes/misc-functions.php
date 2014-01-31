@@ -8,7 +8,7 @@
  */
 function gum_overlay_button( $product_id, $text = '', $wanted = '' ) {
 	
-	return sprintf( '<a href="https://www.gum.co/%s%s" class="gumroad-button">%s</a>', 
+	return sprintf( '<a href="https://gumroad.com/l/%s%s" class="gumroad-button">%s</a>', 
 						esc_attr( $product_id ),
 						( $wanted == 'true' ? '?wanted=true' : '' ),
 						$text );

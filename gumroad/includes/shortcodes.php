@@ -21,7 +21,7 @@ function gum_gumroad_shortcode( $attr ) {
 	extract( shortcode_atts( array(
 					'type' => 'overlay',
 					'product_id' => '',
-					'text' => '',
+					'text' => 'Buy Now',
 					'wanted' => 'false'
 				), $attr ) );
 	
