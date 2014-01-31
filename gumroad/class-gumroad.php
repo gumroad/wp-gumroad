@@ -71,16 +71,24 @@ class Gumroad {
 		// Enqueue admin styles and scripts.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 
-		// Load public-facing style sheet and JavaScript.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-
 		// Add admin notice after plugin activation. Also check if should be hidden.
 		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
+		
+		// Set our plugin constants
+		add_action( 'init', array( $this, 'setup_constants' ) );
 	}
 	
+	/**
+	 * Setup any plugin constants we need 
+	 *
+	 * @since    1.0.2
+	 */
+	public function setup_constants() {
+		define( 'GUM_PLUGIN_SLUG', $this->plugin_slug );
+	}
 	
 	/**
 	 * Load the plugin text domain for translation.
@@ -123,21 +131,6 @@ class Gumroad {
 	public static function activate( $network_wide ) {
 		// Add value to indicate that we should show admin install notice.
 		update_option( 'gum_show_admin_install_notice', 1 );
-	}
-
-	/**
-	 * Register and enqueues public-facing JavaScript files.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-		
-		// Enqueue Gumroad 'overlay' JS. Don't set a version.
-		wp_enqueue_script( $this->plugin_slug . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, false );
-		
-		// Enqueue Gumroad 'embed' JS. Don't set a version.
-		//wp_enqueue_script( $this->plugin_slug . '-embed-script', 'https://gumroad.com/js/gumroad-embed.js', array(), null, false );
-		
 	}
 
 	/**

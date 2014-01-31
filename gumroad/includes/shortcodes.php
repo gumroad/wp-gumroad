@@ -25,6 +25,8 @@ function gum_gumroad_shortcode( $attr ) {
 					'wanted' => 'false'
 				), $attr ) );
 	
+	gum_load_js( $type );
+	
 	if( ! empty( $product_id ) ) {
 		if( $type == 'embed' ) {
 			return gum_embed_button( $product_id );
