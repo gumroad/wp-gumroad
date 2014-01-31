@@ -77,7 +77,7 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 = 1.1.0 =
 
-* Plugin now uses shortcodes to display the Gumroad Overlay or Embed 
+* Plugin now uses shortcodes to display the Gumroad Overlay or Gumroad Embed
 * Removed main plugin settings page since plugin now uses shortcodes
 
 = 1.0.2 =
