@@ -20,7 +20,7 @@ class Gumroad {
 	 *
 	 * @var     string
 	 */
-	protected $version = '1.0.1';
+	protected $version = '1.1.0';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -84,7 +84,7 @@ class Gumroad {
 	/**
 	 * Setup any plugin constants we need 
 	 *
-	 * @since    1.0.2
+	 * @since    1.1.0
 	 */
 	public function setup_constants() {
 		define( 'GUM_PLUGIN_SLUG', $this->plugin_slug );
@@ -93,7 +93,7 @@ class Gumroad {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.2
+	 * @since    1.1.0
 	 */
 	public function load_plugin_textdomain() {
 

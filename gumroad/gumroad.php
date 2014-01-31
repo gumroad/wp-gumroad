@@ -13,7 +13,7 @@
  * Plugin Name: Gumroad Purchase Page Overlay
  * Plugin URI: http://philderksen.com/gumroad-for-wordpress/
  * Description: Display your Gumroad purchase pages in a pretty lightbox overlay.
- * Version: 1.0.2
+ * Version: 1.1.0
  * Author: Phil Derksen
  * Author URI: http://philderksen.com
  * License: GPL-2.0+

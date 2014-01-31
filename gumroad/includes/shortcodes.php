@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) )
 /**
  * Function to process the [gumroad] shortcode
  * 
- * @since 1.0.2
+ * @since 1.1.0
  */
 function gum_gumroad_shortcode( $attr ) {
 	

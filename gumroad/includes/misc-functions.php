@@ -3,7 +3,7 @@
 /**
  * Function to display the Gumroad "overlay" button
  * 
- * @snce 1.0.2
+ * @snce 1.1.0
  * 
  */
 function gum_overlay_button( $product_id, $text = '', $wanted = '' ) {
@@ -17,7 +17,7 @@ function gum_overlay_button( $product_id, $text = '', $wanted = '' ) {
 /**
  * Function to display the Gumroad "embed" in a page
  * 
- * @snce 1.0.2
+ * @snce 1.1.0
  * 
  */
 function gum_embed_button( $product_id ) {
@@ -30,7 +30,7 @@ function gum_embed_button( $product_id ) {
  * This function is only called from the shortcode function so that we know the JS is only being loaded on pages where it is needed
  * 
  * 
- * @since 1.0.2
+ * @since 1.1.0
  */
 function gum_load_js( $type ) {
 	if( $type == 'embed' ) {

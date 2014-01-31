@@ -75,6 +75,11 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 == Changelog ==
 
+= 1.1.0 =
+
+* Plugin now uses shortcodes to display the Gumroad Overlay or Embed 
+* Removed main plugin settings page since plugin now uses shortcodes
+
 = 1.0.2 =
 
 * TODO: Added embeddable purchase page option.
