@@ -131,31 +131,13 @@ class Gumroad {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		global $post;
-		global $gum_options;
 		
-		$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-		$load_script = 0;
+		// Enqueue Gumroad 'overlay' JS. Don't set a version.
+		wp_enqueue_script( $this->plugin_slug . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, false );
 		
-		if( isset( $gum_options['show_on'] ) ) 
-			$show_on = $gum_options['show_on'];
+		// Enqueue Gumroad 'embed' JS. Don't set a version.
+		//wp_enqueue_script( $this->plugin_slug . '-embed-script', 'https://gumroad.com/js/gumroad-embed.js', array(), null, false );
 		
-		if ( empty( $show_on['blog_home_page'] ) && is_home() )
-			return;
-		else if ( ! empty( $show_on['blog_home_page'] ) && is_home() )
-			$load_script = 1;
-
-		if ( empty( $show_on['archives'] ) && is_archive() )
-			return;
-		else if ( ! empty( $show_on['archives'] ) && is_archive() )
-			$load_script = 1;
-		
-		if ( $gum_meta )
-			$load_script = 1;
-		
-		if ( $load_script )
-			// Enqueue Gumroad JS plugin boilerplate style. Don't set a version.
-			wp_enqueue_script( $this->plugin_slug . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, true );
 	}
 
 	/**
@@ -190,13 +172,19 @@ class Gumroad {
 	 */
 	public function includes() {
 		// Load global options.
-		global $gum_options;
+		//global $gum_options;
 
 		// Include the file to register all of the plugin settings.
-		include_once( 'includes/register-settings.php' );
+		//include_once( 'includes/register-settings.php' );
 
 		// Load global options settings.
-		$gum_options = gum_get_settings();
+		//$gum_options = gum_get_settings();
+		
+		// Include any necessary functions
+		include_once( 'includes/misc-functions.php' );
+		
+		// Include shortcode functions
+		include_once( 'includes/shortcodes.php' );
 		
 	}
 
