@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Gumroad Purchase Page Overlay
+ * Gumroad Overlay & Embed
  *
  * @package   GUM
  * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
@@ -10,7 +10,7 @@
  * @copyright 2013-2014 Phil Derksen
  *
  * @wordpress-plugin
- * Plugin Name: Gumroad Purchase Page Overlay
+ * Plugin Name: Gumroad Overlay & Embed
  * Plugin URI: http://philderksen.com/gumroad-for-wordpress/
  * Description: Display your Gumroad purchase pages in a pretty lightbox overlay.
  * Version: 1.1.0
