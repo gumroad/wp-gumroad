@@ -77,10 +77,6 @@ class Gumroad {
 		// Add admin notice after plugin activation. Also check if should be hidden.
 		add_action( 'admin_notices', array( $this, 'admin_install_notice' ) );
 
-		// Add Post Meta stuff.
-		add_action( 'add_meta_boxes', array( $this, 'call_meta_boxes') );
-		add_action( 'save_post', array( $this, 'save_meta_data') );
-
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
 	}
@@ -234,55 +230,6 @@ class Gumroad {
 			// Plugin admin CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array( $this->plugin_slug .'-flat-ui' ), $this->version );
 		}
-	}
-
-	/*
-	 * Add the post meta boxes and callback function to print the HTML
-	 * Reference: http://www.wproots.com/complex-meta-boxes-in-wordpress/
-	 * 
-	 * @since    1.0.0
-	 */
-	public function call_meta_boxes() {
-		global $post;
-
-		//Loop through to make sure custom post types are enabled
-		$post_type = $post->post_type;
-		
-		add_meta_box('gum-meta', 'Gumroad', 'display_meta_box', $post_type, 'side', 'core');
-
-		function display_meta_box( $post ) {
-			$gum_meta = get_post_meta( $post->ID, '_gum_enabled', true );
-
-			wp_nonce_field( basename( __FILE__ ), 'gum_enabled_nonce' );
-			?>
-			<p>
-				<input type="checkbox" name="gum_enabled" <?php checked( $gum_meta, 'on', 1 ); ?> />
-				<label for="gum_enabled"><?php echo __( 'Enable Gumroad overlay on this individual post/page URL.', 'gum' ); ?></label>
-			</p>
-			<?php
-		}
-	}
-
-	/*
-	 * Save the post meta
-	 * 
-	 * @since    1.0.0
-	 */
-	public function save_meta_data( $post_id ) {
-
-		if ( ! isset( $_POST['gum_enabled_nonce'] ) || ! wp_verify_nonce ( $_POST['gum_enabled_nonce'], basename( __FILE__ ) ) )
-			return $post_id;
-		
-		if ( ! current_user_can( 'edit_post', $post_id ) )
-			return $post_id;
-		
-		if ( isset( $_POST['gum_enabled'] ) ) {
-			update_post_meta( $post_id, '_gum_enabled', $_POST['gum_enabled'] );
-		} else {
-			delete_post_meta( $post_id, '_gum_enabled' );
-		}
-
-		return $post_id;
 	}
 
 	/**
