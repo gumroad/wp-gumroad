@@ -6,10 +6,10 @@
  * @snce 1.1.0
  * 
  */
-function gum_overlay_button( $product_id, $text = '', $wanted = '' ) {
+function gum_overlay_button( $id, $text = '', $wanted = '' ) {
 	
 	return sprintf( '<a href="https://gum.co/%s%s" class="gumroad-button">%s</a>', 
-						esc_attr( $product_id ),
+						esc_attr( $id ),
 						( $wanted == 'true' ? '?wanted=true' : '' ),
 						$text );
 }
@@ -20,9 +20,9 @@ function gum_overlay_button( $product_id, $text = '', $wanted = '' ) {
  * @snce 1.1.0
  * 
  */
-function gum_embed_button( $product_id ) {
+function gum_embed_button( $id ) {
 	
-	return sprintf( '<div class="gumroad-product-embed" data-gumroad-product-id="%s"></div>', esc_attr( $product_id ) );
+	return sprintf( '<div class="gumroad-product-embed" data-gumroad-product-id="%s"></div>', esc_attr( $id ) );
 }
 
 /**

@@ -19,19 +19,19 @@ if ( ! defined( 'ABSPATH' ) )
 function gum_gumroad_shortcode( $attr ) {
 	
 	extract( shortcode_atts( array(
-					'type' => 'overlay',
-					'product_id' => '',
-					'text' => 'Buy Now',
+					'id'     => '',
+					'type'   => 'overlay',
+					'text'   => 'Buy Now',
 					'wanted' => 'false'
 				), $attr ) );
 	
 	gum_load_js( $type );
 	
-	if( ! empty( $product_id ) ) {
+	if( ! empty( $id ) ) {
 		if( $type == 'embed' ) {
-			return gum_embed_button( $product_id );
+			return gum_embed_button( $id );
 		} else {
-			return gum_overlay_button( $product_id, $text, $wanted );
+			return gum_overlay_button( $id, $text, $wanted );
 		}
 	}
 }
