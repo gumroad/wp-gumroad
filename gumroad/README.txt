@@ -13,18 +13,18 @@ Display your Gumroad purchase pages in a pretty lightbox or embed them right on 
 
 This plugin lets you bring in the Gumroad purchase pages right onto your site, so that transactions can happen inline — without ruining the browsing experience for your customers.
 
-The overlay option pops up the purchase form in a pretty lightbox. See the official [Gumroad Overlay documentation](https://gumroad.com/overlay).
+The overlay option pops up the purchase form in a pretty lightbox.
 
-The embed option shows the purchase form directly on your page. See the official [Gumroad Embed documentation](https://gumroad.com/embed).
+The embed option shows the purchase form directly on your page.
 
-[Follow this project on Github](https://github.com/pderksen/WP-Gumroad).
+This project is also on [Github](https://github.com/pderksen/WP-Gumroad).
 
 == Installation ==
 
 = 1. Admin Search =
 1. In your Admin, go to menu Plugins > Add.
 1. Search for `Gumroad`.
-1. Find the plugin that's labeled `Gumroad`.
+1. Find the plugin that's labeled `Gumroad Overlay & Embed`.
 1. Look for the author name `Phil Derksen` on the plugin.
 1. Click to install.
 1. Activate the plugin.
@@ -47,23 +47,19 @@ The embed option shows the purchase form directly on your page. See the official
 
 == Frequently Asked Questions ==
 
-[TODO copy from official docs]
+Reference the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https://gumroad.com/embed) documentation.
 
 = Troubleshooting =
 
-[TODO this right?]
-
-From the official [Gumroad overlay documentation](https://gumroad.com/overlay):
+Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
 If the overlay doesn't get triggered on click (and your browser is redirected to a gumroad.com URL), please make sure that there is not extra code that is hijacking the click event (for example, a Google Analytics onclick event).
 
 A popular known plugin that does this is **Google Analytics for WordPress**. Try unchecking one or both of these options: 1) Track outbound clicks & downloads, 2) Check Advanced Settings, then make sure "Track outbound clicks as pageviews" is un-checked.
 
-Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
+See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https://gumroad.com/embed) documentation for other questions.
 
 == Screenshots ==
-
-*TODO: Redo screenshots, add embed.*
 
 1. Enabling Gumroad overlay JavaScript in the post sidebar.
 2. Gumroad purchase page overlay on top of a WordPress page.
@@ -73,12 +69,10 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 
 = 1.1.0 =
 
-* Plugin now uses shortcodes to display the Gumroad Overlay or Gumroad Embed
-* Removed main plugin settings page since plugin now uses shortcodes
-
-= 1.0.2 =
-
-* TODO: Added embeddable purchase page option.
+* Added Gumroad embed purchase page option.
+* Plugin now uses only shortcodes to display Gumroad overlay or embed purchase pages.
+* Main settings options removed.
+* Post meta options removed.
 * Tested up to WordPress 3.8.
 
 = 1.0.1 =
