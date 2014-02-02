@@ -1,13 +1,13 @@
-=== Gumroad Overlay & Embed Purchase Pages ===
+=== Gumroad Overlay & Embed ===
 Contributors: pderksen, nickyoung87
-Tags: gumroad, gumroad purchase pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, embed
+Tags: gumroad, gumroad purchase pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, overlay, embed
 Requires at least: 3.5.2
 Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display your Gumroad purchase pages in a pretty lightbox or embed them right on your pages.
+Display your Gumroad purchase pages in a pretty lightbox or embed them right on your pages using shortcodes.
 
 == Description ==
 
@@ -16,10 +16,6 @@ This plugin lets you bring in the Gumroad purchase pages right onto your site, s
 The overlay option pops up the purchase form in a pretty lightbox. See the official [Gumroad Overlay documentation](https://gumroad.com/overlay).
 
 The embed option shows the purchase form directly on your page. See the official [Gumroad Embed documentation](https://gumroad.com/embed).
-
-This plugin simply embeds a Gumroad JavaScript snippet on the posts or pages you specify. See the options along the right sidebar while editing a post or page.
-
-You can also enable Gumroad on the home page or archive pages where multiple posts are shown. Just look under Settings in your WordPress dashboard.
 
 [Follow this project on Github](https://github.com/pderksen/WP-Gumroad).
 
