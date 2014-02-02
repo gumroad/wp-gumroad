@@ -23,9 +23,11 @@ if ( ! defined( 'ABSPATH' ) )
 
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
+			<h3 class="title"><?php _e( 'Important SSL Requirement', 'gum' ); ?></h3>
+
 			<p>
 				<em>
-					<?php _e( 'Note the address of the page hosting the Gumroad overlay or embed should start with https, ' .
+					<?php _e( 'The address of the page hosting the Gumroad overlay or embed should start with https, ' .
 						'so you\'ll need to setup an SSL certificate for your site if you haven\'t already.', 'gum' ); ?>
 				</em>
 			</p>
