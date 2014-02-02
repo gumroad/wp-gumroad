@@ -17,6 +17,14 @@ The overlay option pops up the purchase form in a pretty lightbox.
 
 The embed option shows the purchase form directly on your page.
 
+Shortcode examples:
+
+`[gumroad id="demo"]`
+`[gumroad id="demo" type="embed"]`
+`[gumroad id="demo" text="Purchase Item" wanted="true"]`
+
+Full shortcode documentation is in Settings > Gumroad after plugin is activated.
+
 This project is also on [Github](https://github.com/pderksen/WP-Gumroad).
 
 == Installation ==
@@ -46,6 +54,8 @@ This project is also on [Github](https://github.com/pderksen/WP-Gumroad).
 1. A new menu item `Gumroad` will appear under your Settings menu option.
 
 == Frequently Asked Questions ==
+
+Full shortcode documentation is in Settings > Gumroad after plugin is activated.
 
 Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
