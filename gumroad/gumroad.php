@@ -12,7 +12,7 @@
  * @wordpress-plugin
  * Plugin Name: Gumroad Overlay & Embed
  * Plugin URI: http://philderksen.com/gumroad-for-wordpress/
- * Description: Display your Gumroad purchase pages in a pretty lightbox overlay.
+ * Description: Display your Gumroad purchase pages in a pretty lightbox or embed them right on your pages using shortcodes.
  * Version: 1.1.0
  * Author: Phil Derksen
  * Author URI: http://philderksen.com
