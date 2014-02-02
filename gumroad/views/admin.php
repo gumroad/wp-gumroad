@@ -22,6 +22,19 @@ if ( ! defined( 'ABSPATH' ) )
 		<div id="gum-settings-content">
 
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+
+			<p>
+				<em>
+					<?php _e( 'Note the address of the page hosting the Gumroad overlay or embed should start with https, ' .
+						'so you\'ll need to setup an SSL certificate for your site if you haven\'t already.', 'gum' ); ?>
+				</em>
+			</p>
+
+			<p>
+				<a href="https://gumroad.com/overlay" target="_blank"><?php _e( 'Gumroad\'s official overlay docs', 'gum' ); ?></a>
+				<br/>
+				<a href="https://gumroad.com/embed" target="_blank"><?php _e( 'Gumroad\'s official embed docs', 'gum' ); ?></a>
+			</p>
 			
 			<!-- Gumroad Shortcode Help -->
 
