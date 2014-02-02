@@ -25,6 +25,7 @@
 
 /*** Glyphs ***/
 
+.fui-arrow-right,
 .fui-check,
 .fui-cross,
 .fui-pinterest {
@@ -36,6 +37,9 @@
 	font-variant: normal;
 	text-transform: none;
 	-webkit-font-smoothing: antialiased;
+}
+.fui-arrow-right:before {
+	content: "\e02c";
 }
 .fui-check:before {
 	content: "\e00a";
