@@ -70,7 +70,7 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 = 1.1.0 =
 
 * Added Gumroad embed purchase page option.
-* Plugin now uses only shortcodes to display Gumroad overlay or embed purchase pages.
+* Plugin now uses only shortcodes to display Gumroad overlay or embed.
 * Main settings options removed.
 * Post meta options removed.
 * Tested up to WordPress 3.8.
