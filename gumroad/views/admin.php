@@ -33,17 +33,19 @@ if ( ! defined( 'ABSPATH' ) )
 			</p>
 
 			<p>
-				<a href="https://gumroad.com/overlay" target="_blank"><?php _e( 'Gumroad\'s official overlay docs', 'gum' ); ?></a>
-				<br/>
-				<a href="https://gumroad.com/embed" target="_blank"><?php _e( 'Gumroad\'s official embed docs', 'gum' ); ?></a>
+				<?php _e( 'Reference the official Gumroad documentation:', 'gum' ); ?>
+				<a href="https://gumroad.com/overlay" target="_blank">Overlay</a>, <a href="https://gumroad.com/embed" target="_blank">Embed</a>
 			</p>
 			
 			<!-- Gumroad Shortcode Help -->
 
-			<h3 class="title"><?php _e( 'Getting Started', 'gum' ); ?></h3>
+			<h3 class="title"><?php _e( 'Shortcode Help', 'gum' ); ?></h3>
 
 			<p>
 				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="demo"]</code> <?php _e( 'to add a product link that will popup in an overlay.', 'gum' ); ?>
+			</p>
+			<p>
+				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="demo" type="embed"]</code> <?php _e( 'to add an embedded Gumroad product.', 'gum' ); ?>
 			</p>
 			<p>
 				<?php _e( 'Use the function', 'gum' ); ?> <code><?php echo htmlentities( '<?php echo do_shortcode(\'[gumroad id="demo"]\'); ?>' ); ?></code>
