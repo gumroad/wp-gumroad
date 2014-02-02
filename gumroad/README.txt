@@ -15,7 +15,7 @@ This plugin lets you bring in the Gumroad purchase pages right onto your site, s
 
 The overlay option pops up the purchase form in a pretty lightbox.
 
-The embed option shows the purchase form directly on your page.
+The embed option shows the product purchase form directly on your page.
 
 Shortcode examples:
 
