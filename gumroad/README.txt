@@ -55,12 +55,6 @@ A popular known plugin that does this is "Google Analytics for WordPress". Try u
 
 See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https://gumroad.com/embed) documentation for further troubleshooting.
 
-== Screenshots ==
-
-1. Enabling Gumroad overlay JavaScript in the post sidebar.
-2. Gumroad purchase page overlay on top of a WordPress page.
-3. Gumroad overlay settings page (home/archive page options).
-
 == Changelog ==
 
 = 1.1.0 =
