@@ -79,6 +79,25 @@ class Gumroad {
 		
 		// Set our plugin constants
 		add_action( 'init', array( $this, 'setup_constants' ) );
+		
+		// Check WP version
+		add_action( 'admin_init', array( $this, 'check_wp_version' ) );
+	}
+	
+	/**
+	 * Make sure user has the minimum required version of WordPress installed to use the plugin
+	 * 
+	 * @since 1.0.0
+	 */
+	public function check_wp_version() {
+		global $wp_version;
+		$required_wp_version = '3.5.2';
+		
+		if ( version_compare( $wp_version, $required_wp_version, '<' ) ) {
+			deactivate_plugins( GUM_MAIN_FILE ); 
+			wp_die( sprintf( __( $this->get_plugin_title() . ' requires WordPress version <strong>' . $required_wp_version . '</strong> to run properly. ' .
+				'Please update WordPress before reactivating this plugin. <a href="%s">Return to Plugins</a>.', 'gum' ), get_admin_url( '', 'plugins.php' ) ) );
+		}
 	}
 	
 	/**
