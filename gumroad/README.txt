@@ -1,34 +1,38 @@
-=== Gumroad Overlay & Embed Purchase Pages ===
+=== Gumroad Overlay & Embed ===
 Contributors: pderksen, nickyoung87
-Tags: gumroad, gumroad purchase pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, embed
+Tags: gumroad, gumroad purchase pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, overlay, embed
 Requires at least: 3.5.2
 Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display your Gumroad purchase pages in a pretty lightbox or embed them right on your pages.
+Display your Gumroad purchase pages in a pretty lightbox or embed them right on your pages using shortcodes.
 
 == Description ==
 
 This plugin lets you bring in the Gumroad purchase pages right onto your site, so that transactions can happen inline — without ruining the browsing experience for your customers.
 
-The overlay option pops up the purchase form in a pretty lightbox. See the official [Gumroad Overlay documentation](https://gumroad.com/overlay).
+The overlay option pops up the purchase form in a pretty lightbox.
 
-The embed option shows the purchase form directly on your page. See the official [Gumroad Embed documentation](https://gumroad.com/embed).
+The embed option shows the product purchase form directly on your page.
 
-This plugin simply embeds a Gumroad JavaScript snippet on the posts or pages you specify. See the options along the right sidebar while editing a post or page.
+Shortcode examples:
 
-You can also enable Gumroad on the home page or archive pages where multiple posts are shown. Just look under Settings in your WordPress dashboard.
+`[gumroad id="demo"]`
+`[gumroad id="demo" type="embed"]`
+`[gumroad id="demo" text="Purchase Item" wanted="true"]`
 
-[Follow this project on Github](https://github.com/pderksen/WP-Gumroad).
+Full shortcode documentation is in Settings > Gumroad after plugin is activated.
+
+This project is also on [Github](https://github.com/pderksen/WP-Gumroad).
 
 == Installation ==
 
 = 1. Admin Search =
 1. In your Admin, go to menu Plugins > Add.
 1. Search for `Gumroad`.
-1. Find the plugin that's labeled `Gumroad`.
+1. Find the plugin that's labeled `Gumroad Overlay & Embed`.
 1. Look for the author name `Phil Derksen` on the plugin.
 1. Click to install.
 1. Activate the plugin.
@@ -51,38 +55,24 @@ You can also enable Gumroad on the home page or archive pages where multiple pos
 
 == Frequently Asked Questions ==
 
-[TODO copy from official docs]
-
-= Troubleshooting =
-
-[TODO this right?]
-
-From the official [Gumroad overlay documentation](https://gumroad.com/overlay):
-
-If the overlay doesn't get triggered on click (and your browser is redirected to a gumroad.com URL), please make sure that there is not extra code that is hijacking the click event (for example, a Google Analytics onclick event).
-
-A popular known plugin that does this is **Google Analytics for WordPress**. Try unchecking one or both of these options: 1) Track outbound clicks & downloads, 2) Check Advanced Settings, then make sure "Track outbound clicks as pageviews" is un-checked.
+Full shortcode documentation is in Settings > Gumroad after plugin is activated.
 
 Your theme must implement **wp_footer()** in the footer.php file, otherwise JavaScript will not load correctly. You can test if this is the issue by switching to a WordPress stock theme such as twenty-twelve temporarily.
 
-== Screenshots ==
+If the overlay doesn't get triggered on click (and your browser is redirected to a gumroad.com URL), please make sure that there is not extra code that is hijacking the click event (for example, a Google Analytics onclick event).
 
-*TODO: Redo screenshots, add embed.*
+A popular known plugin that does this is "Google Analytics for WordPress". Try unchecking one or both of these options: 1) Track outbound clicks & downloads, 2) Check Advanced Settings, then make sure "Track outbound clicks as pageviews" is un-checked.
 
-1. Enabling Gumroad overlay JavaScript in the post sidebar.
-2. Gumroad purchase page overlay on top of a WordPress page.
-3. Gumroad overlay settings page (home/archive page options).
+See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https://gumroad.com/embed) documentation for further troubleshooting.
 
 == Changelog ==
 
 = 1.1.0 =
 
-* Plugin now uses shortcodes to display the Gumroad Overlay or Gumroad Embed
-* Removed main plugin settings page since plugin now uses shortcodes
-
-= 1.0.2 =
-
-* TODO: Added embeddable purchase page option.
+* Added Gumroad embed purchase page option.
+* Plugin now uses only shortcodes to display Gumroad overlay or embed.
+* Main settings options removed.
+* Post meta options removed.
 * Tested up to WordPress 3.8.
 
 = 1.0.1 =
@@ -96,3 +86,9 @@ Your theme must implement **wp_footer()** in the footer.php file, otherwise Java
 = 1.0.0 =
 
 * Initial release.
+
+== Upgrade Notice ==
+
+= 1.1.0 =
+
+After upgrading your previously saved Gumroad settings will no longer apply. This plugin now uses shortcodes only.

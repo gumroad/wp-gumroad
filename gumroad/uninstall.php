@@ -16,5 +16,5 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 delete_option( 'gum_settings_general' );
 delete_option( 'gum_show_admin_install_notice' );
 
-// Remove custom post meta fields.
+// Remove custom post meta fields (v1.0.1 and previous).
 delete_post_meta_by_key( '_gum_enabled' );

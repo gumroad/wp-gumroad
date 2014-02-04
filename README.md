@@ -1,6 +1,6 @@
 Gumroad WordPress Plugin
 ========================
 
-Easily add Gumroad purchase page overlays to your WordPress site.
+Easily embed or overlay Gumroad purchase pages on your WordPress site using shortcodes.
 
 [Changelog on WordPress.org](http://wordpress.org/plugins/gumroad/changelog/)

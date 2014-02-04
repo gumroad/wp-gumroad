@@ -22,13 +22,30 @@ if ( ! defined( 'ABSPATH' ) )
 		<div id="gum-settings-content">
 
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+
+			<h3 class="title"><?php _e( 'Important SSL Requirement', 'gum' ); ?></h3>
+
+			<p>
+				<em>
+					<?php _e( 'The address of the page hosting the Gumroad overlay or embed should start with https, ' .
+						'so you\'ll need to setup an SSL certificate for your site if you haven\'t already.', 'gum' ); ?>
+				</em>
+			</p>
+
+			<p>
+				<?php _e( 'Reference the official Gumroad documentation:', 'gum' ); ?>
+				<a href="https://gumroad.com/overlay" target="_blank">Overlay</a>, <a href="https://gumroad.com/embed" target="_blank">Embed</a>
+			</p>
 			
 			<!-- Gumroad Shortcode Help -->
 
-			<h3 class="title"><?php _e( 'Getting Started', 'gum' ); ?></h3>
+			<h3 class="title"><?php _e( 'Shortcode Help', 'gum' ); ?></h3>
 
 			<p>
 				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="demo"]</code> <?php _e( 'to add a product link that will popup in an overlay.', 'gum' ); ?>
+			</p>
+			<p>
+				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="demo" type="embed"]</code> <?php _e( 'to add an embedded Gumroad product.', 'gum' ); ?>
 			</p>
 			<p>
 				<?php _e( 'Use the function', 'gum' ); ?> <code><?php echo htmlentities( '<?php echo do_shortcode(\'[gumroad id="demo"]\'); ?>' ); ?></code>
