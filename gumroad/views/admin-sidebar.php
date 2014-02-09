@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 	<div class="sidebar-content">
 		<p>
-			<?php _e( 'Check out our Pinterest "Pin It" Button plugin. Now with over <strong>200,000</strong> downloads!', 'gum' ); ?>
+			<?php _e( 'Check out our Pinterest "Pin It" Button plugin. Now with <strong>' . gum_get_pib_downloads() . '</strong> downloads!', 'gum' ); ?>
 		</p>
 
 		<p class="small-text">
