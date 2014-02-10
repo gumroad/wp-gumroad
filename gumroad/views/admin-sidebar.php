@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) )
 	</div>
 </div>
 
+<?php if( !gum_is_pib_active() ) { ?>
 <div class="sidebar-container">
 	<h3 class="sidebar-title-large"><?php _e( 'Need more Pinterest traffic?', 'gum' ); ?></h3>
 
@@ -43,3 +44,4 @@ if ( ! defined( 'ABSPATH' ) )
 		</p>
 	</div>
 </div>
+<?php } ?>
