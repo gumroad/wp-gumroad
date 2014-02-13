@@ -1,5 +1,5 @@
 Gumroad for WordPress
-=====================
+===
 
 A WordPress plugin that allows you to embed or overlay Gumroad purchase pages on your site using shortcodes.
 
