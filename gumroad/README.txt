@@ -25,7 +25,7 @@ Shortcode examples:
 
 Full shortcode documentation is in Settings > Gumroad after plugin is activated.
 
-This project is also on [Github](https://github.com/pderksen/WP-Gumroad).
+[Follow this project on Github](https://github.com/pderksen/WP-Gumroad).
 
 == Installation ==
 
