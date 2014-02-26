@@ -60,7 +60,7 @@ class Gumroad {
 	private function __construct() {
 		
 		// Load plugin text domain
-		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'plugins_loaded', array( $this, 'plugin_textdomain' ) );
 		
 		// Include required files.
 		add_action( 'init', array( $this, 'includes' ), 1 );

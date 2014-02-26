@@ -29,10 +29,19 @@ function gum_gumroad_shortcode( $attr ) {
 	
 	if( ! empty( $id ) ) {
 		if( $type == 'embed' ) {
-			return gum_embed_button( $id );
+			$html = gum_embed_button( $id );
 		} else {
-			return gum_overlay_button( $id, $text, $wanted );
+			$html = gum_overlay_button( $id, $text, $wanted );
 		}
+		
+		$before_html = '';
+		$after_html  = '';
+		
+		$before_html = apply_filters( 'gum_shortcode_before', $before_html );
+		$html        = apply_filters( 'gum_shortcode_html', $html );
+		$after_html  = apply_filters( 'gum_shortcode_after', $after_html );
+		
+		return $before_html . $html . $after_html;
 	}
 }
 add_shortcode( 'gumroad', 'gum_gumroad_shortcode' );
