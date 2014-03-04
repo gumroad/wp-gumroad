@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Test\n"
+"POT-Creation-Date: 2014-02-24 09:53-0800\n"
+"PO-Revision-Date: 2014-03-04 09:46+0100\n"
+"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../gumroad/class-gumroad.php:98
+msgid " requires WordPress version <strong>"
+msgstr "requiere la versión de WordPress <strong>"
+
+#: ../gumroad/class-gumroad.php:182
+msgid " Help"
+msgstr "Ayuda"
+
+#: ../gumroad/class-gumroad.php:183
+msgid "Gumroad"
+msgstr "Gumroad"
+
+#: ../gumroad/class-gumroad.php:221
+msgid "Gumroad Overlay & Embed"
+msgstr "Gumroad Diseño e Incrustación"
+
+#: ../gumroad/class-gumroad.php:255
+msgid "Settings"
+msgstr "Configuración"
+
+#: ../gumroad/views/admin-install-notice.php:26
+msgid " is now installed."
+msgstr "ahora está instalado."
+
+#: ../gumroad/views/admin-install-notice.php:27
+msgid "See how to add Gumroad shortcodes"
+msgstr "Vea cómo agregar códigos cortos Gumroad"
+
+#: ../gumroad/views/admin-sidebar.php:19
+msgid ""
+"Help us get noticed (and boost our egos) with a rating and short review."
+msgstr ""
+"Ayúdenos a ser notados (y aumentar nuestro ego) con una calificación y breve "
+"reseña."
+
+#: ../gumroad/views/admin-sidebar.php:23
+msgid "Rate this plugin on WordPress.org"
+msgstr "Califique este plugin en WordPress.org"
+
+#: ../gumroad/views/admin-sidebar.php:29
+msgid "Need more Pinterest traffic?"
+msgstr "¿Necesita más tráfico Pinterest?"
+
+#: ../gumroad/views/admin-sidebar.php:33
+msgid "Check out our Pinterest \"Pin It\" Button plugin. Now with <strong>"
+msgstr ""
+"Echa un vistazo a nuestro plugin de botón \"Pin It\" Pinterest. Ahora con "
+"<strong>"
+
+#: ../gumroad/views/admin-sidebar.php:42
+msgid "Get the Free \"Pin It\" Button plugin"
+msgstr "Obtenga el plugin de botón \"Pin It\" gratuito."
+
+#: ../gumroad/views/admin-sidebar.php:43
+msgid "Visit the \"Pin It\" Button plugin page"
+msgstr "Visite la página del plugin de botón \"Pin It\""
+
+#: ../gumroad/views/admin.php:26
+msgid "Important SSL Requirement"
+msgstr "Importante Requisito SSL"
+
+#: ../gumroad/views/admin.php:30
+msgid ""
+"The address of the page hosting the Gumroad overlay or embed should start "
+"with https, so you'll need to setup an SSL certificate for your site if you "
+"haven't already."
+msgstr ""
+"La dirección de la página que aloja el overlay o embed Gumroad debe comenzar "
+"con https, por lo que deberá configurar un certificado SSL para su sitio si "
+"usted no lo ha hecho."
+
+#: ../gumroad/views/admin.php:36
+msgid "Reference the official Gumroad documentation:"
+msgstr "Refiérase a la documentación Gumroad oficial:"
+
+#: ../gumroad/views/admin.php:42
+msgid "Shortcode Help"
+msgstr "Ayuda Código corto"
+
+#: ../gumroad/views/admin.php:45 ../gumroad/views/admin.php:48
+msgid "Use the shortcode"
+msgstr "Utilizar el código corto"
+
+#: ../gumroad/views/admin.php:45
+msgid "to add a product link that will popup in an overlay."
+msgstr "para añadir un enlace del producto que emergerá en un overlay."
+
+#: ../gumroad/views/admin.php:48
+msgid "to add an embedded Gumroad product."
+msgstr "para agregar un producto Gumroad incrustado."
+
+#: ../gumroad/views/admin.php:51
+msgid "Use the function"
+msgstr "Utilizar la función"
+
+#: ../gumroad/views/admin.php:52
+msgid "to display within template or theme files."
+msgstr "Para visualizar dentro de archivos de plantilla o tema."
+
+#: ../gumroad/views/admin.php:55
+msgid "Available Attributes"
+msgstr "Atributos disponibles"
+
+#: ../gumroad/views/admin.php:60
+msgid "Attribute"
+msgstr "Atributo"
+
+#: ../gumroad/views/admin.php:61
+msgid "Description"
+msgstr "Descripción"
+
+#: ../gumroad/views/admin.php:62
+msgid "Options"
+msgstr "Opciones"
+
+#: ../gumroad/views/admin.php:63
+msgid "Default"
+msgstr "Por defecto"
+
+#: ../gumroad/views/admin.php:69
+msgid "The Gumroad product ID"
+msgstr "El identificador del producto Gumroad"
+
+#: ../gumroad/views/admin.php:75
+msgid "The type of product link you want to show."
+msgstr "El tipo de enlace de producto que desea mostrar."
+
+#: ../gumroad/views/admin.php:81
+msgid ""
+"The text that shows on the overlay button. This only applies if the type is "
+"set to overlay."
+msgstr ""
+"El texto que se muestra en el botón de overlay. Esto sólo se aplica si el "
+"tipo está establecido a overlay."
+
+#: ../gumroad/views/admin.php:87
+msgid ""
+"Will take the user right to the checkout page for this item. This only "
+"applies if the type is set to overlay."
+msgstr ""
+"Llevará al usuario derecho a la página de pago por este artículo. Esto sólo "
+"se aplica si el tipo está ajustado a overlay."
+
+#: ../gumroad/views/admin.php:94
+msgid "Examples"
+msgstr "Ejemplos"
