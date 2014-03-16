@@ -65,11 +65,13 @@ A popular known plugin that does this is "Google Analytics for WordPress". Try u
 
 See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https://gumroad.com/embed) documentation for further troubleshooting.
 
+Spanish translation by Andrew Kurtis of [webhostinghub.com](http://www.webhostinghub.com/).
+
 == Changelog ==
 
 = 1.1.1 =
 
-* Added Spanish translation.
+* Added Spanish translation (thanks to Andrew Kurtis of [webhostinghub.com](http://www.webhostinghub.com/)).
 * Tested up to WordPress 3.9.
 
 = 1.1.0 =
