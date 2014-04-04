@@ -18,6 +18,7 @@
  * Author URI: http://philderksen.com
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * GitHub Plugin URI: https://github.com/pderksen/WP-Gumroad
  */
 
 // Exit if accessed directly.
@@ -25,9 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once( plugin_dir_path( __FILE__ ) . 'class-gumroad.php' );
+if ( ! defined( 'GUM_MAIN_FILE' ) ) {
+	define( 'GUM_MAIN_FILE', __FILE__ );
+}
 
-define( 'GUM_MAIN_FILE', __FILE__ );
+require_once( plugin_dir_path( __FILE__ ) . 'class-gumroad.php' );
 
 // Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
 register_activation_hook( __FILE__, array( 'Gumroad', 'activate' ) );
