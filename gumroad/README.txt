@@ -69,6 +69,10 @@ Spanish translation by Andrew Kurtis of [webhostinghub.com](http://www.webhostin
 
 == Changelog ==
 
+= 1.1.2 =
+
+* Spanish translation updates.
+
 = 1.1.1 =
 
 * Added Spanish translation (thanks to Andrew Kurtis of [webhostinghub.com](http://www.webhostinghub.com/)).
