@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Gumroad Overlay & Embed
+ * Gumroad Product Pages
  *
  * @package   GUM
  * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
@@ -10,9 +10,9 @@
  * @copyright 2013-2014 Phil Derksen
  *
  * @wordpress-plugin
- * Plugin Name: Gumroad Overlay & Embed
+ * Plugin Name: Gumroad Product Pages
  * Plugin URI: http://philderksen.com/gumroad-for-wordpress/
- * Description: Display your Gumroad purchase pages in a pretty lightbox or embed them right on your pages using shortcodes.
+ * Description: Display your Gumroad product pages in a pretty lightbox or embed them right in your posts using shortcodes.
  * Version: 1.1.2
  * Author: Phil Derksen
  * Author URI: http://philderksen.com

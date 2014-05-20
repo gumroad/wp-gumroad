@@ -215,7 +215,7 @@ class Gumroad {
 	 * @return    string
 	 */
 	public static function get_plugin_title() {
-		return __( 'Gumroad Overlay & Embed', 'gum' );
+		return __( 'Gumroad Product Pages', 'gum' );
 	}
 
 	/**
