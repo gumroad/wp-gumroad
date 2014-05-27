@@ -79,19 +79,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</tr>
 					<tr>
 						<td>text</td>
-						<td><?php _e( 'The text that shows on the overlay button. This only applies if the type is set to overlay.', 'gum' ); ?></td>
+						<td><?php _e( 'Text that shows on the overlay button (applies to overlay only).', 'gum' ); ?></td>
 						<td>Any text</td>
 						<td>Buy Now</td>
 					</tr>
 					<tr>
 						<td>wanted</td>
-						<td><?php _e( 'Will take the user right to the checkout page for this item. This only applies if the type is set to overlay.', 'gum' ); ?></td>
+						<td><?php _e( 'If true, user will be redirected directly to the checkout page (applies to overlay only).', 'gum' ); ?></td>
 						<td>true, false</td>
 						<td>false</td>
 					</tr>
 					<tr>
 						<td>locale</td>
-						<td><?php _e( 'Auto-set a locale.', 'gum' ); ?></td>
+						<td><?php _e( 'Auto-set a locale (applies to overlay only).', 'gum' ); ?></td>
 						<td>true, false</td>
 						<td>false</td>
 					</tr>
