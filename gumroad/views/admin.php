@@ -89,6 +89,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<td>true, false</td>
 						<td>false</td>
 					</tr>
+					<tr>
+						<td>locale</td>
+						<td><?php _e( 'Auto-set a locale.', 'gum' ); ?></td>
+						<td>true, false</td>
+						<td>false</td>
+					</tr>
 				</tbody>
 			</table>
 			
@@ -98,6 +104,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<li><code>[gumroad id="demo"]</code></li>
 				<li><code>[gumroad id="demo" type="embed"]</code></li>
 				<li><code>[gumroad id="demo" text="Purchase Item" wanted="true"]</code></li>
+				<li><code>[gumroad id="demo" text="Purchase Item" wanted="true" locale="true"]</code></li>
 			</ul>
 
 		</div><!-- #gum-settings-content -->
