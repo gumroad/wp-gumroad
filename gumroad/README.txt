@@ -69,6 +69,10 @@ Spanish translation by Andrew Kurtis of [webhostinghub.com](http://www.webhostin
 
 == Changelog ==
 
+= 1.1.3 = 
+
+* Added locale shortcode attribute.
+
 = 1.1.2 =
 
 * Spanish translation updates.
