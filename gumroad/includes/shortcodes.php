@@ -19,19 +19,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function gum_gumroad_shortcode( $attr ) {
 	
-	extract( shortcode_atts( array(
+	$defaults = array(
 					'id'     => '',
 					'type'   => 'overlay',
 					'text'   => 'Buy Now',
 					'wanted' => 'false',
 					'locale' => 'false'
-				), $attr ) );
+				);
+	
+	
+	extract( shortcode_atts( $defaults, $attr ) );
 	
 	gum_load_js( $type );
 	
-	if( empty( $attr['text'] ) ) {
-		$attr['text'] = $text;
-	}
+	$attr = array_merge( $defaults, $attr );
 	
 	if( ! empty( $id ) ) {
 		if( $type == 'embed' ) {
