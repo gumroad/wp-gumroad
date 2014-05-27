@@ -17,18 +17,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="sidebar-container">
 	<div class="sidebar-content">
 		<p>
-			<?php _e( 'Help us get noticed (and boost our egos) with a rating and short review.', 'gum' ); ?>
+			<?php _e( 'We\'d love a super short review. Seriously, it means a lot.', 'gum' ); ?>
 		</p>
 
 		<a href="https://wordpress.org/support/view/plugin-reviews/gumroad" class="button-primary" target="_blank">
-			<?php _e( 'Rate this plugin on WordPress.org', 'gum' ); ?></a>
+			<?php _e( 'Submit a review', 'gum' ); ?></a>
 	</div>
 </div>
 
 <div class="sidebar-container">
 	<div class="sidebar-content">
 		<p>
-			<?php _e( 'Have a feature request or need help from others?', 'gum' ); ?>
+			<?php _e( 'Need some help? Have a feature request?', 'gum' ); ?>
 		</p>
 		<p>
 			<a href="https://wordpress.org/support/plugin/gumroad" target="_blank">
