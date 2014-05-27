@@ -11,12 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @snce 1.1.0
  * 
  */
-function gum_overlay_button( $id, $text = '', $wanted = '' ) {
+function gum_overlay_button( $args ) {
 	
-	return sprintf( '<a href="https://gum.co/%s%s" class="gumroad-button">%s</a>', 
-						esc_attr( $id ),
-						( $wanted == 'true' ? '?wanted=true' : '' ),
-						$text );
+	$url = 'https://gum.co/' . $args['id'];
+	
+	return '<a href="' . add_query_arg( array( 'wanted' => $args['wanted'], 'locale' => $args['locale'] ), $url ) . '" class="gumroad-button">' . $args['text'] . '</a>';
 }
 
 /**

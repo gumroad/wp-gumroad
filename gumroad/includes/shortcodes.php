@@ -23,16 +23,21 @@ function gum_gumroad_shortcode( $attr ) {
 					'id'     => '',
 					'type'   => 'overlay',
 					'text'   => 'Buy Now',
-					'wanted' => 'false'
+					'wanted' => 'false',
+					'locale' => 'false'
 				), $attr ) );
 	
 	gum_load_js( $type );
+	
+	if( empty( $attr['text'] ) ) {
+		$attr['text'] = $text;
+	}
 	
 	if( ! empty( $id ) ) {
 		if( $type == 'embed' ) {
 			$html = gum_embed_button( $id );
 		} else {
-			$html = gum_overlay_button( $id, $text, $wanted );
+			$html = gum_overlay_button( $attr );
 		}
 		
 		$before_html = '';
