@@ -25,6 +25,8 @@ Shortcode examples:
 
 Full shortcode documentation is in Settings > Gumroad after plugin is activated.
 
+Spanish translation by Andrew Kurtis of [webhostinghub.com](http://www.webhostinghub.com/)).
+
 [Follow this project on Github](https://github.com/pderksen/WP-Gumroad).
 
 == Installation ==
