@@ -22,6 +22,7 @@ function gum_gumroad_shortcode( $attr ) {
 	$defaults = array(
 					'id'     => '',
 					'type'   => 'overlay',
+					'class'  => '',
 					'text'   => 'Buy Now',
 					'wanted' => 'false',
 					'locale' => 'false'

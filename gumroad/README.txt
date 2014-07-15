@@ -69,6 +69,10 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.1.4 =
+
+* Added shortcode attribute to add CSS classes to the overlay link button.
+
 = 1.1.3 = 
 
 * Added locale shortcode attribute.
