@@ -21,7 +21,7 @@ class Gumroad {
 	 *
 	 * @var     string
 	 */
-	protected $version = '1.1.3';
+	protected $version = '1.1.5';
 
 	/**
 	 * Unique identifier for your plugin.

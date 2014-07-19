@@ -2,7 +2,7 @@
 Contributors: pderksen, nickyoung87
 Tags: gumroad, gumroad product pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, overlay, embed
 Requires at least: 3.6.1
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -68,6 +68,10 @@ A popular known plugin that does this is "Google Analytics for WordPress". Try u
 See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https://gumroad.com/embed) documentation for further troubleshooting.
 
 == Changelog ==
+
+= 1.1.5 = 
+
+* Tested with WordPress 4.0
 
 = 1.1.4 =
 

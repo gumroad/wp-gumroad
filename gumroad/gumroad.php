@@ -13,7 +13,7 @@
  * Plugin Name: Gumroad Product Pages
  * Plugin URI: http://philderksen.com/gumroad-for-wordpress/
  * Description: Display your Gumroad product pages in a pretty lightbox or embed them right in your posts using shortcodes.
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author: Phil Derksen
  * Author URI: http://philderksen.com
  * License: GPL-2.0+
