@@ -71,7 +71,7 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 = 1.1.5 = 
 
-* Tested with WordPress 4.0
+* Tested with WordPress 4.0.
 
 = 1.1.4 =
 
@@ -109,9 +109,3 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 = 1.0.0 =
 
 * Initial release.
-
-== Upgrade Notice ==
-
-= 1.1.0 =
-
-After upgrading your previously saved Gumroad settings will no longer apply. This plugin now uses shortcodes only.
