@@ -5,7 +5,7 @@
  *
  * @package    GUM
  * @subpackage views
- * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <maxwell@gumroad.com>
  */
 
 // Exit if accessed directly.

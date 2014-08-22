@@ -8,7 +8,7 @@
  *
  * @package    GUM
  * @subpackage Views
- * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorgumeb@gmail.com>
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorgumeb@gmail.com>, Gumroad <maxwell@gumroad.com>
  */
 
 // Exit if accessed directly.
@@ -27,29 +27,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h3 class="title"><?php _e( 'Important SSL Requirement', 'gum' ); ?></h3>
 
 			<p>
-				<em>
+				<b><em>
 					<?php _e( 'The address of the page hosting the Gumroad overlay or embed should start with https, ' .
 						'so you\'ll need to setup an SSL certificate for your site if you haven\'t already.', 'gum' ); ?>
-				</em>
+				</b></em>
 			</p>
 
 			<p>
-				<?php _e( 'Reference the official Gumroad documentation:', 'gum' ); ?>
-				<a href="https://gumroad.com/overlay" target="_blank">Overlay</a>, <a href="https://gumroad.com/embed" target="_blank">Embed</a>
+				If you need help setting up HTTPS on your Wordpress site here is <a href="http://wordpress.org/plugins/wordpress-https/" target="_blank">a Wordpress plugin</a> that can help.
+			</p>
+
+			<p>
+				<?php _e( 'Please refer to the Overlay and Embed documentation for additional help:', 'gum' ); ?>
+				<a href="https://gumroad.com/overlay" target="_blank">Overlay Documentaiton</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
 			</p>
 			
-			<!-- Gumroad Shortcode Help -->
+			<!-- Add a Gumroad product help -->
 
-			<h3 class="title"><?php _e( 'Shortcode Help', 'gum' ); ?></h3>
+			<h3 class="title"><?php _e( 'Adding a product page', 'gum' ); ?></h3>
 
 			<p>
-				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="demo"]</code> <?php _e( 'to add a product link that will popup in an overlay.', 'gum' ); ?>
+				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="DviQY"]</code> <?php _e( 'to add a product link that will popup in an overlay', 'gum' ); ?>:
 			</p>
+
 			<p>
-				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="demo" type="embed"]</code> <?php _e( 'to add an embedded Gumroad product.', 'gum' ); ?>
+				<img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/overlaydemo.gif">
 			</p>
+
 			<p>
-				<?php _e( 'Use the function', 'gum' ); ?> <code><?php echo htmlentities( '<?php echo do_shortcode(\'[gumroad id="demo"]\'); ?>' ); ?></code>
+				<?php _e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="GAPdj" type="embed"]</code> <?php _e( 'to add an embedded Gumroad product.', 'gum' ); ?>
+			</p>
+
+			<p>
+				<img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/embeddemo.png">
+			</p>
+
+			<p>
+				<?php _e( 'Use the function', 'gum' ); ?> <code><?php echo htmlentities( '<?php echo do_shortcode(\'[gumroad id="DviQY"]\'); ?>' ); ?></code>
 				<?php _e( 'to display within template or theme files.', 'gum' ); ?>
 			</p>
 
@@ -68,7 +82,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<tr>
 						<td>id</td>
 						<td><?php _e( 'The Gumroad product ID', 'gum' ); ?></td>
-						<td>Any valid Gumroad product ID</td>
+						<td>Any valid Gumroad product ID, <a href="https://www.youtube.com/watch?v=IZl4lAnai50" target="_blank">What is my Gumroad product ID?</a></td>
 						<td>none</td>
 					</tr>
 					<tr>
@@ -98,13 +112,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</tbody>
 			</table>
 			
-			<h4><?php _e( 'Examples', 'gum' ); ?></h4>
+			<h4><?php _e( 'More examples', 'gum' ); ?></h4>
 
 			<ul class="ul-disc">
-				<li><code>[gumroad id="demo"]</code></li>
-				<li><code>[gumroad id="demo" type="embed"]</code></li>
-				<li><code>[gumroad id="demo" text="Purchase Item" wanted="true"]</code></li>
-				<li><code>[gumroad id="demo" text="Purchase Item" wanted="true" locale="true"]</code></li>
+				<li><code>[gumroad id="DviQY" text="Purchase Item" wanted="true"]</code></li>
+				<p><img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemo.gif"></p>
+				<li><code>[gumroad id="DviQY" text="Comprar articulo" wanted="true" locale="true"]</code></li>
+				<p><img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemolocalized.gif"></p>
 			</ul>
 
 		</div><!-- #gum-settings-content -->
