@@ -88,6 +88,8 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 = 1.1.5 = 
 
+* Videos added to in-plugin help page.
+* Demo videos added to Readme.txt.
 * Tested with WordPress 4.0.
 
 = 1.1.4 =
