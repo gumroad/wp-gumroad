@@ -37,8 +37,8 @@ msgid " is now installed."
 msgstr "ahora está instalado."
 
 #: views/admin-install-notice.php:27
-msgid "See how to add Gumroad shortcodes"
-msgstr "Vea cómo agregar códigos cortos Gumroad"
+msgid "See how to add Gumroad products"
+msgstr "Ver cómo agregar productos Gumroad"
 
 #: views/admin-sidebar.php:19
 msgid ""
@@ -80,8 +80,8 @@ msgid "Use the shortcode"
 msgstr "Utilizar el código corto"
 
 #: views/admin.php:45
-msgid "to add a product link that will popup in an overlay."
-msgstr "para añadir un enlace del producto que emergerá en un overlay."
+msgid "to add a product link that will popup in an overlay"
+msgstr "para añadir un enlace del producto que emergerá en un overlay"
 
 #: views/admin.php:48
 msgid "to add an embedded Gumroad product."
@@ -140,8 +140,8 @@ msgstr ""
 "se aplica si el tipo está ajustado a overlay."
 
 #: views/admin.php:94
-msgid "Examples"
-msgstr "Ejemplos"
+msgid "More examples"
+msgstr "Más ejemplos"
 
 #. Plugin URI of the plugin/theme
 msgid "http://philderksen.com/gumroad-for-wordpress/"
@@ -150,7 +150,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Display your Gumroad purchase pages in a pretty lightbox or embed them right "
-"on your pages using shortcodes."
+"on your pages."
 msgstr ""
 "Mostrar sus páginas de compra de Gumroad en un lightbox bonito o insertarlas "
 "en sus páginas usando códigos cortos."

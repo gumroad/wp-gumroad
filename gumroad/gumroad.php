@@ -1,24 +1,24 @@
 <?php
 
 /**
- * Gumroad Product Pages
+ * Official Gumroad Wordpress Plugin
  *
  * @package   GUM
- * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <maxwell@gumroad.com>
  * @license   GPL-2.0+
- * @link      http://philderksen.com
- * @copyright 2013-2014 Phil Derksen
+ * @link      https://gumroad.com
+ * @copyright 2013-2014 Gumroad
  *
  * @wordpress-plugin
- * Plugin Name: Gumroad Product Pages
- * Plugin URI: http://philderksen.com/gumroad-for-wordpress/
+ * Plugin Name: Gumroad
+ * Plugin URI: https://gumroad.com
  * Description: Display your Gumroad product pages in a pretty lightbox or embed them right in your posts using shortcodes.
  * Version: 1.1.5
- * Author: Phil Derksen
- * Author URI: http://philderksen.com
+ * Author: Gumroad
+ * Author URI: http://gumroad.com
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * GitHub Plugin URI: https://github.com/pderksen/WP-Gumroad
+ * GitHub Plugin URI: https://github.com/gumroad/WP-Gumroad
  * Text Domain: gum
  * Domain Path: /languages/
  */

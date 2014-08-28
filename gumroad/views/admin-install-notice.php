@@ -5,7 +5,7 @@
  *
  * @package    GUM
  * @subpackage Views
- * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>
+ * @author     Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <maxwell@gumroad.com>
  */
 
 // Exit if accessed directly.
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div id="gum-install-notice" class="updated">
 	<p>
 		<?php echo $this->get_plugin_title() . __( ' is now installed.', 'gum' ); ?>
-		<a href="<?php echo add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ); ?>" class="button-primary"><?php _e( 'See how to add Gumroad shortcodes', 'gum' ); ?></a>
+		<a href="<?php echo add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ); ?>" class="button-primary"><?php _e( 'See how to add Gumroad products', 'gum' ); ?></a>
 		<a href="<?php echo add_query_arg( 'gum-dismiss-install-nag', 1 ); ?>" class="button-secondary"><?php _e( 'Hide this', 'gum' ); ?></a>
 	</p>
 </div>

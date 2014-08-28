@@ -35,7 +35,7 @@ msgid " is now installed."
 msgstr ""
 
 #: views/admin-install-notice.php:27
-msgid "See how to add Gumroad shortcodes"
+msgid "See how to add Gumroad products"
 msgstr ""
 
 #: views/admin-sidebar.php:19
@@ -76,7 +76,7 @@ msgid "Use the shortcode"
 msgstr ""
 
 #: views/admin.php:45
-msgid "to add a product link that will popup in an overlay."
+msgid "to add a product link that will popup in an overlay"
 msgstr ""
 
 #: views/admin.php:48
@@ -142,7 +142,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Display your Gumroad purchase pages in a pretty lightbox or embed them right "
-"on your pages using shortcodes."
+"on your pages."
 msgstr ""
 
 #. Author of the plugin/theme
