@@ -94,7 +94,11 @@ class Gumroad {
 	 * @since    1.1.0
 	 */
 	public function plugin_textdomain() {
-		load_plugin_textdomain( 'gum', false, $gum_lang_dir );
+		load_plugin_textdomain(
+			'gum',
+			false,
+			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
+		);
 	}
 	
 	/**
