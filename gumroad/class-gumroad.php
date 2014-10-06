@@ -126,8 +126,6 @@ class Gumroad {
 	 * @param    boolean    $network_wide    True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog.
 	 */
 	public static function activate( $network_wide ) {
-		// Add value to indicate that we should show admin install notice.
-		update_option( 'gum_show_admin_install_notice', 1 );
 	}
 
 	/**
@@ -228,28 +226,5 @@ class Gumroad {
 			return true;
 		else
 			return false;
-	}
-
-	/**
-	 * Show notice after plugin install/activate in admin dashboard.
-	 * Hide after first viewing.
-	 *
-	 * @since   1.0.1
-	 */
-	public function admin_install_notice() {
-		// Exit all of this is stored value is false/0 or not set.
-		if ( false == get_option( 'gum_show_admin_install_notice' ) )
-			return;
-
-		// Delete stored value if "hide" button click detected (custom querystring value set to 1).
-		// or if on a PIB admin page. Then exit.
-		if ( ! empty( $_REQUEST['gum-dismiss-install-nag'] ) || $this->viewing_this_plugin() ) {
-			delete_option( 'gum_show_admin_install_notice' );
-			return;
-		}
-
-		// At this point show install notice. Show it only on the plugin screen.
-		if( get_current_screen()->id == 'plugins' )
-			include_once( 'views/admin-install-notice.php' );
 	}
 }
