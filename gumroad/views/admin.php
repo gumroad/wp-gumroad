@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p>
 				<?php esc_html_e( 'Please refer to the Overlay and Embed documentation for additional help:', 'gum' ); ?>
-				<a href="https://gumroad.com/overlay" target="_blank">Overlay Documentaiton</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
+				<a href="https://gumroad.com/overlay" target="_blank">Overlay Documentation</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
 			</p>
 			
 			<!-- Add a Gumroad product help -->
