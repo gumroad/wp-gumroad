@@ -138,8 +138,8 @@ class Gumroad {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			$this->get_plugin_title() . esc_html_e( ' Help', 'gum' ),
-			esc_html_e( 'Gumroad', 'gum' ),
+			$this->get_plugin_title() . esc_html( ' Help', 'gum' ),
+			esc_html( 'Gumroad', 'gum' ),
 			'manage_options',
 			$this->plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
@@ -177,7 +177,7 @@ class Gumroad {
 	 * @return    string
 	 */
 	public static function get_plugin_title() {
-		return esc_html_e( 'Gumroad', 'gum' );
+		return esc_html( 'Gumroad', 'gum' );
 	}
 
 	/**
@@ -205,7 +205,7 @@ class Gumroad {
 	 */
 	public function settings_link( $links ) {
 
-		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'options-general.php' ) ), esc_html_e( 'Settings', 'gum' ) );
+		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'options-general.php' ) ), esc_html( 'Settings', 'gum' ) );
 		array_unshift( $links, $setting_link );
 
 		return $links;

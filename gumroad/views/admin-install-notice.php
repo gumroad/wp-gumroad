@@ -24,8 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="gum-install-notice" class="updated">
 	<p>
-		<?php echo $this->get_plugin_title() . esc_html_e( ' is now installed.', 'gum' ); ?>
-		<a href="<?php echo add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ); ?>" class="button-primary"><?php esc_html_e( 'See how to add Gumroad products', 'gum' ); ?></a>
-		<a href="<?php echo add_query_arg( 'gum-dismiss-install-nag', 1 ); ?>" class="button-secondary"><?php esc_html_e( 'Hide this', 'gum' ); ?></a>
+		<?php echo $this->get_plugin_title() . esc_html( ' is now installed.', 'gum' ); ?>
+		<a href="<?php echo add_query_arg( 'page', $this->plugin_slug, admin_url( 'admin.php' ) ); ?>" class="button-primary"><?php esc_html( 'See how to add Gumroad products', 'gum' ); ?></a>
+		<a href="<?php echo add_query_arg( 'gum-dismiss-install-nag', 1 ); ?>" class="button-secondary"><?php esc_html( 'Hide this', 'gum' ); ?></a>
 	</p>
 </div>
