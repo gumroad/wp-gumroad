@@ -13,7 +13,7 @@
  * Plugin Name: Gumroad
  * Plugin URI: https://gumroad.com
  * Description: Display your Gumroad product pages in a pretty lightbox or embed them right in your posts using shortcodes.
- * Version: 1.1.5
+ * Version: 1.1.6
  * Author: Gumroad
  * Author URI: http://gumroad.com
  * License: GPL-2.0+

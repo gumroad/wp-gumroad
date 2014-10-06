@@ -86,6 +86,14 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.1.6 =
+
+* Replace all i18n functions with escaped equivalents.
+* Simplified load_plugin_textdomain() call.
+* Add proper escaping when building the overlay button.
+* Removed activation/install notice.
+* Removed some now unused functions and files.
+
 = 1.1.5 = 
 
 * Videos added to in-plugin help page.
