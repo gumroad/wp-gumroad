@@ -93,12 +93,13 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 * Add proper escaping when building the overlay button.
 * Removed activation/install notice.
 * Removed some now unused functions and files.
+* Tested up to WordPress 4.1.
 
 = 1.1.5 = 
 
 * Videos added to in-plugin help page.
 * Demo videos added to Readme.txt.
-* Tested with WordPress 4.0.
+* Tested up to WordPress 4.0.
 
 = 1.1.4 =
 
