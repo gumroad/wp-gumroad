@@ -62,11 +62,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/embeddemo.png">
 			</p>
 
-			<p>
-				<?php esc_html_e( 'Use the function', 'gum' ); ?> <code><?php echo htmlentities( '<?php echo do_shortcode(\'[gumroad id="DviQY"]\'); ?>' ); ?></code>
-				<?php esc_html_e( 'to display within template or theme files.', 'gum' ); ?>
-			</p>
-
 			<h4><?php esc_html_e( 'Available Attributes', 'gum' ); ?></h4>
 
 			<table class="widefat importers" cellspacing="0">
