@@ -86,6 +86,10 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.1.8 =
+
+* Remove note in help about using in template files or theme files.
+
 = 1.1.7 =
 
 * Tested up to WordPress 4.1.
