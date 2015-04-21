@@ -1,9 +1,9 @@
 === Official Gumroad Wordpress Plugin ===
 Contributors: pderksen, nickyoung87, gumroad
 Tags: gumroad, gumroad product pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, overlay, embed
-Requires at least: 3.8.5
-Tested up to: 4.1
-Stable tag: trunk
+Requires at least: 3.9.3
+Tested up to: 4.2
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,10 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 2. Simple Embed example
 
 == Changelog ==
+
+= 1.1.9 =
+
+* Tested up to WordPress 4.2.
 
 = 1.1.8 =
 
