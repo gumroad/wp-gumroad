@@ -40,7 +40,7 @@ See full the full documentation in Settings > Gumroad after plugin is activated.
 
 Spanish translation by Andrew Kurtis of [webhostinghub.com](http://www.webhostinghub.com/).
 
-[Follow this project on Github](https://github.com/gumroad/WP-Gumroad).
+[Follow this project on Github](https://github.com/gumroad/WP-Gumroad)
 
 == Installation ==
 
