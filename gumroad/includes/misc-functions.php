@@ -15,7 +15,7 @@ function gum_overlay_button( $args ) {
 	
 	$url = 'https://gum.co/' . $args['id'];
 	
-	return '<a href="' . add_query_arg( array( 'wanted' => esc_attr($args['wanted']), 'locale' => esc_attr($args['locale']) ), esc_url($url) ) . '" '.
+	return '<a href="' . esc_url( add_query_arg( array( 'wanted' => esc_attr( $args['wanted'] ), 'locale' => esc_attr( $args['locale'] ) ), $url ) ) . '" '.
 		'class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
 }
 
