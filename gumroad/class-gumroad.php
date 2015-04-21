@@ -203,7 +203,7 @@ class Gumroad {
 	 */
 	public function settings_link( $links ) {
 
-		$setting_link = sprintf( '<a href="%s">%s</a>', add_query_arg( 'page', $this->plugin_slug, admin_url( 'options-general.php' ) ), esc_html( 'Settings', 'gum' ) );
+		$setting_link = sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( 'page', $this->plugin_slug, admin_url( 'options-general.php' ) ) ), esc_html( 'Settings', 'gum' ) );
 		array_unshift( $links, $setting_link );
 
 		return $links;
