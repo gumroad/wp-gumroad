@@ -94,15 +94,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</tr>
 					<tr>
 						<td>wanted</td>
-						<td><?php esc_html_e( 'If true, user will be redirected directly to the checkout page (applies to overlay only).', 'gum' ); ?></td>
-						<td>true, false</td>
-						<td>false</td>
+						<td><?php esc_html_e( 'If set, user will be redirected directly to the checkout page (applies to overlay only).', 'gum' ); ?></td>
+						<td>true</td>
+						<td>N/A</td>
 					</tr>
 					<tr>
 						<td>locale</td>
 						<td><?php esc_html_e( 'Auto-set a locale (applies to overlay only).', 'gum' ); ?></td>
-						<td>true, false</td>
-						<td>false</td>
+						<td>en, es, pt, ...</td>
+						<td>User's browser locale</td>
 					</tr>
 				</tbody>
 			</table>
