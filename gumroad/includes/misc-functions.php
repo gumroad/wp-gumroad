@@ -2,7 +2,7 @@
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+  exit;
 }
 
 /**
@@ -12,11 +12,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  * 
  */
 function gum_overlay_button( $args ) {
-	
-	$url = 'https://gum.co/' . $args['id'];
-	
-	return '<a href="' . add_query_arg( array( 'wanted' => esc_attr($args['wanted']), 'locale' => esc_attr($args['locale']) ), esc_url($url) ) . '" '.
-		'class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
+  
+  $url = 'https://gum.co/' . $args['id'];
+  $args = '?'
+
+  if (esc_attr($args['wanted']) == 'true') {
+    $args += 'wanted=true';
+  }
+
+  if (esc_attr($args['locale'])) {
+    $args += 'locale=' . esc_attr($args['locale']);
+  }
+
+  return '<a href="' . esc_url($url . $args) . '" class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
 }
 
 /**
@@ -26,8 +34,8 @@ function gum_overlay_button( $args ) {
  * 
  */
 function gum_embed_button( $id ) {
-	
-	return sprintf( '<div class="gumroad-product-embed" data-gumroad-product-id="%s"></div>', esc_attr( $id ) );
+  
+  return sprintf( '<div class="gumroad-product-embed" data-gumroad-product-id="%s"></div>', esc_attr( $id ) );
 }
 
 /**
@@ -38,11 +46,11 @@ function gum_embed_button( $id ) {
  * @since 1.1.0
  */
 function gum_load_js( $type ) {
-	if( $type == 'embed' ) {
-		// Enqueue Gumroad 'embed' JS. Don't set a version.
-		wp_enqueue_script( GUM_PLUGIN_SLUG . '-embed-script', 'https://gumroad.com/js/gumroad-embed.js', array(), null, false );
-	} else {
-		// Enqueue Gumroad 'overlay' JS. Don't set a version.
-		wp_enqueue_script( GUM_PLUGIN_SLUG . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, false );
-	}
+  if( $type == 'embed' ) {
+    // Enqueue Gumroad 'embed' JS. Don't set a version.
+    wp_enqueue_script( GUM_PLUGIN_SLUG . '-embed-script', 'https://gumroad.com/js/gumroad-embed.js', array(), null, false );
+  } else {
+    // Enqueue Gumroad 'overlay' JS. Don't set a version.
+    wp_enqueue_script( GUM_PLUGIN_SLUG . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, false );
+  }
 }
