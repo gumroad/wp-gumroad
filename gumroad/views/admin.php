@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<tr>
 						<td>id</td>
 						<td><?php esc_html_e( 'The Gumroad product ID', 'gum' ); ?></td>
-						<td>Any valid Gumroad product ID, <a href="https://www.youtube.com/watch?v=IZl4lAnai50" target="_blank">What is my Gumroad product ID?</a></td>
+						<td>Any valid Gumroad product ID, <a href="https://help.gumroad.com/11164-Payments/whats-my-product-id" target="_blank">What is my Gumroad product ID?</a></td>
 						<td>none</td>
 					</tr>
 					<tr>
