@@ -33,8 +33,6 @@ See the full documentation in Settings > Gumroad after the plugin is activated.
 = 1. Admin Search =
 1. In your Admin, go to menu Plugins > Add.
 1. Search for `Gumroad`.
-1. Find the plugin that's labeled `Gumroad Overlay & Embed`.
-1. Look for the author name `Gumroad` on the plugin.
 1. Click to install.
 1. Activate the plugin.
 1. A new menu item `Gumroad` will appear under your Settings menu option.
