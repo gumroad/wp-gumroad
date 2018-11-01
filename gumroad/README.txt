@@ -7,13 +7,15 @@ Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display your Gumroad products right on your Wordpress page.
+Make your Gumroad products available for purchase right within WordPress.
 
 == Description ==
 
 This plugin lets you embed Gumroad into your website, using our Overlay and Embed widgets: https://gumroad.com/widgets
 
 Zero coding knowledge is required. Once installed, all links to Gumroad will automatically open the Gumroad Overlay (lightbox popup).
+
+For more information on how this plugin works, you can see a video on our Overlay here: https://www.youtube.com/watch?v=u80Ey6lSRyE
 
 You can also use shortcodes:
 
@@ -23,7 +25,7 @@ Basic embed example: `[gumroad id="GAPdj" type="embed"]`
 
 Overlay that will automatically show the payment form: `[gumroad id="DviQY" text="Purchase Item" wanted="true"]`
 
-See the full documentation in Settings > Gumroad after the plugin is activated.
+The ID ("GAPdJ") is the same as your Gumroad product URL ("gumroad.com/l/GAPdJ"). See the full documentation in Settings > Gumroad after the plugin is activated.
 
 == Installation ==
 
@@ -61,9 +63,9 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Screenshots ==
 
-1. Simple Overlay example
+1. Example of the Overlay popup
 
-2. Simple Embed example
+2. Example of the inline Embed
 
 == Changelog ==
 
