@@ -11,15 +11,9 @@ Display your Gumroad products right on your Wordpress page.
 
 == Description ==
 
-This plugin lets you embed, https://gumroad.com/embed, or overlay, https://gumroad.com/overlay, your Gumroad purchase pages with little to no coding effort.
+This plugin lets you embed Gumroad into your website, using our Overlay and Embed widgets: https://gumroad.com/widgets
 
-The Gumroad overlay lets you bring in the Gumroad purchase pages right onto your site, so that transactions can happen inline — in a pretty Gumroad lightbox:
-
-http://www.youtube.com/watch?v=R8r6LBKkKoQ
-
-The Gumroad embed lets you bring in Gumroad products right onto your site, so that transactions can happen inline (*Gumroad embed requires HTTPS to work!* [Here is a Wordpress plugin that assists in HTTPS setup](http://wordpress.org/plugins/wordpress-https/)):
-
-http://www.youtube.com/watch?v=in9wzs3W7Ms
+Zero coding knowledge is required.
 
 Examples:
 
@@ -32,11 +26,7 @@ Basic embed example:
 Overlay that will automatically show the payment form:
 `[gumroad id="DviQY" text="Purchase Item" wanted="true"]`
 
-*"Where do I find my product's id?"*:
-
-http://www.youtube.com/watch?v=IZl4lAnai50
-
-See full the full documentation in Settings > Gumroad after plugin is activated.
+See full the full documentation in Settings > Gumroad after the plugin is activated.
 
 Spanish translation by Andrew Kurtis of [webhostinghub.com](http://www.webhostinghub.com/).
 
