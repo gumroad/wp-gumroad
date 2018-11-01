@@ -26,11 +26,7 @@ Basic embed example:
 Overlay that will automatically show the payment form:
 `[gumroad id="DviQY" text="Purchase Item" wanted="true"]`
 
-See full the full documentation in Settings > Gumroad after the plugin is activated.
-
-Spanish translation by Andrew Kurtis of [webhostinghub.com](http://www.webhostinghub.com/).
-
-[Follow this project on Github](https://github.com/gumroad/WP-Gumroad)
+See the full documentation in Settings > Gumroad after the plugin is activated.
 
 == Installation ==
 
