@@ -13,18 +13,15 @@ Display your Gumroad products right on your Wordpress page.
 
 This plugin lets you embed Gumroad into your website, using our Overlay and Embed widgets: https://gumroad.com/widgets
 
-Zero coding knowledge is required.
+Zero coding knowledge is required. Once installed, all links to Gumroad will automatically open the Gumroad Overlay (lightbox popup).
 
-Examples:
+You can also use shortcodes:
 
-Basic overlay example:
-`[gumroad id="DviQY"]`
+Basic overlay example: `[gumroad id="DviQY"]`
 
-Basic embed example:
-`[gumroad id="GAPdj" type="embed"]`
+Basic embed example: `[gumroad id="GAPdj" type="embed"]`
 
-Overlay that will automatically show the payment form:
-`[gumroad id="DviQY" text="Purchase Item" wanted="true"]`
+Overlay that will automatically show the payment form: `[gumroad id="DviQY" text="Purchase Item" wanted="true"]`
 
 See the full documentation in Settings > Gumroad after the plugin is activated.
 
