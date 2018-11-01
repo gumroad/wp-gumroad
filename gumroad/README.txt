@@ -1,4 +1,4 @@
-=== Official Gumroad Wordpress Plugin ===
+=== Gumroad ===
 Contributors: pderksen, nickyoung87, gumroad
 Tags: gumroad, gumroad product pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, overlay, embed
 Requires at least: 3.9
