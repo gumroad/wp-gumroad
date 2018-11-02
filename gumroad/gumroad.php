@@ -4,7 +4,7 @@
  * Official Gumroad Wordpress Plugin
  *
  * @package   GUM
- * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <maxwell@gumroad.com>
+ * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <hi@gumroad.com>
  * @license   GPL-2.0+
  * @link      https://gumroad.com
  * @copyright 2013-2014 Gumroad
@@ -12,8 +12,8 @@
  * @wordpress-plugin
  * Plugin Name: Gumroad
  * Plugin URI: https://gumroad.com
- * Description: Display your Gumroad product pages in a pretty lightbox or embed them right in your posts using shortcodes.
- * Version: 1.1.9
+ * Description: Make your Gumroad products available for purchase right within WordPress.
+ * Version: 2
  * Author: Gumroad
  * Author URI: http://gumroad.com
  * License: GPL-2.0+
