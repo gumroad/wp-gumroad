@@ -16,23 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="sidebar-container">
 	<div class="sidebar-content">
-		<p>
-			<?php esc_html_e( 'We\'d love a super short review. Seriously, it means a lot.', 'gum' ); ?>
-		</p>
-
-		<a href="https://wordpress.org/support/view/plugin-reviews/gumroad" class="button-primary" target="_blank">
-			<?php esc_html_e( 'Submit a review', 'gum' ); ?></a>
+		<p>We'd love a super short review. Seriously, it means a lot.</p>
+		<a href="https://wordpress.org/support/view/plugin-reviews/gumroad" class="button-primary" target="_blank">Submit a review</a>
 	</div>
 </div>
 
 <div class="sidebar-container">
 	<div class="sidebar-content">
-		<p>
-			<?php esc_html_e( 'Need some help? Have a feature request?', 'gum' ); ?>
-		</p>
-		<p>
-			<a href="https://wordpress.org/support/plugin/gumroad" target="_blank">
-				<?php esc_html_e( 'Visit our Community Support Forums', 'gum' ); ?></a>
-		</p>
+		<p>Need some help? Have a feature request?</p>
+		<p><a href="https://wordpress.org/support/plugin/gumroad" target="_blank">Visit our Community Support Forums</a></p>
 	</div>
 </div>
