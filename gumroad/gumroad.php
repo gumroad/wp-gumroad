@@ -4,10 +4,10 @@
  * Official Gumroad Wordpress Plugin
  *
  * @package   GUM
- * @author    Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <hi@gumroad.com>
+ * @author    Karl Oscar Weber <me@kow.fm>, Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <hi@gumroad.com>
  * @license   GPL-2.0+
  * @link      https://gumroad.com
- * @copyright 2013-2014 Gumroad
+ * @copyright 2013-2018 Gumroad
  *
  * @wordpress-plugin
  * Plugin Name: Gumroad

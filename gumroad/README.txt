@@ -1,5 +1,5 @@
 === Gumroad ===
-Contributors: pderksen, nickyoung87, gumroad
+Contributors: karloscarweber, pderksen, nickyoung87, gumroad
 Tags: gumroad, gumroad product pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, overlay, embed
 Requires at least: 3.9
 Tested up to: 4.9.6
@@ -69,6 +69,11 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.2.1 - December 11, 2018 =
+
+* Tested up to Wordpress 4.9.8
+* Posts with product links now automatically include gumroad.js
+
 = 1.2 =
 
 * Tested up to Wordpress 4.9.6
@@ -95,7 +100,7 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 * Removed activation/install notice.
 * Removed some now unused functions and files.
 
-= 1.1.5 = 
+= 1.1.5 =
 
 * Videos added to in-plugin help page.
 * Demo videos added to Readme.txt.
@@ -105,7 +110,7 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 * Added shortcode attribute to add CSS classes to the overlay link button.
 
-= 1.1.3 = 
+= 1.1.3 =
 
 * Added locale shortcode attribute.
 
