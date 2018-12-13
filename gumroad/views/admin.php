@@ -118,7 +118,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<h3 class="title">Automatic linking and embeds</h3>
 
-			<p>Links to Gumroad products will automatically display an overlay on Gumroad pages. Embed code copied from the Gumroad product widget will also work without including the script tag:</p>
+			<p>Links to Gumroad products will automatically trigger the overlay. Embed code copied from the Gumroad product widget will also work without including the script tag:</p>
 
 			<p>
 <code>
