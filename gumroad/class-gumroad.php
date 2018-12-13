@@ -59,10 +59,10 @@ class Gumroad {
 	 * @since     1.0.0
 	 */
 	private function __construct() {
-		
+
 		// Load plugin text domain
 		add_action( 'plugins_loaded', array( $this, 'plugin_textdomain' ) );
-		
+
 		// Include required files.
 		add_action( 'init', array( $this, 'includes' ), 1 );
 
@@ -74,20 +74,20 @@ class Gumroad {
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
-		
+
 		// Set our plugin constants
 		add_action( 'init', array( $this, 'setup_constants' ) );
 	}
-	
+
 	/**
-	 * Setup any plugin constants we need 
+	 * Setup any plugin constants we need
 	 *
 	 * @since    1.1.0
 	 */
 	public function setup_constants() {
 		define( 'GUM_PLUGIN_SLUG', $this->plugin_slug );
 	}
-	
+
 	/**
 	 * Load the plugin text domain for translation.
 	 *
@@ -100,7 +100,7 @@ class Gumroad {
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
 	}
-	
+
 	/**
 	 * Return an instance of this class.
 	 *
@@ -152,19 +152,22 @@ class Gumroad {
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
 	}
-	
+
 	/**
 	 * Include required files (admin and frontend).
 	 *
 	 * @since     1.0.1
 	 */
 	public function includes() {
-		
+
 		// Include any necessary functions
 		include_once( 'includes/misc-functions.php' );
-		
+
 		// Include shortcode functions
 		include_once( 'includes/shortcodes.php' );
+
+		// Include scanner functions
+		include_once( 'includes/scanner.php' );
 	}
 
 	/**
