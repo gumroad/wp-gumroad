@@ -41,10 +41,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php esc_html_e( 'Please refer to the Overlay and Embed documentation for additional help:', 'gum' ); ?>
 				<a href="https://gumroad.com/overlay" target="_blank">Overlay Documentation</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
 			</p>
-			
+
 			<!-- Add a Gumroad product help -->
 
-			<h3 class="title"><?php esc_html_e( 'Adding a product page', 'gum' ); ?></h3>
+			<h3 class="title"><?php esc_html_e( 'Adding a product to a page', 'gum' ); ?></h3>
 
 			<p>
 				<?php esc_html_e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="DviQY"]</code> <?php esc_html_e( 'to add a product link that will popup in an overlay', 'gum' ); ?>:
@@ -106,7 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</tr>
 				</tbody>
 			</table>
-			
+
 			<h4><?php esc_html_e( 'More examples', 'gum' ); ?></h4>
 
 			<ul class="ul-disc">
@@ -115,6 +115,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<li><code>[gumroad id="DviQY" text="Comprar articulo" wanted="true" locale="true"]</code></li>
 				<p><img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemolocalized.gif"></p>
 			</ul>
+
+			<h3 class="title">Automatic linking and embeds</h3>
+
+			<p>Links to Gumroad products will automatically display an overlay on Gumroad pages. Embed code copied from the Gumroad product widget will also work without including the script tag:</p>
+
+			<p>
+<code>
+&lt;div class="gumroad-product-embed" data-gumroad-product-id="DviQY"&gt;&lt;a href="https://gumroad.com/l/qLlJJ"&gt;Loading...&lt;/a&gt;&lt;/div&gt;
+</code>
+			</p>
 
 		</div><!-- #gum-settings-content -->
 
