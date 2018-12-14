@@ -70,7 +70,9 @@ class Gumroad {
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 
 		// Enqueue admin styles and scripts.
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+		// We'll just comment this puppy out for now because we don't even need the
+		// styles at the moment.
+		// add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
