@@ -94,12 +94,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<td>true, false</td>
 				<td>false</td>
 			</tr>
-			<tr>
-				<td>locale</td>
-				<td><?php esc_html_e( 'Auto-set a locale (applies to overlay only).', 'gum' ); ?></td>
-				<td>true, false</td>
-				<td>false</td>
-			</tr>
 		</tbody>
 	</table>
 
@@ -108,8 +102,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<ul class="ul-disc">
 		<li><code>[gumroad id="DviQY" text="Purchase Item" wanted="true"]</code></li>
 		<p><img style="width: 100%;max-width: 941px;" src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemo.gif"></p>
-		<li><code>[gumroad id="DviQY" text="Comprar articulo" wanted="true" locale="true"]</code></li>
-		<p><img style="width: 100%;max-width: 876px;" src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemolocalized.gif"></p>
 	</ul>
 
 	<h3>Automatic linking and embeds</h3>
