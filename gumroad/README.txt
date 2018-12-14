@@ -69,6 +69,11 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.2.2 - December 13, 2018 =
+
+* Simplify HTML/CSS for admin help page
+* Remove locale preference from shortcodes
+
 = 1.2.1 - December 11, 2018 =
 
 * Tested up to Wordpress 4.9.8
