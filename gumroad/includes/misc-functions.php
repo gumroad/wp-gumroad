@@ -14,9 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 function gum_overlay_button( $args ) {
 
 	$url = 'https://gum.co/' . $args['id'];
+	$wanted = '';
 
-	return '<a href="' . esc_url( add_query_arg( array( 'wanted' => esc_attr( $args['wanted'] )), $url ) ) . '" ' .	'class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
+	if ($args['wanted'] == 'true') {
+		$wanted = '?wanted=true'
+	}
 
+	return '<a href="' . $url . $wanted . '" '. 'class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
 }
 
 /**
