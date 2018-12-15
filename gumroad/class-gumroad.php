@@ -170,6 +170,10 @@ class Gumroad {
 
 		// Include scanner functions
 		include_once( 'includes/scanner.php' );
+
+		// Include Gutenberg block functions
+		include_once( 'includes/gutenberg.php' );
+
 	}
 
 	/**
