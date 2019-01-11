@@ -17,9 +17,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="wrap">
+<div class="wrap gumroad-wrap">
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
+	<p>The Gumroad plugin makes it easy to use wordpress short codes to add links and embedded
+products from your Gumroad storefront directly into your wordpress pages and posts. There is
+a brand new post and page editor in Version 5.0 of wordpress and onward, Gumroad links and
+embed code will work the same, but only if they are added properly.</p>
+
+	<span style="margin-bottom:65px;display:block;"></span>
 	<h3 class="title"><?php esc_html_e( 'Important SSL Requirement', 'gum' ); ?></h3>
 
 	<p>
@@ -38,9 +44,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<a href="https://gumroad.com/overlay" target="_blank">Overlay Documentation</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
 	</p>
 
-	<!-- Add a Gumroad product help -->
+	<span style="margin-bottom:65px;display:block;"></span>
+	<h2>Guides</h2>
 
-	<h3><?php esc_html_e( 'Adding a product to a page', 'gum' ); ?></h3>
+	<p>
+		<a href="#using_shortcodes">Using Shortcodes</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
+	</p>
+
+	<!-- Add a Gumroad product help -->
+	<span style="margin-bottom:65px;display:block;" id="using_shortcodes"></span>
+	<h3>Using Shortcodes</h3>
+	<h4>For wordpress 5.0:</h4>
+
+	<p>Open the wordpress Editor and either type <code>/</code> or click on the <em>plus</em> icon and then choose to add a short code.</p>
+
+	<p>
+		<img style="width: 100%;max-width: 800px;" src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-001.png" alt="">
+	</p>
+
+	<p>With the Short Code Block you can use Short codes normally like you would in Wordpress <strong>4.9</strong>.</p>
+
+	<p>
+		<img style="width: 100%;max-width: 800px;" src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-003.png" alt="">
+	</p>
+
+	<h4>For wordpress 4.9.2 and lower:</h4>
 
 	<p>
 		<?php esc_html_e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="DviQY"]</code> <?php esc_html_e( 'to add a product link that will popup in an overlay', 'gum' ); ?>:

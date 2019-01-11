@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
    wp_register_script(
      'gumblocks',
      plugins_url( 'gumroad/scripts/gumblocks.js' ),
-     array( 'wp-blocks', 'wp-element' )
+     array( 'wp-blocks', 'wp-editor', 'wp-element' )
    );
 
    register_block_type( 'gumroad/gumblocks',  array(

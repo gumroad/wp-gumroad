@@ -8,18 +8,41 @@
  *
 */
 
-var el = wp.element.creatElement,
-  registerBlockType = wp.blocks.registerBlockType,
-  blockStyle = { backgroundColor: '#900', color: '#fff', padding: '20px' };
+(function( blocks, element ) {
+  const el = element.createElement;
+  const {TextControl} = wp.components;
 
-registerBlockType( 'gumroad/gumblocks', {
-  title: 'GumBlocks Embed',
-  icon: 'universal-access-alt',
-  category: 'embed',
-  edit: function() {
-    return el( 'p', { style: blockStyle }, 'Hello editor.' );
-  },
-  save: function() {
-    return el( 'p', { style: blockStyle }, 'Hello saved content.');
-  },
-} );
+  import { TextControl } from '@wordpress/components';
+  import { withState } from '@wordpress/compose';
+
+  blocks.registerBlockType( 'gumroad/gumblocks', {
+    title: 'Gumroad Embed',
+    icon: 'universal-access-alt',
+    category: 'embed',
+    attributes: {
+      shortcode: {
+        type: 'string',
+        default: ''
+      }
+    },
+    edit: function(props) {
+      return el(
+        TextControl,
+        {
+          onChange: (shortcode) => {
+            props.setAttributes( { shortcode } )
+          },
+          label: ShortCode
+        },
+        props.attributes.shortcode
+      );
+    },
+    save: function() {
+      return null;
+    },
+  } );
+
+}(
+	window.wp.blocks,
+	window.wp.element
+));
