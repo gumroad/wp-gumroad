@@ -72,7 +72,7 @@ class Gumroad {
 		// Enqueue admin styles and scripts.
 		// We'll just comment this puppy out for now because we don't even need the
 		// styles at the moment.
-		// add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 
 		// Add plugin listing "Settings" action link.
 		add_filter( 'plugin_action_links_' . plugin_basename( plugin_dir_path( __FILE__ ) . $this->plugin_slug . '.php' ), array( $this, 'settings_link' ) );
@@ -170,6 +170,10 @@ class Gumroad {
 
 		// Include scanner functions
 		include_once( 'includes/scanner.php' );
+
+		// Include Gutenberg block functions
+		include_once( 'includes/gutenberg.php' );
+
 	}
 
 	/**
@@ -191,7 +195,6 @@ class Gumroad {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
-
 		if ( $this->viewing_this_plugin() ) {
 			// Plugin admin CSS. Tack on plugin version.
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'css/admin.css', __FILE__ ), array(), $this->version );
