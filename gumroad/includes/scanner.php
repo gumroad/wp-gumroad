@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  /**
   * Function accepts the post_content and scans it for gumroad short links
 	*
-	* @snce 1.2.1
+	* @since 1.2.1
 	*
   */
  function scanner( $post_content ) {

@@ -60,9 +60,6 @@ class Gumroad {
 	 */
 	private function __construct() {
 
-		// Load plugin text domain
-		add_action( 'plugins_loaded', array( $this, 'plugin_textdomain' ) );
-
 		// Include required files.
 		add_action( 'init', array( $this, 'includes' ), 1 );
 
@@ -70,8 +67,6 @@ class Gumroad {
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 
 		// Enqueue admin styles and scripts.
-		// We'll just comment this puppy out for now because we don't even need the
-		// styles at the moment.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 
 		// Add plugin listing "Settings" action link.
@@ -88,19 +83,6 @@ class Gumroad {
 	 */
 	public function setup_constants() {
 		define( 'GUM_PLUGIN_SLUG', $this->plugin_slug );
-	}
-
-	/**
-	 * Load the plugin text domain for translation.
-	 *
-	 * @since    1.1.0
-	 */
-	public function plugin_textdomain() {
-		load_plugin_textdomain(
-			'gum',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
 	}
 
 	/**
@@ -172,7 +154,7 @@ class Gumroad {
 		include_once( 'includes/scanner.php' );
 
 		// Include Gutenberg block functions
-		include_once( 'includes/gutenberg.php' );
+		// include_once( 'includes/gutenberg.php' );
 
 	}
 

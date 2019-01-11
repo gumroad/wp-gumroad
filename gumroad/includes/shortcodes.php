@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 /**
  * Function to process the [gumroad] shortcode
  *
@@ -23,10 +22,9 @@ function gum_gumroad_shortcode( $attr ) {
 					'id'     => '',
 					'type'   => 'overlay',
 					'class'  => '',
-					'text'   => 'I want this!',
-					'wanted' => ''
+					'text'   => 'Buy Now',
+					'wanted' => 'false'
 				);
-
 
 	extract( shortcode_atts( $defaults, $attr ) );
 

@@ -8,29 +8,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Function to display the Gumroad "overlay" button
  *
- * @snce 1.1.0
+ * @since 1.1.0
  *
  */
 function gum_overlay_button( $args ) {
-
 	$url = 'https://gum.co/' . $args['id'];
-	$wanted = '';
-
-	if ($args['wanted'] == 'true') {
-		$wanted = '?wanted=true'
-	}
-
-	return '<a href="' . $url . $wanted . '" '. 'class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
+	return '<a href="' . esc_url( add_query_arg( array( 'wanted' => esc_attr( $args['wanted'] )), $url ) ) . '" ' .	'class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
 }
 
 /**
  * Function to display the Gumroad "embed" in a page
  *
- * @snce 1.1.0
+ * @since 1.1.0
  *
  */
 function gum_embed_button( $id ) {
-
 	return sprintf( '<div class="gumroad-product-embed" data-gumroad-product-id="%s"></div>', esc_attr( $id ) );
 }
 

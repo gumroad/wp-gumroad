@@ -11,9 +11,10 @@
 (function( blocks, element ) {
   const el = element.createElement;
   const {TextControl} = wp.components;
+  const {withState} = wp.compose;
 
-  import { TextControl } from '@wordpress/components';
-  import { withState } from '@wordpress/compose';
+  // import {TextControl} from '@wordpress/components';
+  // import {withState} from '@wordpress/compose';
 
   blocks.registerBlockType( 'gumroad/gumblocks', {
     title: 'Gumroad Embed',
@@ -32,7 +33,7 @@
           onChange: (shortcode) => {
             props.setAttributes( { shortcode } )
           },
-          label: ShortCode
+          label: 'ShortCode'
         },
         props.attributes.shortcode
       );

@@ -18,61 +18,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="wrap gumroad-wrap">
-	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+	<h2><?php get_admin_page_title() ?></h2>
 
-	<p>The Gumroad plugin makes it easy to use wordpress short codes to add links and embedded
-products from your Gumroad storefront directly into your wordpress pages and posts. There is
-a brand new post and page editor in Version 5.0 of wordpress and onward, Gumroad links and
-embed code will work the same, but only if they are added properly.</p>
-
-	<span style="margin-bottom:65px;display:block;"></span>
-	<h3 class="title"><?php esc_html_e( 'Important SSL Requirement', 'gum' ); ?></h3>
+	<h3 class="title">Important SSL Requirement</h3>
 
 	<p>
-		<b><em>
-			<?php esc_html_e( 'The address of the page hosting the Gumroad overlay or embed should start with https, ' .
-				'so you\'ll need to setup an SSL certificate for your site if you haven\'t already.', 'gum' ); ?>
+		<b><em>The address of the page hosting the Gumroad overlay or embed should start with https, so you'll need to setup an SSL certificate for your site if you haven't already.
 		</b></em>
 	</p>
 
 	<p>
-		If you need help setting up HTTPS on your Wordpress site here is <a href="http://wordpress.org/plugins/wordpress-https/" target="_blank">a Wordpress plugin</a> that can help.
+		If you need help setting up HTTPS on your site here is <a href="http://wordpress.org/plugins/wordpress-https/" target="_blank">a plugin</a> that can help.
 	</p>
 
 	<p>
-		<?php esc_html_e( 'Please refer to the Overlay and Embed documentation for additional help:', 'gum' ); ?>
+		Please refer to the Overlay and Embed documentation for additional help:
 		<a href="https://gumroad.com/overlay" target="_blank">Overlay Documentation</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
 	</p>
 
-	<span style="margin-bottom:65px;display:block;"></span>
 	<h2>Guides</h2>
 
 	<p>
-		<a href="#using_shortcodes">Using Shortcodes</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
+		<a href="#using_shortcodes">Using shortcode Blocsk</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
 	</p>
 
 	<!-- Add a Gumroad product help -->
-	<span style="margin-bottom:65px;display:block;" id="using_shortcodes"></span>
-	<h3>Using Shortcodes</h3>
-	<h4>For wordpress 5.0:</h4>
+	<h3 id="using_shortcodes">Using shortcode Blocks</h3>
+	<h4>For version 5.0:</h4>
 
-	<p>Open the wordpress Editor and either type <code>/</code> or click on the <em>plus</em> icon and then choose to add a short code.</p>
-
-	<p>
-		<img style="width: 100%;max-width: 800px;" src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-001.png" alt="">
-	</p>
-
-	<p>With the Short Code Block you can use Short codes normally like you would in Wordpress <strong>4.9</strong>.</p>
+	<p>Open the Editor and either type <code>/</code> or click on the <em>plus</em> icon and then choose to add a short code.</p>
 
 	<p>
-		<img style="width: 100%;max-width: 800px;" src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-003.png" alt="">
+		<img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-001.png" alt="">
 	</p>
 
-	<h4>For wordpress 4.9.2 and lower:</h4>
+	<p>With the Short Code Block you can use Short codes normally like you would in version <strong>4.9</strong>.</p>
 
 	<p>
-		<?php esc_html_e( 'Use the shortcode', 'gum' ); ?> <code>[gumroad id="DviQY"]</code> <?php esc_html_e( 'to add a product link that will popup in an overlay', 'gum' ); ?>:
+		<img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-003.png" alt="">
 	</p>
+
+	<h4>For version 4.9.2 and lower:</h4>
 
 	<p>Use the shortcode <code>[gumroad id="DviQY"]</code> to add a product link that will open in an overlay.</p>
 
@@ -121,7 +107,7 @@ embed code will work the same, but only if they are added properly.</p>
 
 	<ul class="ul-disc">
 		<li><code>[gumroad id="DviQY" text="Purchase Item" wanted="true"]</code></li>
-		<p><img style="width: 100%;max-width: 941px;" src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemo.gif"></p>
+		<p><img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemo.gif"></p>
 	</ul>
 
 	<h3>Automatic linking and embeds</h3>
