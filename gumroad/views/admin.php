@@ -20,26 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wrap gumroad-wrap">
 	<h2><?php get_admin_page_title() ?></h2>
 
-	<h3 class="title">Important SSL Requirement</h3>
-
-	<p>
-		<b><em>The address of the page hosting the Gumroad overlay or embed should start with https, so you'll need to setup an SSL certificate for your site if you haven't already.
-		</b></em>
-	</p>
-
-	<p>
-		If you need help setting up HTTPS on your site here is <a href="http://wordpress.org/plugins/wordpress-https/" target="_blank">a plugin</a> that can help.
-	</p>
-
-	<p>
-		Please refer to the Overlay and Embed documentation for additional help:
-		<a href="https://gumroad.com/overlay" target="_blank">Overlay Documentation</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
-	</p>
-
 	<h2>Guides</h2>
 
 	<p>
-		<a href="#using_shortcodes">Using shortcode Blocsk</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
+		<a href="#using_shortcodes">Using shortcode Blocks</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
 	</p>
 
 	<!-- Add a Gumroad product help -->
