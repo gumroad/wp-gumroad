@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
 /**
  * Function to process the [gumroad] shortcode
  *
@@ -26,7 +25,6 @@ function gum_gumroad_shortcode( $attr ) {
 					'text'   => 'I want this!',
 					'wanted' => ''
 				);
-
 
 	extract( shortcode_atts( $defaults, $attr ) );
 

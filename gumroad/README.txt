@@ -69,14 +69,6 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
-= 2 -  December 14, 2018 =
-
-* Tested up to Wordpress 5
-* New documentation
-* Removed locale
-* Simplified settings
-* Autoload Gumroad JS if Gumroad link is present
-
 = 1.2.2 - December 13, 2018 =
 
 * Simplify HTML/CSS for admin help page

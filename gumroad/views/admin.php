@@ -17,9 +17,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="wrap">
+<div class="wrap gumroad-wrap">
+	<h2><?php get_admin_page_title() ?></h2>
 
-	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+	<h2>Guides</h2>
+
+	<h3">Using Shortcodes</h3>
+
+	<h4>For version 5.0:</h4>
+
+	<p>Open the Editor and either type <code>/</code> or click on the <em>plus</em> icon and then choose to add a shortcode.</p>
+
+	<p>
+		<img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-001.png" alt="">
+	</p>
+
+	<p>With the Shortcode Block you can use shortcodes normally like you would in version <strong>4.9</strong>.</p>
+
+	<p>
+		<img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-003.png" alt="">
+	</p>
+
+	<h4>For version 4.9.2 and lower:</h4>
 
 	<p>Use the shortcode <code>[gumroad id="DviQY"]</code> to add a product link that will open in an overlay.</p>
 
@@ -68,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<ul class="ul-disc">
 		<li><code>[gumroad id="DviQY" text="Purchase Item" wanted="true"]</code></li>
-		<p><img style="width: 100%;max-width: 941px;" src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemo.gif"></p>
+		<p><img src="https://s3.amazonaws.com/gumroad/assets/wordpress_docs/wantedoverlaydemo.gif"></p>
 	</ul>
 
 	<h3>Automatic linking and embeds</h3>
