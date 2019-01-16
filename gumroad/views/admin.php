@@ -22,21 +22,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<h2>Guides</h2>
 
-	<p>
-		<a href="#using_shortcodes">Using shortcode Blocks</a>, <a href="https://gumroad.com/embed" target="_blank">Embed Documentation</a>
-	</p>
+	<h3">Using Shortcodes</h3>
 
-	<!-- Add a Gumroad product help -->
-	<h3 id="using_shortcodes">Using shortcode Blocks</h3>
 	<h4>For version 5.0:</h4>
 
-	<p>Open the Editor and either type <code>/</code> or click on the <em>plus</em> icon and then choose to add a short code.</p>
+	<p>Open the Editor and either type <code>/</code> or click on the <em>plus</em> icon and then choose to add a shortcode.</p>
 
 	<p>
 		<img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-001.png" alt="">
 	</p>
 
-	<p>With the Short Code Block you can use Short codes normally like you would in version <strong>4.9</strong>.</p>
+	<p>With the Shortcode Block you can use shortcodes normally like you would in version <strong>4.9</strong>.</p>
 
 	<p>
 		<img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-003.png" alt="">
