@@ -20,10 +20,11 @@ function gum_gumroad_shortcode( $attr ) {
 
 	$defaults = array(
 					'id'     => '',
-					'type'   => 'overlay',
+					'type'   => 'none',
 					'class'  => '',
 					'text'   => 'I want this!',
-					'wanted' => ''
+					'wanted' => '',
+					'button' => 'false'
 				);
 
 	extract( shortcode_atts( $defaults, $attr ) );
@@ -33,12 +34,14 @@ function gum_gumroad_shortcode( $attr ) {
 	$attr = array_merge( $defaults, $attr );
 
 	if( ! empty( $id ) ) {
-		if( $type == 'embed' ) {
-			$html = gum_embed_button( $id );
-		} else if ( $type == 'link' ) {
-			$html = gum_default_link( $attr );
-		} else {
-			$html = gum_overlay_button( $attr );
+
+		// link behaviour
+		if ( $type == 'embed') { // Embed
+			$html = gum_embed( $id );
+		} else if ( $type == 'overlay' ) { // Overlay
+			$html = gum_overlay( $attr );
+		} else { // Default
+			$html = gum_link( $attr );
 		}
 
 		$before_html = '';

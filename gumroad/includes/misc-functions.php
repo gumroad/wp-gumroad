@@ -6,20 +6,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Function to display the Gumroad "overlay" button
+ * Function to have a normal Gumroad link
  *
- * @since 1.1.0
+ * @since 1.2.3
  *
  */
-function gum_overlay_button( $args ) {
+function gum_link( $args ) {
 	$url = 'https://gum.co/' . $args['id'];
 	$wanted = '';
+	$button = '';
 
 	if ($args['wanted'] == 'true') {
-			$wanted = '?wanted=true';
+		$url = $url . '?wanted=true';
 	}
 
-	return '<a href="' . $url . $wanted . '" ' . 'class="gumroad-button ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
+	if( $args['button'] == 'true' ) {
+		$button = 'gumroad-button';
+	}
+
+	return '<a href="#" target="_blank" onclick="window.open(\'' . $url . $wanted . '\', \'_blank\')" ' . 'class="' . $button . ' ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
+}
+
+/**
+ * Function to have a normal Gumroad link
+ *
+ * @since 1.2.3
+ *
+ */
+function gum_overlay( $args ) {
+	$url = 'https://gum.co/' . $args['id'];
+	$wanted = '';
+	$button = '';
+
+	if ($args['wanted'] == 'true') {
+		$url = $url . '?wanted=true';
+	}
+
+	if( $args['button'] == 'true' ) {
+		$button = 'gumroad-button';
+	}
+
+	return '<a href="' . $url . $wanted . '" class="' . $button . ' ' . esc_attr($args['class']) . '">' . esc_html($args['text']) . '</a>';
 }
 
 /**
@@ -28,7 +55,7 @@ function gum_overlay_button( $args ) {
  * @since 1.1.0
  *
  */
-function gum_embed_button( $id ) {
+function gum_embed( $id ) {
 	return sprintf( '<div class="gumroad-product-embed" data-gumroad-product-id="%s"></div>', esc_attr( $id ) );
 }
 
@@ -60,7 +87,7 @@ function gum_load_js( $type ) {
 	if( $type == 'embed' ) {
 		// Enqueue Gumroad 'embed' JS. Don't set a version.
 		wp_enqueue_script( GUM_PLUGIN_SLUG . '-embed-script', 'https://gumroad.com/js/gumroad-embed.js', array(), null, false );
-	} else {
+	} else if ( $type == 'overlay' ) {
 		// Enqueue Gumroad 'overlay' JS. Don't set a version.
 		wp_enqueue_script( GUM_PLUGIN_SLUG . '-overlay-script', 'https://gumroad.com/js/gumroad.js', array(), null, false );
 	}
