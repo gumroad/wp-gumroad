@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<h2>Guides</h2>
 
-	<h3">Using Shortcodes</h3>
+	<h3>Using Shortcodes</h3>
 
 	<h4>For version 5.0:</h4>
 
@@ -61,28 +61,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</thead>
 		<tbody>
 			<tr>
-				<td>id</td>
+				<td><strong>id</strong></td>
 				<td>Gumroad product ID</td>
 				<td>Any valid Gumroad product ID, <a href="https://help.gumroad.com/11164-Payments/whats-my-product-id" target="_blank">What is my Gumroad product ID?</a></td>
 				<td>none</td>
 			</tr>
 			<tr>
-				<td>type</td>
+				<td><strong>type</strong></td>
 				<td>The type of product link you want to show.</td>
 				<td>none, overlay, embed</td>
 				<td>none</td>
 			</tr>
 			<tr>
-				<td>text</td>
+				<td><strong>text</strong></td>
 				<td>Text for the link or button (applies to overlay only).</td>
 				<td>Any text</td>
 				<td>I want this!</td>
 			</tr>
 			<tr>
-				<td>wanted</td>
+				<td><strong>wanted</strong></td>
 				<td>If true, user will be sent directly to the checkout form (applies to overlay only).</td>
 				<td>true if wanted, otherwise leave unspecified</td>
 				<td>False</td>
+			</tr>
+			<tr>
+				<td><strong>button</strong></td>
+				<td>An option to change the gumroad link into a Gumroad button.</td>
+				<td>true, false</td>
+				<td>False</td>
+			</tr>
+			<tr>
+				<td><strong>class</strong></td>
+				<td>An optional class that you can add to gumroad buttons and links</td>
+				<td>Text including letters, numbers, and dashes. A space separates multiple classes</td>
+				<td>none</td>
 			</tr>
 		</tbody>
 	</table>
