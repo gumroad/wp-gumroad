@@ -69,6 +69,10 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.2.3 - January 19, 2019 =
+
+* Give users the chance to show a simple
+
 = 1.2.2 - December 13, 2018 =
 
 * Simplify HTML/CSS for admin help page

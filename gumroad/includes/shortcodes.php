@@ -35,6 +35,8 @@ function gum_gumroad_shortcode( $attr ) {
 	if( ! empty( $id ) ) {
 		if( $type == 'embed' ) {
 			$html = gum_embed_button( $id );
+		} else if ( $type == 'link' ) {
+			$html = gum_default_link( $attr );
 		} else {
 			$html = gum_overlay_button( $attr );
 		}
