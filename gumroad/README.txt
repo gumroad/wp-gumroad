@@ -69,6 +69,12 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.2.3 - January 28, 2019 =
+
+* Simplify admin help page.
+* Regular links are now the default for Gumroad short codes.
+* Add option to choose to make a link a button.
+
 = 1.2.2 - December 13, 2018 =
 
 * Simplify HTML/CSS for admin help page
