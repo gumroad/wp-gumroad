@@ -44,3 +44,7 @@ Thumbs.db
 # Netbeans IDE *
 ################
 /gumroad/nbproject/*
+
+# Node modules #
+################
+node_modules
