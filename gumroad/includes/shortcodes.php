@@ -20,7 +20,7 @@ function gum_gumroad_shortcode( $attr ) {
 
 	$defaults = array(
 					'id'     => '',
-					'type'   => 'none',
+					'type'   => 'none', // none, overlay, embed
 					'class'  => '',
 					'text'   => 'I want this!',
 					'wanted' => '',

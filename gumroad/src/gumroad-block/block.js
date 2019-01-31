@@ -30,11 +30,11 @@ class GumControls extends Component {
     super( ...arguments );
   }
 
-  compose_url( props ) {
-    if (props.attributes.id == defaultID) {
+  compose_url( value ) {
+    if (value == '') {
       return gumURL + defaultID;
     }
-    return gumURL + props.attributes.id;
+    return gumURL + value;
   }
 
   render() {
@@ -49,7 +49,12 @@ class GumControls extends Component {
       { value: 'gumroad-button', label: __( 'Button' )}
     ];
 
-    const { setAttributes, attributes: { id, type, button, classes, url } } = this.props;
+    const wantedOptions = [
+      { value: '', label: __( 'unwanted' )},
+      { value: 'true', label: __( 'Wanted' )}
+    ];
+
+    const { setAttributes, attributes: { id, type, button, classes, wanted, url } } = this.props;
 
     return(
       <InspectorControls key="GumControls">
@@ -61,9 +66,7 @@ class GumControls extends Component {
             value={ id }
             onChange={ ( value ) => {
                 setAttributes( { id: value } );
-                var url = this.compose_url( this.props );
-                setAttributes( { url: url } );
-                console.log( 'url: ' + url );
+                setAttributes( { url: this.compose_url( value ) } );
               }
             }
           /><br />
@@ -80,6 +83,13 @@ class GumControls extends Component {
             options={ buttonOptions }
             value={ button }
             onChange={ ( value ) => setAttributes( { button: value } ) }
+            />
+          <SelectControl
+            label={ __( 'Wanted?' ) }
+            description={ __( 'Is this product immediately wanted?' ) }
+            options={ wantedOptions }
+            value={ wanted }
+            onChange={ ( value ) => setAttributes( { wanted: value } ) }
             />
           <label>Classes:</label>
           <RichText
@@ -103,7 +113,8 @@ class EditBlockContent extends Component {
         type,
         url,
         button,
-        classes
+        classes,
+        wanted
       },
       setAttributes
     } = this.props;
@@ -197,14 +208,49 @@ registerBlockType( 'gumroad/gumroad-block', {
 	save: function( props ) {
     const { attributes: { id, type, classes, text, wanted, button, url }} = props;
 
-		return (
-        <a href={url} className={button} className={classes}>
-        { text && !! text.length && (
-          <RichText.Content
-            value={ text }
-          />
-        )}
-        </a>
-		);
+      var urlString = '';
+      urlString = url;
+
+      if (wanted == 'true') {
+        urlString = urlString + '?wanted=true';
+      }
+      
+      if ( type == 'embed' ) {
+
+        return ( // return if link behavior normal
+          // <div
+          // className={"gumroad-product-embed " + classes}
+          // data-gumroad-product-id={"" + id + ""}
+          // ></div>
+          <div class="gumroad-product-embed" data-gumroad-product-id={"" + id + ""}></div>
+        )
+      } else if ( type == 'overlay' ) {
+        return ( // return if link behavior normal
+          <a
+          href={urlString}
+          className={" " + classes + " "+ button + " "}
+          >
+          { text && !! text.length && (
+            <RichText.Content
+              value={ text }
+            />
+          )}
+          </a>
+        )
+      } else {
+        return ( // return if link behavior normal
+          <a
+          href='#'
+          className={" " + classes + " "+ button + " "}
+          onClick={"window.open('" + urlString + "', '_blank')"}
+          >
+          { text && !! text.length && (
+            <RichText.Content
+              value={ text }
+            />
+          )}
+          </a>
+        )
+      }
 	},
 } );
