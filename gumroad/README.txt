@@ -19,11 +19,11 @@ For more information on how this plugin works, you can see a video on our Overla
 
 You can also use shortcodes:
 
-Basic overlay example: `[gumroad id="DviQY" type="overlay"]`
+Basic overlay example: `[gumroad id="DviQY"]`
 
 Basic embed example: `[gumroad id="GAPdj" type="embed"]`
 
-Overlay that will automatically show the payment form: `[gumroad id="DviQY" text="Purchase Item" wanted="true" type="overlay"]`
+Overlay that will automatically show the payment form: `[gumroad id="DviQY" text="Purchase Item" wanted="true"]`
 
 The ID ("GAPdJ") is the same as your Gumroad product URL ("gumroad.com/l/GAPdJ"). See the full documentation in Settings > Gumroad after the plugin is activated.
 
