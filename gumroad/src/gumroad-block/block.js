@@ -18,40 +18,31 @@ const {
 
 const {
   SelectControl,
-  PanelBody
+  PanelBody,
+  CheckboxControl
 } = wp.components
 
-const gumroadURL = 'https://gum.co/';
-const defaultID = 'DviQY';
+const gumroadURL = 'https://gumroad.com/l/demo';
+const defaultID = 'demo';
+const gumroadURLRegex = /(https:\/\/gumroad\.com\/l\/)|(https:\/\/gumroad\.com\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
 
 class GumControls extends Component {
   constructor( props ) {
     super( ...arguments );
   }
 
-  compose_url( value ) {
-    if (value == '') {
-      return gumroadURL + defaultID;
+  extract_id( value ) {
+      var id = value.replace(gumroadURLRegex, '');
+      console.log('id: ', id);
+      return id;
     }
-    return gumroadURL + value;
-  }
 
   render() {
 
     const typeOptions = [
-      { value: 'none', label: __( 'Link' )},
+      { value: 'none', label: __( 'Inline link (anchor tag)' )},
       { value: 'overlay', label: __( 'Overlay' )},
       { value: 'embed', label: __( 'Embed' )}
-    ];
-
-    const buttonOptions = [
-      { value: '', label: __( 'Link' )},
-      { value: 'gumroad-button', label: __( 'Button' )}
-    ];
-
-    const wantedOptions = [
-      { value: '', label: __( 'Unwanted' )},
-      { value: 'true', label: __( 'Wanted' )}
     ];
 
     const {
@@ -62,50 +53,58 @@ class GumControls extends Component {
         button,
         classes,
         wanted,
-        url
+        url,
+        disabled
       }
     } = this.props;
 
     return(
       <InspectorControls key="GumControls">
         <PanelBody>
-          <label>Product ID:</label>
+          <label>Product URL:</label>
           <RichText
             tagName="div"
-            placeholder={ __( defaultID ) }
-            value={ id }
+            placeholder={ __( gumroadURL ) }
+            value={ url }
             onChange={ ( value ) => {
-                setAttributes( { id: value } );
-                setAttributes( { url: this.compose_url( value ) } );
+                setAttributes( { url: value } );
+                setAttributes( { id: this.extract_id( value ) } );
               }
             }
           /><br />
           <SelectControl
-            label={ __( 'Behavior Type' ) }
+            label={ __( 'Behavior' ) }
             description={ __( 'Set the type of Gumroad link behavior: Link, Overlay, or Embed.' ) }
             options={ typeOptions }
             value={ type }
-            onChange={ ( value ) => setAttributes( { type: value } ) }
+            onChange={ ( value ) => {
+                setAttributes( { type: value } );
+                if ( value == 'embed') {
+                  setAttributes( { disabled: 'disabled-gumbox' } );
+                } else {
+                  setAttributes( { disabled: 'enabled' } );
+                }
+              }
+            }
             />
-          <SelectControl
-            label={ __( 'Button?' ) }
-            description={ __( 'Make the link a button.' ) }
-            options={ buttonOptions }
-            value={ button }
+          <CheckboxControl
+            label="Display as Gumroad button"
+            checked={ button }
+            className={ disabled }
             onChange={ ( value ) => setAttributes( { button: value } ) }
             />
-          <SelectControl
-            label={ __( 'Wanted?' ) }
-            description={ __( 'Is this product immediately wanted?' ) }
-            options={ wantedOptions }
-            value={ wanted }
+          <CheckboxControl
+            label="Auto-trigger the payment form"
+            checked={ wanted }
+            className={ disabled }
             onChange={ ( value ) => setAttributes( { wanted: value } ) }
             />
-          <label>Classes:</label>
+          <label className={ disabled }>Classes:</label>
           <RichText
             tagName="div"
             placeholder={ __( 'Add extra classes to your link.' ) }
             value={ classes }
+            className={ disabled }
             onChange={ ( value ) => setAttributes( { classes: value } ) }
           /><br />
         </PanelBody>
@@ -124,7 +123,8 @@ class EditBlockContent extends Component {
         url,
         button,
         classes,
-        wanted
+        wanted,
+        disabled
       },
       setAttributes
     } = this.props;
@@ -229,12 +229,17 @@ registerBlockType( 'gumroad/gumroad-block', {
       }
     } = props;
 
-    var urlString = '';
-    urlString = url;
+    var urlString = url, wantedString = '', classesString = classes;
 
-    if (wanted == 'true') {
+    // Wanted
+    if (wanted == 'true' || wanted == true) {
+      wantedString = '?wanted=true';
+    }
+    urlString = urlString + wantedString;
 
-      urlString = urlString + '?wanted=true';
+    // Button
+    if (button == 'true' || button == true) {
+      classesString = classes + ' gumroad-button';
     }
 
     if ( type == 'embed' ) {
@@ -242,12 +247,12 @@ registerBlockType( 'gumroad/gumroad-block', {
       return ( // return if link behavior normal
         <div class="gumroad-product-embed" data-gumroad-product-id={"" + id + ""}></div>
       )
-    } else if ( type == 'overlay' ) {
+    } else if ( type == 'overlay' ) { // overlay links
 
-      return ( // return if link behavior normal
+      return (
         <a
         href={urlString}
-        className={" " + classes + " "+ button + " "}
+        className={ classesString }
         >
         { text && !! text.length && (
           <RichText.Content
@@ -256,12 +261,12 @@ registerBlockType( 'gumroad/gumroad-block', {
         )}
         </a>
       )
-    } else {
+    } else { // normal links
 
-      return ( // return if link behavior normal
+      return (
         <a
         href='#'
-        className={" " + classes + " "+ button + " "}
+        className={ classesString }
         onClick={"window.open('" + urlString + "', '_blank')"}
         >
         { text && !! text.length && (
