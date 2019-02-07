@@ -153,7 +153,7 @@ class Gumroad {
 		// Include scanner functions
 		include_once( 'includes/scanner.php' );
 
-		// niclude gutenberg blocks
+		// include gutenberg blocks
 		include_once( 'src/init.php' );
 
 	}

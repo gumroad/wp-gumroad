@@ -6,7 +6,6 @@
  */
 
 //  Import CSS.
-import './style.scss';
 import './editor.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
@@ -22,7 +21,7 @@ const {
   PanelBody
 } = wp.components
 
-const gumURL = 'https://gum.co/';
+const gumroadURL = 'https://gum.co/';
 const defaultID = 'DviQY';
 
 class GumControls extends Component {
@@ -32,12 +31,13 @@ class GumControls extends Component {
 
   compose_url( value ) {
     if (value == '') {
-      return gumURL + defaultID;
+      return gumroadURL + defaultID;
     }
-    return gumURL + value;
+    return gumroadURL + value;
   }
 
   render() {
+
     const typeOptions = [
       { value: 'none', label: __( 'Link' )},
       { value: 'overlay', label: __( 'Overlay' )},
@@ -50,11 +50,21 @@ class GumControls extends Component {
     ];
 
     const wantedOptions = [
-      { value: '', label: __( 'unwanted' )},
+      { value: '', label: __( 'Unwanted' )},
       { value: 'true', label: __( 'Wanted' )}
     ];
 
-    const { setAttributes, attributes: { id, type, button, classes, wanted, url } } = this.props;
+    const {
+      setAttributes,
+      attributes: {
+        id,
+        type,
+        button,
+        classes,
+        wanted,
+        url
+      }
+    } = this.props;
 
     return(
       <InspectorControls key="GumControls">
@@ -136,7 +146,7 @@ class EditBlockContent extends Component {
 };
 
 /**
- * Register: aa Gutenberg Block.
+ * Register: a Gutenberg Block.
  *
  * Registers a new block provided a unique name and an object defining its
  * behavior. Once registered, the block is made editor as an option to any
@@ -149,13 +159,13 @@ class EditBlockContent extends Component {
  *                             registered; otherwise `undefined`.
  */
 registerBlockType( 'gumroad/gumroad-block', {
-	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Gumroad Block' ), // Block title.
-	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
-	keywords: [
-		__( 'gumroad-block' ),
-	],
+  // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
+  title: __( 'Gumroad Block' ), // Block title.
+  icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+  category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+  keywords: [
+    __( 'gumroad-block' ),
+  ],
   attributes : {
     id: {
       type: 'string',
@@ -187,70 +197,80 @@ registerBlockType( 'gumroad/gumroad-block', {
     }
   },
 
-	/**
-	 * The edit function describes the structure of your block in the context of the editor.
-	 * This represents what the editor will render when the block is used.
-	 *
-	 * The "edit" property must be a valid function.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 */
-	edit: EditBlockContent,
+  /**
+   * The edit function describes the structure of your block in the context of the editor.
+   * This represents what the editor will render when the block is used.
+   *
+   * The "edit" property must be a valid function.
+   *
+   * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+   */
+  edit: EditBlockContent,
 
-	/**
-	 * The save function defines the way in which the different attributes should be combined
-	 * into the final markup, which is then serialized by Gutenberg into post_content.
-	 *
-	 * The "save" property must be specified and must be a valid function.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 */
-	save: function( props ) {
-    const { attributes: { id, type, classes, text, wanted, button, url }} = props;
+  /**
+   * The save function defines the way in which the different attributes should be combined
+   * into the final markup, which is then serialized by Gutenberg into post_content.
+   *
+   * The "save" property must be specified and must be a valid function.
+   *
+   * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
+   */
+  save: function( props ) {
 
-      var urlString = '';
-      urlString = url;
-
-      if (wanted == 'true') {
-        urlString = urlString + '?wanted=true';
+    const {
+      attributes: {
+        id,
+        type,
+        classes,
+        text,
+        wanted,
+        button,
+        url
       }
-      
-      if ( type == 'embed' ) {
+    } = props;
 
-        return ( // return if link behavior normal
-          // <div
-          // className={"gumroad-product-embed " + classes}
-          // data-gumroad-product-id={"" + id + ""}
-          // ></div>
-          <div class="gumroad-product-embed" data-gumroad-product-id={"" + id + ""}></div>
-        )
-      } else if ( type == 'overlay' ) {
-        return ( // return if link behavior normal
-          <a
-          href={urlString}
-          className={" " + classes + " "+ button + " "}
-          >
-          { text && !! text.length && (
-            <RichText.Content
-              value={ text }
-            />
-          )}
-          </a>
-        )
-      } else {
-        return ( // return if link behavior normal
-          <a
-          href='#'
-          className={" " + classes + " "+ button + " "}
-          onClick={"window.open('" + urlString + "', '_blank')"}
-          >
-          { text && !! text.length && (
-            <RichText.Content
-              value={ text }
-            />
-          )}
-          </a>
-        )
-      }
-	},
+    var urlString = '';
+    urlString = url;
+
+    if (wanted == 'true') {
+
+      urlString = urlString + '?wanted=true';
+    }
+
+    if ( type == 'embed' ) {
+
+      return ( // return if link behavior normal
+        <div class="gumroad-product-embed" data-gumroad-product-id={"" + id + ""}></div>
+      )
+    } else if ( type == 'overlay' ) {
+
+      return ( // return if link behavior normal
+        <a
+        href={urlString}
+        className={" " + classes + " "+ button + " "}
+        >
+        { text && !! text.length && (
+          <RichText.Content
+            value={ text }
+          />
+        )}
+        </a>
+      )
+    } else {
+
+      return ( // return if link behavior normal
+        <a
+        href='#'
+        className={" " + classes + " "+ button + " "}
+        onClick={"window.open('" + urlString + "', '_blank')"}
+        >
+        { text && !! text.length && (
+          <RichText.Content
+            value={ text }
+          />
+        )}
+        </a>
+      )
+    }
+  },
 } );
