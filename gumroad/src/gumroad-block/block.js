@@ -99,14 +99,6 @@ class GumControls extends Component {
             className={ disabled }
             onChange={ ( value ) => setAttributes( { wanted: value } ) }
             />
-          <label className={ disabled }>Classes:</label>
-          <RichText
-            tagName="div"
-            placeholder={ __( 'Add extra classes to your link.' ) }
-            value={ classes }
-            className={ disabled }
-            onChange={ ( value ) => setAttributes( { classes: value } ) }
-          /><br />
         </PanelBody>
       </InspectorControls>
     );
