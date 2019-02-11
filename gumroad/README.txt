@@ -69,6 +69,10 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 
 == Changelog ==
 
+= 1.2.4 - January 30, 2019 =
+
+* Add Gutenberg Blocks
+
 = 1.2.3 - January 28, 2019 =
 
 * Simplify admin help page.

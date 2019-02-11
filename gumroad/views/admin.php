@@ -20,7 +20,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wrap gumroad-wrap">
 	<h2><?php get_admin_page_title() ?></h2>
 
-	<h2>Guides</h2>
+	<h2>Guides:</h2>
+
+  <h3>Using Gumroad blocks</h3>
+
+  <p>Open the post editor and add a new Gumroad Block by searching for <em>gumroad</em> in the block inserter menu. Choose the Gumroad Block option. You can change the text of the Gumroad link directly. Before the link will work you'll need to add a URL to your Gumroad block; While editing the Link text click on the gear icon in the upper right corner to reveal the settings menu.</p>
+
+  <p>In the settings menu you can add the link to your Gumroad product.</p>
+
+  <p>
+    <img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-004.gif" alt="">
+  </p>
+
+  <p>You may also change the appearance and behavior of your Gumroad link from the settings menu.</p>
+
+  <p>
+    <img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-005.gif" alt="">
+  </p>
+
+  <p>It's also possible to change the link into an embedded product.</p>
+
+  <p>
+    <img src="<?= plugins_url() ?>/gumroad/assets/images/gumroad-wp-006.gif" alt="">
+  </p>
+
 
 	<h3>Using Shortcodes</h3>
 

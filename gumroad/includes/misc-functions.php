@@ -60,23 +60,6 @@ function gum_embed( $id ) {
 }
 
 /**
- * Function to give a default link that opens a new window if it uses Gumroad.
- *
- * @since 1.2.3
- *
- */
- function gum_default_link( $args ) {
-	 $url = 'https://gum.co/' . $args['id'];
-	 $wanted = '';
-
-	 if ($args['wanted'] == 'true') {
-			 $wanted = '?wanted=true';
-	 }
-
-	 return '<a href="' . $url . $wanted . '" ' . 'class="gumroad-link"' . esc_attr($args['class']) . '" target="_blank">' . esc_html($args['text']) . '</a>';
- }
-
-/**
  * Function to load the correct JS based on the shortcode type
  * This function is only called from the shortcode function so that we know the JS is only being loaded on pages where it is needed
  *

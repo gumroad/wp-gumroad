@@ -4,7 +4,7 @@
  * Main Gumroad class
  *
  * @package GUM
- * @author  Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <hi@gumroad.com>
+ * @author  Karl Oscar Weber <me@kow.fm>, Phil Derksen <pderksen@gmail.com>, Nick Young <mycorpweb@gmail.com>, Gumroad <hi@gumroad.com>
  */
 
 // Exit if accessed directly.
@@ -21,7 +21,7 @@ class Gumroad {
 	 *
 	 * @var     string
 	 */
-	protected $version = '1.2';
+	protected $version = '1.2.4';
 
 	/**
 	 * Unique identifier for your plugin.
@@ -153,6 +153,9 @@ class Gumroad {
 		// Include scanner functions
 		include_once( 'includes/scanner.php' );
 
+		// include gutenberg blocks
+		include_once( 'src/init.php' );
+
 	}
 
 	/**
@@ -214,4 +217,5 @@ class Gumroad {
 		else
 			return false;
 	}
+
 }
