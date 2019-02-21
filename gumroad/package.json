@@ -1,6 +1,6 @@
 {
   "name": "wp-gumroad",
-  "version": "1.2.4",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "start": "cgb-scripts start",

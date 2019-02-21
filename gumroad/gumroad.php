@@ -13,7 +13,7 @@
  * Plugin Name: Gumroad
  * Plugin URI: https://gumroad.com
  * Description: Make your Gumroad products available for purchase right within WordPress.
- * Version: 2
+ * Version: 2.1.0
  * Author: Gumroad
  * Author URI: http://gumroad.com
  * License: GPL-2.0+
