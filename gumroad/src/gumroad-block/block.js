@@ -24,7 +24,7 @@ const {
 
 const gumroadURL = 'https://gumroad.com/l/demo';
 const defaultID = 'demo';
-const gumroadURLRegex = /(https:\/\/gumroad\.com\/l\/)|(https:\/\/gumroad\.com\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
+const gumroadURLRegex = /(https:\/\/gumroad\.com\/a\/.+\/)|(https:\/\/gumroad\.com\/l\/)|(https:\/\/gumroad\.com\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
 
 class GumControls extends Component {
   constructor( props ) {
@@ -223,6 +223,12 @@ registerBlockType( 'gumroad/gumroad-block', {
 
     var urlString = url, wantedString = '', classesString = classes;
 
+    // Embed widget doesn't work with alias domain URLs
+    urlString = urlString
+			.replace("gum.co/a/", "gumroad.com/a/")
+			.replace("gum.co/l/", "gumroad.com/l/")
+			.replace("gum.co/", "gumroad.com/l/");
+
     // Wanted
     if (wanted == 'true' || wanted == true) {
       wantedString = '?wanted=true';
@@ -237,7 +243,7 @@ registerBlockType( 'gumroad/gumroad-block', {
     if ( type == 'embed' ) {
 
       return ( // return if link behavior normal
-        <div class="gumroad-product-embed" data-gumroad-product-id={"" + id + ""}></div>
+        <div class="gumroad-product-embed"><a href={urlString}></a></div>
       )
     } else if ( type == 'overlay' ) { // overlay links
 
