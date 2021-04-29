@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  */
 function gum_link( $args ) {
-	$url = 'https://gum.co/' . $args['id'];
+	$url = $args['url'];
 	$wanted = '';
 	$button = '';
 
@@ -34,7 +34,7 @@ function gum_link( $args ) {
  *
  */
 function gum_overlay( $args ) {
-	$url = 'https://gum.co/' . $args['id'];
+	$url = $args['url'];
 	$wanted = '';
 	$button = '';
 
@@ -55,8 +55,8 @@ function gum_overlay( $args ) {
  * @since 1.1.0
  *
  */
-function gum_embed( $id ) {
-	return sprintf( '<div class="gumroad-product-embed" data-gumroad-product-id="%s"></div>', esc_attr( $id ) );
+function gum_embed( $args ) {
+	return sprintf( '<div class="gumroad-product-embed"><a href="%s"></a></div>', esc_attr( $args['url'] ) );
 }
 
 /**

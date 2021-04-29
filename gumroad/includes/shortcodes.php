@@ -20,6 +20,7 @@ function gum_gumroad_shortcode( $attr ) {
 
 	$defaults = array(
 					'id'     => '',
+					'url'    => '',
 					'type'   => 'none', // none, overlay, embed
 					'class'  => '',
 					'text'   => 'I want this!',
@@ -33,11 +34,22 @@ function gum_gumroad_shortcode( $attr ) {
 
 	$attr = array_merge( $defaults, $attr );
 
-	if( ! empty( $id ) ) {
+	if( ! empty( $id ) || ! empty( $url ) ) {
 
 		// link behaviour
+		if ( ! empty( $url ) ) {
+			// Embed widget doesn't work with alias domain URLs
+			$attr['url'] = str_replace('gum.co/a/', 'gumroad.com/a/', $attr['url']);
+			$attr['url'] = str_replace('gum.co/l/', 'gumroad.com/l/', $attr['url']);
+			$attr['url'] = str_replace('gum.co/', 'gumroad.com/l/', $attr['url']);
+		}
+
+		if ( empty( $attr['url'] ) && ! empty( $id ) ) {
+			$attr['url'] = 'https://gumroad.com/l/' . $id;
+		}
+
 		if ( $type == 'embed') { // Embed
-			$html = gum_embed( $id );
+			$html = gum_embed( $attr );
 		} else if ( $type == 'overlay' ) { // Overlay
 			$html = gum_overlay( $attr );
 		} else { // Default
