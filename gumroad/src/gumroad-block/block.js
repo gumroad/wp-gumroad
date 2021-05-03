@@ -24,7 +24,7 @@ const {
 
 const gumroadURL = 'https://gumroad.com/l/demo';
 const defaultID = 'demo';
-const gumroadURLRegex = /(https:\/\/gumroad\.com\/a\/.+\/)|(https:\/\/gumroad\.com\/l\/)|(https:\/\/gumroad\.com\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
+const gumroadURLRegex = /(https:\/\/gumroad\.com\/a\/[[:alnum:]]+\/)|(https:\/\/gumroad\.com\/l\/)|(https:\/\/gumroad\.com\/)|(https:\/\/gum\.co\/)/g;
 
 class GumControls extends Component {
   constructor( props ) {
@@ -226,7 +226,6 @@ registerBlockType( 'gumroad/gumroad-block', {
     // Embed widget doesn't work with alias domain URLs
     urlString = urlString
 			.replace("gum.co/a/", "gumroad.com/a/")
-			.replace("gum.co/l/", "gumroad.com/l/")
 			.replace("gum.co/", "gumroad.com/l/");
 
     // Wanted

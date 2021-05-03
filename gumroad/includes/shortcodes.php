@@ -40,7 +40,6 @@ function gum_gumroad_shortcode( $attr ) {
 		if ( ! empty( $url ) ) {
 			// Embed widget doesn't work with alias domain URLs
 			$attr['url'] = str_replace('gum.co/a/', 'gumroad.com/a/', $attr['url']);
-			$attr['url'] = str_replace('gum.co/l/', 'gumroad.com/l/', $attr['url']);
 			$attr['url'] = str_replace('gum.co/', 'gumroad.com/l/', $attr['url']);
 		}
 
