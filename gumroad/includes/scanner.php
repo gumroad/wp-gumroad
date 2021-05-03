@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  function scanner( $post_content ) {
 
  	// counts to see if we find any gumroad product links.
- 	if (count(preg_grep('/(gumroad.com\/a\/[[:alnum:]]+\/[[:alnum:]].*|gumroad.com\/l\/[[:alnum:]]|gum.co\/[[:alnum:]])/', explode("\n", $post_content))) > 0) {
+ 	if (count(preg_grep('/(gumroad.com\/a\/[[:alnum:]]+\/[[:alnum:]]|gumroad.com\/l\/[[:alnum:]]|gum.co\/[[:alnum:]])/', explode("\n", $post_content))) > 0) {
 		gum_load_js('overlay');
  	}
 	if (count(preg_grep('/(class=\"gumroad-product-embed\")/', explode("\n", $post_content))) > 0) {
