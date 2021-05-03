@@ -2,8 +2,8 @@
 Contributors: karloscarweber, pderksen, nickyoung87, gumroad
 Tags: gumroad, gumroad product pages, gumroad overlay, gumroad embed, ecommerce, e-commerce, pdf, javascript, overlay, embed
 Requires at least: 3.9
-Tested up to: 4.9.6
-Stable tag: 2.1
+Tested up to: 5.7.1
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,21 +11,23 @@ Make your Gumroad products available for purchase right within WordPress.
 
 == Description ==
 
-This plugin lets you embed Gumroad into your website, using our Overlay and Embed widgets: https://gumroad.com/widgets
+This plugin lets you embed Gumroad into your website, using our Overlay and Embed widgets: https://gumroad.com/widgets.
 
 Zero coding knowledge is required. Once installed, all links to Gumroad will automatically open the Gumroad Overlay (lightbox popup).
 
-For more information on how this plugin works, you can see a video on our Overlay here: https://www.youtube.com/watch?v=u80Ey6lSRyE
+For more information on how this plugin works, you can see a video on our Overlay here: https://www.youtube.com/watch?v=u80Ey6lSRyE.
 
 You can also use shortcodes:
 
-Basic overlay example: `[gumroad id="DviQY"]`
+Basic overlay example: `[gumroad url="https://gumroad.com/l/DviQY"]`
 
-Basic embed example: `[gumroad id="GAPdj" type="embed"]`
+Basic embed example: `[gumroad url="https://gumroad.com/l/GAPdj" type="embed"]`
 
-Overlay that will automatically show the payment form: `[gumroad id="DviQY" text="Purchase Item" wanted="true"]`
+Overlay that will automatically show the payment form: `[gumroad url="https://gumroad.com/l/DviQY" text="Purchase Item" wanted="true"]`
 
-The ID ("GAPdJ") is the same as your Gumroad product URL ("gumroad.com/l/GAPdJ"). See the full documentation in Settings > Gumroad after the plugin is activated.
+Overlay for an affiliated product: `[gumroad url="https://gumroad.com/a/919237747/llNDe" type="overlay"]`
+
+See the full documentation in Settings > Gumroad after the plugin is activated.
 
 == Installation ==
 
@@ -68,6 +70,10 @@ See the official Gumroad [overlay](https://gumroad.com/overlay) or [embed](https
 2. Example of the inline Embed
 
 == Changelog ==
+
+= 3.0.0 - April 30, 2021 =
+
+* Add support for specifying both regular and affiliated product URLs in Gumroad Block as well as short codes.
 
 = 1.2.4 - January 30, 2019 =
 
