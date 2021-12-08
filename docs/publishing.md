@@ -49,7 +49,7 @@ Requires at least: 3.9
 Stable tag: 3.0.0
 ```
 
-5. If the changes made to the `trunk` directory look good, copy the current `trunk` directory to the `tags` directory with an intended version.
+5. If the changes made to the `trunk` directory look good, copy the current `trunk` directory to the `tags` directory with the intended version.
 
 ```bash
 # Copies "trunk" to a new "X.X.X" directory under "tags" directory,
